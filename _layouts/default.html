@@ -4,25 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | DBI Research Group</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">DBI RESEARCH GROUP</div>
+        <div class="logo" style="font-weight: bold; color: #00234b; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-brain" style="color: #0d6efd;"></i> DBI RESEARCH GROUP
+        </div>
+        
         <ul class="nav-links">
-            <li><a href="{{ '/' | relative_url }}">Investigación</a></li>
-            <li><a href="{{ '/equipo' | relative_url }}">Equipo</a></li>
-            <li><a href="{{ '/galeria' | relative_url }}">Galería</a></li>
+            <li><a href="/dbi-research-web/">Investigación</a></li>
+            <li><a href="/dbi-research-web/catalogo">Catálogo</a></li>
+            <li><a href="/dbi-research-web/equipo">Equipo</a></li>
+            <li><a href="/dbi-research-web/galeria">Galería</a></li>
         </ul>
+
+        <div class="nav-auth">
+            <a href="#" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                <i class="fas fa-lock"></i> Admin
+            </a>
+        </div>
     </nav>
 
     <main>
         {{ content }}
     </main>
 
-    <footer class="main-footer">
+    <footer style="text-align: center; padding: 40px 20px; background: white; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 50px;">
         <p>&copy; 2024 DBI Research Group. Todos los derechos reservados.</p>
     </footer>
 
