@@ -1,4 +1,3 @@
-<style>
 :root {
     --azul-degradado: linear-gradient(135deg, #0a2e61 0%, #15468a 100%);
     --azul-primario: #0d6efd;
@@ -7,67 +6,91 @@
     --blanco: #ffffff;
 }
 
-/* RESET TOTAL PARA ELIMINAR ESPACIOS BLANCOS */
-body, html { margin: 0; padding: 0; background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; }
-
-/* Forzar a Jekyll/GitHub Pages a no poner márgenes arriba */
+/* Reset de márgenes para Jekyll */
 .main-content, #main, .container-lg { 
     max-width: 100% !important; 
     padding: 0 !important; 
     margin: 0 !important; 
 }
 
-/* HERO: Ajustado para que pegue al menú */
+/* Hero */
 .hero {
     background: var(--azul-degradado);
     color: white;
-    padding: 60px 10% 80px; /* Reducido para que no sea tan gigante */
+    padding: 80px 10% 100px;
     text-align: center;
-    margin: 0;
-    position: relative;
 }
+.hero-title { font-size: 3.2rem; font-weight: 800; margin: 20px 0 10px; letter-spacing: -1px; }
+.hero-subtitle { font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
 
-.badge { 
+.badge-tech { 
     background: rgba(255,255,255,0.2); 
     border: 1px solid rgba(255,255,255,0.4); 
-    color: white; 
-    padding: 5px 20px; 
+    padding: 6px 20px; 
     border-radius: 20px; 
     font-size: 0.85rem;
     font-weight: bold;
+    display: inline-block;
 }
 
-/* CONTENEDOR DE TARJETAS */
-.container { 
-    max-width: 1200px; 
-    margin: -40px auto 40px; /* Esto hace que el buscador/contenido suba un poco sobre el azul */
-    padding: 0 20px; 
+/* Buscador */
+.search-container {
+    background: white; 
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15); 
+    margin: -45px auto 50px; 
+    display: flex; 
+    gap: 10px;
+    max-width: 700px;
     position: relative;
-    z-index: 10;
+    z-index: 20;
 }
+.search-input { flex: 1; border: 1px solid #eee; padding: 12px 20px; border-radius: 8px; outline: none; font-size: 1rem; }
+.btn-search { background: #2563eb; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; 
-}
+/* Contenedores y Grid */
+.container { max-width: 1100px; margin: auto; padding: 0 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
+/* Cards Generales */
 .card {
     background: var(--blanco); 
     padding: 25px; 
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
-    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
     transition: transform 0.3s;
 }
-
 .card:hover { transform: translateY(-5px); }
 
-/* IMAGENES */
-img { max-width: 100%; height: auto; }
+/* Secciones específicas */
+.divider { width: 50px; height: 3px; background: var(--azul-primario); margin: 10px auto 40px; }
+.section-title { color: var(--azul-oscuro); font-size: 2rem; }
 
-@media (max-width: 600px) {
-    .hero { padding: 40px 5% 60px; }
-    .hero h1 { font-size: 1.8rem !important; }
+/* Líneas de Investigación */
+.icon-line { font-size: 2rem; margin-bottom: 15px; }
+.line-embebidos { border-top: 4px solid #2563eb; text-align: center; }
+.line-ia { border-top: 4px solid #10b981; text-align: center; }
+.line-iot { border-top: 4px solid #f59e0b; text-align: center; }
+
+/* Miembros */
+.card-member { border-top: 4px solid var(--azul-primario); text-align: center; margin-top: 40px; }
+.photo-circle { 
+    width: 100px; height: 100px; border-radius: 50%; 
+    margin: -60px auto 15px; 
+    border: 4px solid var(--blanco); 
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: white;
 }
-</style>
+.photo-circle img { width: 100%; height: 100%; object-fit: cover; }
+.member-name { font-size: 1.2rem; margin-bottom: 5px; }
+.member-role { color: var(--azul-primario); font-weight: bold; font-size: 0.85rem; text-transform: uppercase; }
+.member-inst { color: #777; font-size: 0.8rem; line-height: 1.4; }
+
+/* Producción Reciente */
+.recent-production { margin: 80px 0; }
+.flex-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.project-tag { font-size: 0.7rem; color: #2563eb; background: #eef4ff; padding: 4px 10px; border-radius: 10px; font-weight: bold; }
+.project-title { margin-top: 15px; font-size: 1.15rem; }
+.project-link { margin-top: 20px; color: var(--azul-primario); font-weight: bold; text-decoration: none; display: inline-block; }
