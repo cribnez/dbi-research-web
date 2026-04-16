@@ -1,14 +1,14 @@
 - nombre: "Christian Roberto Ibáñez Nangüelú"
   rol: "INVESTIGADOR PRINCIPAL"
-  foto: "usuario.png" # Sube la foto a assets/img/
+  foto: "assets/img/usuario.png" # Sube la foto a assets/img/
   bio: "Especialista en IA y Visión Artificial."
 
 - nombre: "Roberto Ibáñez Córdova"
   rol: "INVESTIGADOR PRINCIPAL"
-  foto: "usuario.png" # Sube la foto a assets/img/
+  foto: "assets/img/usuario.png" # Sube la foto a assets/img/
   bio: "Especialista en IA y Visión Artificial."
 
 - nombre: "Integrante de Prueba"
   rol: "ESTUDIANTE"
-  foto: "usuario.png"
+  foto: "assets/img/usuario.png"
   bio: "Desarrollo de prototipos biomédicos."
