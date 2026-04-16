@@ -16,9 +16,14 @@
                 <h3 style="color: var(--azul-oscuro); margin-bottom: 8px; font-size: 1.35rem;">{{ miembro.nombre }}</h3>
                 <p style="color: #0d6efd; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem; text-transform: uppercase;">{{ miembro.rol }}</p>
                 
-                <p style="color: #666; font-size: 0.8rem; line-height: 1.4; padding: 0 10px; white-space: normal; overflow: visible;">
-                    {{ miembro.institucion }}
-                </p>
+                <p style="color: #777; font-size: 0.85rem; line-height: 1.4; margin: 0 auto; padding: 0 10px; 
+          white-space: normal !important; 
+          overflow: visible !important; 
+          text-overflow: clip !important; 
+          max-width: 250px; 
+          display: block;">
+    {{ miembro.institucion }}
+</p>
             </div>
 
             <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #f0f0f0; width: 100%; color: #888; font-size: 0.8rem; display: flex; justify-content: center; align-items: center; gap: 7px;">
