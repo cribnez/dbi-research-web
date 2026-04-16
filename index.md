@@ -77,8 +77,8 @@ title: Inicio
         {% endfor %}
     </div>
 
-    <div style="text-align: center; margin-top: 50px; margin-bottom: 80px;">
-        <a href="{{ '/catalogo.html' | relative_url }}" class="btn">Explorar catálogo completo</a>
-    </div>
+    <div style="text-align: center; margin-top: 40px;">
+            <a href="{{ '/catalogo.html' | relative_url }}" style="color: var(--azul-primario); font-weight: bold; text-decoration: none;">Ver todo el equipo →</a>
+        </div>
 
 </div>
