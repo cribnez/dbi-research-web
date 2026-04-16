@@ -38,3 +38,24 @@ body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--gris-fo
 }
 .photo-circle img { width: 100%; height: 100%; object-fit: cover; }
 .img-fluid { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+
+/* Añade esto a tu CSS para que nada se rompa en móviles */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 95%; /* En pantallas pequeñas usa casi todo el ancho */
+    max-width: 1200px; /* En pantallas grandes no se estira infinito */
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.8rem !important; /* Texto más pequeño en celular */
+    }
+    .card {
+        margin-top: 50px !important; /* Espacio para que la foto circular no choque */
+    }
+}
