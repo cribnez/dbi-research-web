@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | DBI Research Group</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
+    <nav class="navbar">
+        <div class="logo">DBI RESEARCH GROUP</div>
+        <ul class="nav-links">
+            <li><a href="{{ '/' | relative_url }}">Investigación</a></li>
+            <li><a href="{{ '/equipo' | relative_url }}">Equipo</a></li>
+            <li><a href="{{ '/galeria' | relative_url }}">Galería</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 DBI Research Group. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
