@@ -8,7 +8,7 @@ title: Equipo
         {% for miembro in site.data.equipo %}
         <div class="card" style="text-align: center; margin-top: 50px;">
             <div class="photo-circle">
-                <img src="/assets/img/{{ usuario.png }}" alt="{{ miembro.nombre }}">
+                <img src="/assets/img/{{ miembro.foto }}" alt="{{ miembro.nombre }}">
             </div>
             <h3>{{ miembro.nombre }}</h3>
             <p style="color: var(--azul-primario); font-weight: bold;">{{ miembro.rol }}</p>
