@@ -66,7 +66,7 @@ title: Inicio
     <div class="recent-production">
         <div class="flex-header">
             <h2 class="section-title">Producción Reciente</h2>
-            <a href="{{ '/catalogo.html' | relative_url }}" class="link-all">Ver Catálogo →</a>
+            <a href="{{ '/catalogo.html' | relative_url }}" class="project-link">Ver Catálogo →</a>
         </div>
 
         <div class="grid">
