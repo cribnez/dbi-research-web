@@ -11,16 +11,14 @@ title: Galería
 <div class="container">
     <div class="grid">
         {% for item in site.data.galeria %}
-        <div class="card" style="padding: 10px; overflow: hidden;">
-            <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 8px;">
-                <img src="{{ site.baseurl }}/assets/img/{{ item.imagen }}" class="img-fluid" alt="{{ item.titulo }}">
+        <div class="card" style="padding: 15px; text-align: center;">
+            <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; background: #f8f9fa;">
+                <img src="{{ '/assets/img/' | append: item.imagen | relative_url }}" 
                      style="width: 100%; height: 100%; object-fit: cover;" 
                      alt="{{ item.titulo }}">
             </div>
-            <div style="padding: 15px 5px 5px;">
-                <h4 style="color: var(--azul-oscuro); margin: 0; font-size: 1rem;">{{ item.titulo }}</h4>
-                <p style="color: #888; font-size: 0.8rem; margin-top: 5px;">{{ item.fecha }}</p>
-            </div>
+            <h3 style="color: var(--azul-oscuro); margin-bottom: 5px;">{{ item.titulo }}</h3>
+            <p style="color: #666; font-size: 0.9rem;">{{ item.descripcion }}</p>
         </div>
         {% endfor %}
     </div>
