@@ -1,6 +1,6 @@
 title: Dispositivos Biomédicos Inteligentes
 description: Innovación en IA y Sistemas Embebidos.
-baseurl: "" # Déjalo vacío si el repo se llama 'usuario.github.io'
+baseurl: "/dbi-research-web"
 url: "https://cribnez.github.io"
 
 # Ajustes de Jekyll
