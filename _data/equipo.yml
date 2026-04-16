@@ -27,3 +27,17 @@ alumnos:
     institucion: "Universidad Politécnica de Chiapas"
     email: "blackrubick14@gmail.com"
     foto: "/assets/img/usuario.png"
+
+  - nombre: "César Gómez Aguilera"
+    rol: "Ing. en Desarrollo de Software"
+    especialidad: "Estudiante de Ingeniería"
+    institucion: "Universidad Politécnica de Chiapas"
+    email: "blackrubick14@gmail.com"
+    foto: "/assets/img/usuario.png"
+    
+  - nombre: "César Gómez Aguilera"
+    rol: "Ing. en Desarrollo de Software"
+    especialidad: "Estudiante de Ingeniería"
+    institucion: "Universidad Politécnica de Chiapas"
+    email: "blackrubick14@gmail.com"
+    foto: "/assets/img/usuario.png"
