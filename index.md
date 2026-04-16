@@ -78,7 +78,7 @@ title: Inicio
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
-            <a href="{{ '/catalogo.html' | relative_url }}" style="color: var(--azul-primario); font-weight: bold; text-decoration: none;">Ver todo el equipo →</a>
+            <a href="{{ '/catalogo.html' | relative_url }}" style="color: var(--azul-primario); font-weight: bold; text-decoration: none;">Ver lista completa →</a>
         </div>
 
 </div>
