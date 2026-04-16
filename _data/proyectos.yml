@@ -1,1 +1,31 @@
+# --- CATÁLOGO DE PROYECTOS Y PRODUCCIÓN ACADÉMICA ---
 
+- titulo: "Desarrollo de un sistema de monitoreo cardíaco mediante IoT"
+  autor: "Juan Pérez García"
+  director: "Dr. Christian Roberto Ibáñez Nangüelú"
+  anio: "2024"
+  nivel: "Ingeniería"
+  escuela: "Universidad Politécnica de Chiapas"
+  estado: "Finalizada"
+  resumen: "Prototipo funcional para el monitoreo de signos vitales en tiempo real."
+  link: "#" # Aquí puedes poner el link al PDF de la tesis
+
+- titulo: "Algoritmos de IA para detección de neumonía en radiografías"
+  autor: "María López Ruiz"
+  director: "Dr. Christian Roberto Ibáñez Nangüelú"
+  anio: "2023"
+  nivel: "Maestría"
+  escuela: "Instituto Tecnológico"
+  estado: "En curso"
+  resumen: "Implementación de redes neuronales convolucionales para diagnóstico médico."
+  link: "#"
+
+- titulo: "Implementación de una red de sensores biomédicos"
+  autor: "Carlos Ruiz"
+  director: "Dr. Christian Roberto Ibáñez Nangüelú"
+  anio: "2024"
+  nivel: "Ingeniería"
+  escuela: "Universidad Politécnica de Chiapas"
+  estado: "Finalizada"
+  resumen: "Red inalámbrica para la transmisión de datos de salud en entornos hospitalarios."
+  link: "#"
