@@ -1,1 +1,7 @@
+- titulo: "Laboratorio DBI"
+  descripcion: "Pruebas de sensores en tiempo real."
+  imagen: "lab.jpg"
 
+- titulo: "Prototipo de IA"
+  descripcion: "Análisis de imágenes médicas usando redes neuronales."
+  imagen: "ia.jpg"
