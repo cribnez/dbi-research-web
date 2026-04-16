@@ -13,7 +13,7 @@ title: Galería
         {% for item in site.data.galeria %}
         <div class="card" style="padding: 10px; overflow: hidden;">
             <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 8px;">
-                <img src="{{ '/assets/img/' | append: item.imagen | relative_url }}" class="img-fluid" alt="{{ item.titulo }}">
+                <img src="{{ site.baseurl }}/assets/img/{{ item.imagen }}" class="img-fluid" alt="{{ item.titulo }}">
                      style="width: 100%; height: 100%; object-fit: cover;" 
                      alt="{{ item.titulo }}">
             </div>
