@@ -1,5 +1,13 @@
+<style>
 :root {
+    /* El degradado que querías */
     --azul-degradado: linear-gradient(135deg, #0a2e61 0%, #15468a 100%);
+    
+    /* Colores base restaurados para que funcionen las cards y botones */
+    --azul-primario: #0d6efd;
+    --azul-oscuro: #0a2e61;
+    --gris-fondo: #f8f9fa;
+    --blanco: #ffffff;
 }
 
 body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--gris-fondo); color: #333; }
