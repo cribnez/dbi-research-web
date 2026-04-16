@@ -1,15 +1,15 @@
 investigadores:
   - nombre: "Christian Roberto Ibáñez Nangüelú"
     rol: "Investigador Principal"
-    especialidad: "Especialista en IA y Visión Artificial"
+    especialidad: "Especialista en IA"
     institucion: "Universidad Politécnica de Chiapas"
-    email: "correo@ejemplo.com"
+    email: "cribn@ib.upchiapas.edu.mx"
     foto: "/assets/img/usuario.png"
 
-  - nombre: "Christian Roberto Ibáñez Nangüelú"
+  - nombre: "Roberto Ibáñez Córdova"
     rol: "Investigador Principal"
-    especialidad: "Especialista en IA y Visión Artificial"
-    institucion: "Universidad Politécnica de Chiapas"
+    especialidad: "Visión Artificial"
+    institucion: "Tecnológico Nacional de México"
     email: "correo@ejemplo.com"
     foto: "/assets/img/usuario.png"
 
