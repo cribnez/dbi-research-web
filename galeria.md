@@ -7,7 +7,7 @@ title: Galería
     <div class="grid">
         {% for item in site.data.galeria %}
         <div class="card">
-            <img src="/assets/img/{{ item.imagen }}" class="img-fluid">
+            <img src="{{ '/assets/img/' | append: item.imagen | relative_url }}" class="img-fluid" alt="{{ item.titulo }}">
             <h3>{{ item.titulo }}</h3>
             <p>{{ item.descripcion }}</p>
         </div>
