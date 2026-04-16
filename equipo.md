@@ -1,35 +1,66 @@
-<div class="container" style="margin-top: 80px; margin-bottom: 80px;">
-    <div style="text-align: center; margin-bottom: 70px;">
-        <h2 style="color: var(--azul-oscuro); font-size: 2.2rem; margin-bottom: 10px;">Investigadores Principales</h2>
-        <div style="width: 60px; height: 4px; background: var(--azul-primario); margin: 0 auto;"></div>
+---
+layout: default
+title: Nuestro Equipo
+---
+
+<div class="hero" style="padding: 50px 10%; text-align: center;">
+    <h1 style="font-size: 2.2rem; margin: 0;">Nuestro Equipo</h1>
+    <p style="font-size: 1rem; opacity: 0.9; margin-top: 10px;">Talento dedicado a la investigación y desarrollo.</p>
+</div>
+
+<div class="container">
+    
+    <div style="text-align: center; margin: 40px 0 50px;">
+        <h2 style="color: var(--azul-oscuro); font-size: 1.8rem;">Investigadores Principales</h2>
+        <div style="width: 40px; height: 3px; background: var(--azul-primario); margin: 10px auto;"></div>
     </div>
 
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px 30px;">
-        {% for miembro in site.data.equipo.investigadores limit:3 %}
-        <div class="card" style="text-align: center; padding: 35px 25px 20px; position: relative; display: flex; flex-direction: column; align-items: center; min-height: 340px; border-top: 5px solid var(--azul-primario);">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px 20px; margin-bottom: 60px;">
+        {% for miembro in site.data.equipo.investigadores %}
+        <div class="card" style="text-align: center; padding: 25px 20px 15px; position: relative; display: flex; flex-direction: column; align-items: center; min-height: 320px; border-top: 4px solid var(--azul-primario);">
             
-            <div style="width: 110px; height: 110px; border-radius: 50%; overflow: hidden; border: 4px solid #eef4ff; position: absolute; top: -55px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid #eef4ff; position: absolute; top: -50px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 <img src="{{ miembro.foto | relative_url }}" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
 
-            <div style="margin-top: 60px; flex-grow: 1; width: 100%;">
-                <h3 style="color: var(--azul-oscuro); margin-bottom: 8px; font-size: 1.35rem;">{{ miembro.nombre }}</h3>
-                <p style="color: #0d6efd; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem; text-transform: uppercase;">{{ miembro.rol }}</p>
-                
-                <p style="color: #777; font-size: 0.85rem; line-height: 1.4; margin: 0 auto; padding: 0 10px; 
-          white-space: normal !important; 
-          overflow: visible !important; 
-          text-overflow: clip !important; 
-          max-width: 250px; 
-          display: block;">
-    {{ miembro.institucion }}
-</p>
+            <div style="margin-top: 50px; flex-grow: 1; width: 100%;">
+                <h3 style="color: var(--azul-oscuro); margin-bottom: 5px; font-size: 1.2rem;">{{ miembro.nombre }}</h3>
+                <p style="color: #0d6efd; font-weight: bold; margin-bottom: 5px; font-size: 0.85rem; text-transform: uppercase;">{{ miembro.rol }}</p>
+                <p style="color: #555; font-size: 0.8rem; margin-bottom: 5px;">{{ miembro.especialidad }}</p>
+                <p style="color: #777; font-size: 0.75rem; line-height: 1.3; margin: 0; white-space: normal;">{{ miembro.institucion }}</p>
             </div>
 
-            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #f0f0f0; width: 100%; color: #888; font-size: 0.8rem; display: flex; justify-content: center; align-items: center; gap: 7px;">
+            <div style="margin-top: 20px; padding-top: 12px; border-top: 1px solid #eee; width: 100%; color: #888; font-size: 0.75rem; display: flex; justify-content: center; align-items: center; gap: 6px;">
                 <i class="far fa-envelope"></i> <span>{{ miembro.email }}</span>
             </div>
         </div>
         {% endfor %}
     </div>
+
+    <div style="text-align: center; margin: 60px 0 50px;">
+        <h2 style="color: var(--azul-oscuro); font-size: 1.8rem;">Colaboradores y Estudiantes</h2>
+        <div style="width: 40px; height: 3px; background: var(--azul-primario); margin: 10px auto;"></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px 20px; margin-bottom: 50px;">
+        {% for miembro in site.data.equipo.alumnos %}
+        <div class="card" style="text-align: center; padding: 25px 20px 15px; position: relative; display: flex; flex-direction: column; align-items: center; min-height: 300px; border-top: 4px solid #0d6efd;">
+            
+            <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid #eef4ff; position: absolute; top: -50px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <img src="{{ miembro.foto | relative_url }}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <div style="margin-top: 50px; flex-grow: 1; width: 100%;">
+                <h3 style="color: var(--azul-oscuro); margin-bottom: 5px; font-size: 1.2rem;">{{ miembro.nombre }}</h3>
+                <p style="color: #0d6efd; font-weight: bold; margin-bottom: 5px; font-size: 0.85rem;">{{ miembro.rol }}</p>
+                <p style="color: #777; font-size: 0.75rem; line-height: 1.3; margin: 0; white-space: normal;">{{ miembro.institucion }}</p>
+            </div>
+
+            <div style="margin-top: 20px; padding-top: 12px; border-top: 1px solid #eee; width: 100%; color: #888; font-size: 0.75rem; display: flex; justify-content: center; align-items: center; gap: 6px;">
+                <i class="far fa-envelope"></i> <span>{{ miembro.email }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
