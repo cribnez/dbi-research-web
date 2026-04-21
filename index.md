@@ -79,7 +79,7 @@ title: Inicio
                     <h3 class="project-title">{{ proyecto.titulo }}</h3>
                     <p class="project-author"><strong>Autor:</strong> {{ proyecto.autor }}</p>
                 </div>
-                <a href="{{ proyecto.link | relative_url }}" class="project-link">Leer más →</a>
+                <a href="{{ /dbi-research-web/proyecto.link | relative_url }}" class="project-link">Leer más →</a>
             </div>
             {% endfor %}
         </div>
