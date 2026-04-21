@@ -8,7 +8,7 @@
   escuela: "Universidad Politécnica de Chiapas"
   estado: "Finalizada"
   resumen: "Prototipo funcional para el monitoreo de signos vitales en tiempo real."
-  link: "/proyectos/monitoreo-cardiaco.html" # Aquí puedes poner el link al PDF de la tesis
+  link: "/dbi-research-web/proyectos/monitoreo-cardiaco.html" # Aquí puedes poner el link al PDF de la tesis
 
 - titulo: "Algoritmos de IA para detección de neumonía en radiografías"
   autor: "María López Ruiz"
