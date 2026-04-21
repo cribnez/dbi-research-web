@@ -1,31 +1,17 @@
-# --- CATÁLOGO DE PROYECTOS Y PRODUCCIÓN ACADÉMICA ---
-
-- titulo: "Desarrollo de un sistema de monitoreo cardíaco mediante IoT"
-  autor: "Juan Pérez García"
-  director: "Dr. Christian Roberto Ibáñez Nangüelú"
+- id: simulador_fuente_radiactiva
+  titulo: "Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics"
   anio: "2024"
   nivel: "Ingeniería"
-  escuela: "Universidad Politécnica de Chiapas"
-  estado: "Finalizada"
-  resumen: "Prototipo funcional para el monitoreo de signos vitales en tiempo real."
-  link: "/dbi-research-web/proyectos/monitoreo-cardiaco.html" # Aquí puedes poner el link al PDF de la tesis
-
-- titulo: "Algoritmos de IA para detección de neumonía en radiografías"
-  autor: "María López Ruiz"
+  resumen: "Este proyecto presenta el diseño e implementación de un simulador electrónico de bajo costo concebido como un análogo físico para la enseñanza de la desintegración radiactiva. Ante las restricciones logísticas y de seguridad que implica el uso de fuentes radiactivas reales, se desarrolló un sistema que utiliza un microcontrolador Raspberry Pi Pico para emular la actividad radiactiva disminuyendo la intensidad de un LED mediante PWM, medida por un sensor BH1750."
   director: "Dr. Christian Roberto Ibáñez Nangüelú"
-  anio: "2023"
-  nivel: "Maestría"
-  escuela: "Instituto Tecnológico"
-  estado: "En curso"
-  resumen: "Implementación de redes neuronales convolucionales para diagnóstico médico."
-  link: "/proyectos/monitoreo-cardiaco.html"
-
-- titulo: "Implementación de una red de sensores biomédicos"
-  autor: "Carlos Ruiz"
-  director: "Dr. Christian Roberto Ibáñez Nangüelú"
-  anio: "2024"
-  nivel: "Ingeniería"
   escuela: "Universidad Politécnica de Chiapas"
-  estado: "Finalizada"
-  resumen: "Red inalámbrica para la transmisión de datos de salud en entornos hospitalarios."
-  link: "#"
+  github: "https://github.com/cribnez/simulador-fuente-radiactiva" # Cambia esto por tu link real
+  link: "/proyectos/simulador_fuente_radiactiva.html"
+  autores_lista:
+    - "Georgina Hernández Santiz"
+    - "Adriana Jackeline Hernández Carbajal"
+    - "Abigail Peláez Segura"
+  resultados_lista:
+    - "Implementación de un análogo físico seguro y de bajo costo."
+    - "Emulación precisa de la ley de decaimiento exponencial con Raspberry Pi Pico."
+    - "Interfaz gráfica interactiva en Python (PyQt5) para análisis de datos."

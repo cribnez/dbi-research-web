@@ -52,7 +52,13 @@ title: Nuestro Equipo
 
             <div style="margin-top: 50px; flex-grow: 1; width: 100%;">
                 <h3 style="color: var(--azul-oscuro); margin-bottom: 5px; font-size: 1.2rem;">{{ miembro.nombre }}</h3>
-                <p style="color: #0d6efd; font-weight: bold; margin-bottom: 5px; font-size: 0.85rem;">{{ miembro.rol }}</p>
+                <p style="color: #0d6efd; font-weight: bold; margin-bottom: 10px; font-size: 0.85rem;">{{ miembro.rol }}</p>
+                
+                {% if miembro.especialidad %}
+                <p style="font-size: 0.80rem; color: #d35400; background: #fdf2e9; padding: 4px 12px; border-radius: 12px; font-weight: bold; margin: 0 auto 10px; display: inline-block;">
+                    {{ miembro.especialidad }}
+                </p>
+                {% endif %}
                 <p style="color: #777; font-size: 0.75rem; line-height: 1.3; margin: 0; white-space: normal;">{{ miembro.institucion }}</p>
             </div>
 

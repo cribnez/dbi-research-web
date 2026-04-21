@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | DBI Research Group</title>
+    
+    <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" style="font-weight: bold; color: #00234b; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-brain" style="color: #0d6efd;"></i> DBI RESEARCH GROUP
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="/dbi-research-web/">Investigación</a></li>
+            <li><a href="/dbi-research-web/catalogo">Catálogo</a></li>
+            <li><a href="/dbi-research-web/equipo">Equipo</a></li>
+            <li><a href="/dbi-research-web/galeria">Galería</a></li>
+        </ul>
+
+        <div class="nav-auth">
+            <a href="#" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                <i class="fas fa-lock"></i> Admin
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+    <div class="badge-tech">Ingeniería y Tecnología</div>
+    <h1 class="hero-title">
+        Dispositivos Biomédicos Inteligentes
+    </h1>
+    <p class="hero-subtitle">
+        Innovación en algoritmos de IA y sistemas embebidos aplicados a la salud humana y veterinaria.
+    </p>
+</header>
+
+<div class="container">
+    
+    <div class="search-container">
+        <input type="text" id="inputBusquedaHero" placeholder="Buscar tesis, artículos, autores..." class="search-input" />
+        <button onclick="ejecutarBusqueda()" class="btn-search">
+            Buscar
+        </button>
+    </div>
+
+    <div class="section-header">
+        <h2 class="section-title">Líneas de Investigación</h2>
+        <div class="divider"></div>
+        
+        <div class="grid">
+            <div class="card line-embebidos">
+                <i class="fas fa-microchip icon-line"></i>
+                <h3>Sistemas Embebidos</h3>
+                <p class="card-text">Hardware médico de bajo consumo y alta precisión para entornos clínicos.</p>
+            </div>
+            <div class="card line-ia">
+                <i class="fas fa-brain icon-line"></i>
+                <h3>Inteligencia Artificial</h3>
+                <p class="card-text">Modelos de visión artificial y Deep Learning para diagnóstico médico.</p>
+            </div>
+            <div class="card line-iot">
+                <i class="fas fa-heartbeat icon-line"></i>
+                <h3>Monitoreo IoT</h3>
+                <p class="card-text">Telemetría y redes de sensores inalámbricos para salud remota.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header" style="margin-top: 100px;">
+        <h2 class="section-title">Investigadores Principales</h2>
+        <div class="divider"></div>
+        
+        <div class="grid">
+            
+            <div class="card card-member">
+                <div class="photo-circle">
+                    <img src="/dbi-research-web/assets/img/cribn.jpg" alt="Christian Roberto Ibáñez Nangüelú" />
+                </div>
+                <h3 class="member-name">Christian Roberto Ibáñez Nangüelú</h3>
+                <p class="member-role">Investigador Principal</p>
+                <p class="member-inst">Universidad Politécnica de Chiapas</p>
+            </div>
+            
+            <div class="card card-member">
+                <div class="photo-circle">
+                    <img src="/dbi-research-web/assets/img/usuario.png" alt="Roberto Ibáñez Córdova" />
+                </div>
+                <h3 class="member-name">Roberto Ibáñez Córdova</h3>
+                <p class="member-role">Investigador Principal</p>
+                <p class="member-inst">Tecnológico Nacional de México</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="recent-production">
+        <div class="flex-header">
+            <h2 class="section-title">Producción Reciente</h2>
+            <a href="/dbi-research-web/catalogo.html" class="project-link">Ver Catálogo →</a>
+        </div>
+
+        <div class="grid">
+            
+            <div class="card card-project" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span class="project-tag">
+                        2024 | Ingeniería
+                    </span>
+                    <h3 class="project-title">Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics</h3>
+                    <p class="project-author" style="margin-top: 10px; font-size: 0.9rem; color: #555;">
+                        <strong>Por:</strong> 
+                        
+                        
+                            Georgina Hernández Santiz et al.
+                        
+                    </p>
+                </div>
+                
+                <a href="/dbi-research-web/proyectos/simulador_fuente_radiactiva.html" class="project-link" style="margin-top: 20px;">Leer más →</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+function ejecutarBusqueda() {
+    const terminobusqueda = document.getElementById('inputBusquedaHero').value;
+    if (terminobusqueda.trim() !== "") {
+        window.location.href = "/dbi-research-web/catalogo.html?search=" + encodeURIComponent(terminobusqueda);
+    }
+}
+document.getElementById('inputBusquedaHero').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') ejecutarBusqueda();
+});
+</script>
+
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px 20px; background: white; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 50px;">
+        <p>&copy; 2024 DBI Research Group. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

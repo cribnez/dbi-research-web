@@ -71,15 +71,26 @@ title: Inicio
 
         <div class="grid">
             {% for proyecto in site.data.proyectos limit:2 %}
-            <div class="card card-project">
+            <div class="card card-project" style="display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                     <span class="project-tag">
                         {{ proyecto.anio }} | {{ proyecto.nivel }}
                     </span>
                     <h3 class="project-title">{{ proyecto.titulo }}</h3>
-                    <p class="project-author"><strong>Autor:</strong> {{ proyecto.autor }}</p>
+                    <p class="project-author" style="margin-top: 10px; font-size: 0.9rem; color: #555;">
+                        <strong>Por:</strong> 
+                        {% comment %} 
+                        Esta lógica permite usar el formato viejo (autor) o el nuevo (autores_lista) 
+                        {% endcomment %}
+                        {% if proyecto.autor %}
+                            {{ proyecto.autor }}
+                        {% elsif proyecto.autores_lista %}
+                            {{ proyecto.autores_lista | first }} et al.
+                        {% endif %}
+                    </p>
                 </div>
-                <a href="{{ /dbi-research-web/proyecto.link | relative_url }}" class="project-link">Leer más →</a>
+                
+                <a href="{{ proyecto.link | relative_url }}" class="project-link" style="margin-top: 20px;">Leer más →</a>
             </div>
             {% endfor %}
         </div>

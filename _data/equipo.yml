@@ -4,7 +4,7 @@ investigadores:
     especialidad: "Especialista en IA"
     institucion: "Universidad Politécnica de Chiapas"
     email: "cribn@ib.upchiapas.edu.mx"
-    foto: "/assets/img/usuario.png"
+    foto: "/assets/img/cribn.jpg"
 
   - nombre: "Roberto Ibáñez Córdova"
     rol: "Investigador Principal"
@@ -14,30 +14,10 @@ investigadores:
     foto: "/assets/img/usuario.png"
 
 alumnos:
-  - nombre: "César Gómez Aguilera"
-    rol: "Ing. en Desarrollo de Software"
-    especialidad: "Estudiante de Ingeniería"
+  - nombre: "Georgina Hernández Santiz"
+    rol: "Ing. Biomédica"
+    especialidad: "Desarrollo de tecnologías aplicadas a la salud, dispositivos médicos e innovación biomédica"
     institucion: "Universidad Politécnica de Chiapas"
-    email: "blackrubick14@gmail.com"
+    email: "203340@ib.upchiapas.edu.mx"
     foto: "/assets/img/usuario.png"
     
-  - nombre: "César Gómez Aguilera"
-    rol: "Ing. en Desarrollo de Software"
-    especialidad: "Estudiante de Ingeniería"
-    institucion: "Universidad Politécnica de Chiapas"
-    email: "blackrubick14@gmail.com"
-    foto: "/assets/img/usuario.png"
-
-  - nombre: "César Gómez Aguilera"
-    rol: "Ing. en Desarrollo de Software"
-    especialidad: "Estudiante de Ingeniería"
-    institucion: "Universidad Politécnica de Chiapas"
-    email: "blackrubick14@gmail.com"
-    foto: "/assets/img/usuario.png"
-    
-  - nombre: "César Gómez Aguilera"
-    rol: "Ing. en Desarrollo de Software"
-    especialidad: "Estudiante de Ingeniería"
-    institucion: "Universidad Politécnica de Chiapas"
-    email: "blackrubick14@gmail.com"
-    foto: "/assets/img/usuario.png"
