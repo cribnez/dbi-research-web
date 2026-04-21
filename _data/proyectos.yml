@@ -18,7 +18,7 @@
   escuela: "Instituto Tecnológico"
   estado: "En curso"
   resumen: "Implementación de redes neuronales convolucionales para diagnóstico médico."
-  link: "#"
+  link: "/proyectos/monitoreo-cardiaco.html"
 
 - titulo: "Implementación de una red de sensores biomédicos"
   autor: "Carlos Ruiz"
