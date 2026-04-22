@@ -1,0 +1,53 @@
+/* galeria.css */
+.filter-btn { 
+    border: none; 
+    padding: 8px 25px; 
+    border-radius: 20px; 
+    background: transparent; 
+    color: #555; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+.filter-btn.active { 
+    background: #007bff; 
+    color: white; 
+    box-shadow: 0 4px 10px rgba(0,123,255,0.3); 
+}
+
+.gallery-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    padding: 20px 15px; color: white; transform: translateY(10px);
+    opacity: 0; transition: 0.3s ease;
+}
+.gallery-item:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
+.gallery-item:hover img { transform: scale(1.08); }
+
+.close-btn {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    color: white;
+    font-size: 38px;
+    cursor: pointer;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.15);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-family: Arial, sans-serif;
+    line-height: 0;
+    padding-bottom: 4px;
+}
+
+.close-btn:hover {
+    background: #e74c3c;
+    transform: scale(1.1);
+}

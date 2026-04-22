@@ -4,7 +4,7 @@ investigadores:
     especialidad: "Especialista en IA"
     institucion: "Universidad Politécnica de Chiapas"
     email: "cribn@ib.upchiapas.edu.mx"
-    foto: "/assets/img/cribn.jpg"
+    foto: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_400,h_400,c_fill,g_face/v1776868085/cribn_imtfhl.jpg"
 
   - nombre: "Roberto Ibáñez Córdova"
     rol: "Investigador Principal"
