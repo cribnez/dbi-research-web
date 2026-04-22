@@ -3,26 +3,27 @@ layout: default
 title: Catálogo
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/catalogo.css' | relative_url }}">
+
 <header class="hero">
-    <h1 class="hero-title" style="margin: 0;">Catálogo de Producción Académica</h1>
-    <p class="hero-subtitle" style="margin-top: 10px;">
+    <h1 class="hero-title catalogo-hero-title">Catálogo de Producción Académica</h1>
+    <p class="hero-subtitle catalogo-hero-subtitle">
         Explora las tesis, artículos y proyectos desarrollados por nuestro grupo de investigación.
     </p>
 </header>
 
 <div class="container">
     
-    <div class="search-container" style="margin-top: -30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: space-between;">
-        <div style="flex: 2; min-width: 250px;">
-            <input type="text" id="searchInput" placeholder="Buscar por título o autor..." class="search-input" style="width: 100%; box-sizing: border-box;">
+    <div class="search-container catalogo-search-wrapper">
+        <div class="catalogo-input-container">
+            <input type="text" id="searchInput" placeholder="Buscar por título o autor..." class="search-input catalogo-input-text">
         </div>
-        <select id="filterNivel" class="search-input" style="flex: 1; min-width: 150px; cursor: pointer; color: #555;">
+        <select id="filterNivel" class="search-input catalogo-select">
             <option value="todos">Todos los Niveles</option>
             <option value="Ingeniería">Ingeniería</option>
             <option value="Maestría">Maestría</option>
-          
         </select>
-        <select id="filterAnio" class="search-input" style="flex: 1; min-width: 150px; cursor: pointer; color: #555;">
+        <select id="filterAnio" class="search-input catalogo-select">
             <option value="todos">Todos los Años</option>
             <option value="2024">2024</option>
             <option value="2023">2023</option>
@@ -31,22 +32,19 @@ title: Catálogo
 
     <div class="grid" id="catalogoGrid">
         {% for proyecto in site.data.proyectos %}
-        <div class="card proyecto-item" data-nivel="{{ proyecto.nivel }}" data-anio="{{ proyecto.anio }}" style="display: flex; flex-direction: column; justify-content: space-between; text-align: left; min-height: 280px;">
+        <div class="card proyecto-item" data-nivel="{{ proyecto.nivel }}" data-anio="{{ proyecto.anio }}">
             
             <div>
-                <div style="margin-bottom: 15px;">
+                <div class="proyecto-tag-wrapper">
                     <span class="project-tag">
                         {{ proyecto.anio }} | {{ proyecto.nivel }}
                     </span>
                 </div>
 
-                <h3 class="proyecto-titulo" style="margin: 0 0 10px 0; color: var(--azul-oscuro); font-size: 1.3rem; line-height: 1.3;">
-                    {{ proyecto.titulo }}
-                </h3>
+                <h3 class="proyecto-titulo">{{ proyecto.titulo }}</h3>
 
-                <p class="proyecto-autor" style="font-size: 0.95rem; color: #666; margin-bottom: 12px;">
+                <p class="proyecto-autor">
                     <strong>Por:</strong> 
-                    {% comment %} Lógica para soportar formato viejo o nuevo de autores {% endcomment %}
                     {% if proyecto.autor %}
                         {{ proyecto.autor }}
                     {% elsif proyecto.autores_lista %}
@@ -54,13 +52,13 @@ title: Catálogo
                     {% endif %}
                 </p>
 
-                <p style="color: #555; font-size: 0.95rem; line-height: 1.5; margin: 0 0 20px 0;">
+                <p class="proyecto-resumen">
                     {{ proyecto.resumen | truncate: 140 }}
                 </p>
             </div>
 
-            <div style="margin-top: auto;">
-                <a href="{{ proyecto.link | relative_url }}" class="project-link" style="font-size: 1rem;">
+            <div class="proyecto-footer">
+                <a href="{{ proyecto.link | relative_url }}" class="project-link proyecto-link-btn">
                     Ver detalles →
                 </a>
             </div>
@@ -69,44 +67,4 @@ title: Catálogo
     </div>
 </div>
 
-<script>
-    const searchInput = document.getElementById('searchInput');
-    const filterNivel = document.getElementById('filterNivel');
-    const filterAnio = document.getElementById('filterAnio');
-    const items = document.querySelectorAll('.proyecto-item');
-
-    function filtrar() {
-        const txt = searchInput.value.toLowerCase();
-        const nvl = filterNivel.value;
-        const ani = filterAnio.value;
-
-        items.forEach(item => {
-            const titulo = item.querySelector('.proyecto-titulo').innerText.toLowerCase();
-            const autor = item.querySelector('.proyecto-autor').innerText.toLowerCase();
-            const itemNivel = item.getAttribute('data-nivel');
-            const itemAnio = item.getAttribute('data-anio');
-
-            const matchTxt = titulo.includes(txt) || autor.includes(txt);
-            const matchNvl = nvl === 'todos' || itemNivel === nvl;
-            const matchAni = ani === 'todos' || itemAnio === ani;
-
-            // Mostrar u ocultar la tarjeta
-            item.style.display = (matchTxt && matchNvl && matchAni) ? 'flex' : 'none';
-        });
-    }
-
-    searchInput.addEventListener('input', filtrar);
-    filterNivel.addEventListener('change', filtrar);
-    filterAnio.addEventListener('change', filtrar);
-
-    // NUEVO: Código para "atrapar" la búsqueda que viene de la página de inicio
-    document.addEventListener("DOMContentLoaded", function() {
-        const params = new URLSearchParams(window.location.search);
-        const query = params.get('search'); // Busca si en la URL hay un "?search=algo"
-        
-        if (query) {
-            searchInput.value = query; // Escribe la palabra en el buscador
-            filtrar(); // Ejecuta el filtro automáticamente
-        }
-    });
-</script>
+<script src="{{ '/assets/js/catalogo.js' | relative_url }}"></script>

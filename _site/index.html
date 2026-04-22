@@ -131,16 +131,11 @@
 </div>
 
 <script>
-function ejecutarBusqueda() {
-    const terminobusqueda = document.getElementById('inputBusquedaHero').value;
-    if (terminobusqueda.trim() !== "") {
-        window.location.href = "/dbi-research-web/catalogo.html?search=" + encodeURIComponent(terminobusqueda);
-    }
-}
-document.getElementById('inputBusquedaHero').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') ejecutarBusqueda();
-});
+    // Variable global con la ruta del catálogo para que el JS externo la pueda usar
+    const URL_CATALOGO = "/dbi-research-web/catalogo.html";
 </script>
+
+<script src="/dbi-research-web/assets/js/inicio.js"></script>
 
 
     </main>

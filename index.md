@@ -98,13 +98,7 @@ title: Inicio
 </div>
 
 <script>
-function ejecutarBusqueda() {
-    const terminobusqueda = document.getElementById('inputBusquedaHero').value;
-    if (terminobusqueda.trim() !== "") {
-        window.location.href = "{{ '/catalogo.html' | relative_url }}?search=" + encodeURIComponent(terminobusqueda);
-    }
-}
-document.getElementById('inputBusquedaHero').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') ejecutarBusqueda();
-});
+    // Variable global con la ruta del catálogo para que el JS externo la pueda usar
+    const URL_CATALOGO = "{{ '/catalogo.html' | relative_url }}";
 </script>
+<script src="{{ '/assets/js/inicio.js' | relative_url }}"></script>
