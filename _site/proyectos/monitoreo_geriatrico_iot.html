@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Fuente Radiactiva | DBI Research Group</title>
+    <title>Sistema IoT de Monitoreo Geriátrico | DBI Research Group</title>
     
     <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
     
@@ -42,18 +42,15 @@
         <span>←</span> Volver al catálogo
     </a>
 
-    <h1 class="proyecto-header-title">Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics</h1>
+    <h1 class="proyecto-header-title">Diseño de un sistema embebido basado en IoT para la monitorización remota de signos vitales en pacientes geriátricos</h1>
     
     <div class="proyecto-meta-tags">
-        <span class="meta-badge badge-anio">Año: 2024</span>
+        <span class="meta-badge badge-anio">Año: 2025</span>
         <span class="meta-badge badge-nivel">Ingeniería</span>
         
         
             
             <span class="badge-tipo tipo-articulo">Artículo</span>
-        
-            
-            <span class="badge-tipo tipo-congreso">Congreso</span>
         
     </div>
 
@@ -64,23 +61,25 @@
         <div class="col-info">
             
             <div class="proyecto-img-wrapper">
-                <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_450,c_fill,g_auto,f_auto,q_auto/v1776962812/Captura_de_pantalla_2026-04-23_104631_ncodku.png" alt="Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics" />
+                <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,h_563,c_fill,g_auto,f_auto,q_auto/v1776964247/dashboard_hax4sj.jpg" alt="Diseño de un sistema embebido basado en IoT para la monitorización remota de signos vitales en pacientes geriátricos" />
             </div>
             
 
             <h3 class="seccion-titulo">Resumen del Proyecto</h3>
             <p class="resumen-texto">
-                Este proyecto presenta el diseño e implementación de un simulador electrónico de bajo costo concebido como un análogo físico para la enseñanza de la desintegración radiactiva. Ante las restricciones logísticas y de seguridad que implica el uso de fuentes radiactivas reales, se desarrolló un sistema que utiliza un microcontrolador Raspberry Pi Pico para emular la actividad radiactiva disminuyendo la intensidad de un LED mediante PWM, medida por un sensor BH1750.
+                Este proyecto presenta el diseño y validación de un sistema de telemonitorización de signos vitales en tiempo real para pacientes de la tercera edad. Utiliza un microcontrolador ESP32 y sensores de bajo costo para adquirir datos de ECG, SpO2, frecuencia cardíaca y temperatura. Implementa procesamiento en el borde (edge computing) para optimizar la transmisión de datos a una plataforma IoT, permitiendo una supervisión médica remota constante y eficiente.
             </p>
 
             <h3 class="seccion-titulo">Resultados Principales</h3>
             <ul class="lista-resultados">
                 
-                    <li>Implementación de un análogo físico seguro y de bajo costo.</li>
+                    <li>Desarrollo de un prototipo portátil de bajo costo para monitorización continua.</li>
                 
-                    <li>Emulación precisa de la ley de decaimiento exponencial con Raspberry Pi Pico.</li>
+                    <li>Integración de múltiples sensores biomédicos (ECG, SpO2, Temperatura) en una sola plataforma.</li>
                 
-                    <li>Interfaz gráfica interactiva en Python (PyQt5) para análisis de datos.</li>
+                    <li>Reducción del tráfico de red mediante técnicas de procesamiento en el borde (Edge Computing).</li>
+                
+                    <li>Visualización de datos en tiempo real para facilitar la toma de decisiones médicas preventivas.</li>
                 
             </ul>
         </div>
@@ -89,16 +88,24 @@
             <h4 class="sidebar-titulo" style="color: var(--azul-oscuro); margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Equipo de Trabajo</h4>
             
             <div class="equipo-block" style="margin-bottom: 25px;">
-                <p class="sidebar-label">Investigador a cargo (Director):</p>
-                <p style="margin: 0; color: #333; font-weight: 500;">Dr. Christian Roberto Ibáñez Nangüelú</p>
-            </div>
-        
-        <div class="equipo-block" style="margin-bottom: 25px;">
             <p class="sidebar-label">Investigadores a cargo (Directores):</p>
             
                 <p style="margin: 0; color: #333; font-weight: 500;">Dr. Christian Roberto Ibáñez Nangüelú</p>
             
+                <p style="margin: 0; color: #333; font-weight: 500;">Dra. María de Lourdes Corzo Cuesta</p>
+            
         </div>
+
+            <div class="equipo-block" style="margin-bottom: 20px;">
+                <p class="sidebar-label">Alumnas/os autores:</p>
+                <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                    
+                        <li>Wilber Franco Gutiérrez</li>
+                    
+                        <li>Jose Angel Ramos Escobar</li>
+                    
+                </ul>
+            </div>
 
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dotted #ccc; font-size: 0.85rem; color: #777;">
                 <p><strong>Laboratorio:</strong> DBI Research Lab</p>
@@ -107,7 +114,7 @@
 
             
             <div style="margin-top: 30px;">
-                <a href="https://github.com/cribnez/simulador-fuente-radiactiva" target="_blank" class="btn-github">
+                <a href="https://github.com/cribnez/telemonitoring-geriatric-vitals-iot" target="_blank" class="btn-github">
                     <i class="fab fa-github"></i> Ver documentación completa
                 </a>
             </div>

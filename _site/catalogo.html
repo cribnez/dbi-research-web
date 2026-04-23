@@ -46,27 +46,47 @@
         <div class="catalogo-input-container">
             <input type="text" id="searchInput" placeholder="Buscar por título o autor..." class="search-input catalogo-input-text" />
         </div>
+
+        <select id="filterTipo" class="search-input catalogo-select">
+            <option value="todos">Todos los Tipos</option>
+            <option value="Tesis">Tesis</option>
+            <option value="Artículo">Artículos</option>
+            <option value="Congreso">Memorias de Congreso</option>
+            <option value="Prototipo">Prototipos / Software</option>
+        </select>
+
         <select id="filterNivel" class="search-input catalogo-select">
             <option value="todos">Todos los Niveles</option>
             <option value="Ingeniería">Ingeniería</option>
             <option value="Maestría">Maestría</option>
+            <option value="Doctorado">Doctorado</option>
         </select>
+
         <select id="filterAnio" class="search-input catalogo-select">
             <option value="todos">Todos los Años</option>
             <option value="2024">2024</option>
             <option value="2023">2023</option>
+            <option value="2022">2022</option>
         </select>
     </div>
 
     <div class="grid" id="catalogoGrid">
         
-        <div class="card proyecto-item" data-nivel="Ingeniería" data-anio="2024">
+        <div class="card proyecto-item" data-nivel="Ingeniería" data-anio="2024" data-tipo="Artículo,Congreso"> 
             
             <div>
                 <div class="proyecto-tag-wrapper">
                     <span class="project-tag">
                         2024 | Ingeniería
                     </span>
+                    
+                    
+                        
+                        <span class="badge-tipo tipo-articulo">Artículo</span>
+                    
+                        
+                        <span class="badge-tipo tipo-congreso">Congreso</span>
+                    
                 </div>
 
                 <h3 class="proyecto-titulo">Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics</h3>
@@ -85,6 +105,41 @@
 
             <div class="proyecto-footer">
                 <a href="/dbi-research-web/proyectos/simulador_fuente_radiactiva.html" class="project-link proyecto-link-btn">
+                    Ver detalles →
+                </a>
+            </div>
+        </div>
+        
+        <div class="card proyecto-item" data-nivel="Ingeniería" data-anio="2025" data-tipo="Artículo"> 
+            
+            <div>
+                <div class="proyecto-tag-wrapper">
+                    <span class="project-tag">
+                        2025 | Ingeniería
+                    </span>
+                    
+                    
+                        
+                        <span class="badge-tipo tipo-articulo">Artículo</span>
+                    
+                </div>
+
+                <h3 class="proyecto-titulo">Diseño de un sistema embebido basado en IoT para la monitorización remota de signos vitales en pacientes geriátricos</h3>
+
+                <p class="proyecto-autor">
+                    <strong>Por:</strong> 
+                    
+                        Wilber Franco Gutiérrez, Jose Angel Ramos Escobar
+                    
+                </p>
+
+                <p class="proyecto-resumen">
+                    Este proyecto presenta el diseño y validación de un sistema de telemonitorización de signos vitales en tiempo real para pacientes de la t...
+                </p>
+            </div>
+
+            <div class="proyecto-footer">
+                <a href="/dbi-research-web/proyectos/monitoreo_geriatrico_iot.html" class="project-link proyecto-link-btn">
                     Ver detalles →
                 </a>
             </div>

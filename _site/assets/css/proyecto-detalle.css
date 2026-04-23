@@ -1,0 +1,186 @@
+/* assets/css/proyecto-detalle.css */
+/* Justificación del resumen */
+.resumen-texto {
+    color: #444; 
+    line-height: 1.8;       /* Un poco más de espacio entre líneas para mejor lectura */
+    text-align: justify;    /* Justificación mágica */
+    hyphens: auto;          /* Opcional: añade guiones si una palabra es muy larga */
+    margin-bottom: 25px;
+}
+
+/* Justificación y estilo de los resultados */
+.col-info ul {
+    padding-left: 25px;
+    margin-top: 15px;
+}
+
+.col-info li {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;    /* También justificamos los puntos de la lista */
+}
+
+.proyecto-detalle-container {
+    background: white; 
+    padding: 40px; 
+    border-radius: 12px; 
+    margin-top: 40px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    margin-bottom: 60px;
+}
+
+.volver-link {
+    color: var(--azul-primario); 
+    text-decoration: none; 
+    font-weight: bold; 
+    display: flex; 
+    align-items: center; 
+    gap: 5px;
+    transition: transform 0.2s;
+}
+
+.volver-link:hover {
+    transform: translateX(-5px);
+}
+
+.proyecto-header-title {
+    color: var(--azul-oscuro); 
+    margin-top: 25px; 
+    line-height: 1.2; 
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.proyecto-meta-tags {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-top: 10px; 
+    align-items: center;
+}
+
+.meta-badge {
+    padding: 5px 12px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: bold;
+}
+
+.badge-anio { background: #eef4ff; color: var(--azul-primario); }
+.badge-nivel { background: #fdf2e9; color: #d35400; }
+
+.divider {
+    width: 100%; 
+    height: 1px; 
+    background: #eee; 
+    margin: 30px 0;
+}
+
+.proyecto-main-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px;
+}
+
+/* Estilos de Imagen */
+.proyecto-img-wrapper {
+    width: 100%; 
+    margin-bottom: 30px; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* assets/css/proyecto-detalle.css */
+
+.proyecto-img-wrapper {
+    width: 100%;           /* Ocupa todo el ancho de la columna izquierda */
+    max-width: 100%;       /* Asegura que no se pase del contenedor */
+    
+    /* ESTO ES LO NUEVO: Proporción Rectangular */
+    aspect-ratio: 16 / 9;  /* Mantiene la proporción aunque cambie el tamaño */
+    
+    margin: 0 auto 30px auto; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
+    background-color: #f0f0f0; /* Fondo gris suave por si tarda en cargar */
+}
+
+/* Asegura que la imagen interna rellene el rectángulo */
+.proyecto-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para rellenar el rectángulo sin estirarla */
+    display: block;
+}
+
+.seccion-titulo {
+    color: var(--azul-oscuro); 
+    border-left: 4px solid var(--azul-primario); 
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+/* Barra Lateral (Equipo) */
+.sidebar-equipo {
+    background: #f8f9fa; 
+    padding: 25px; 
+    border-radius: 12px; 
+    border: 1px solid #eee; 
+    height: fit-content;
+}
+
+.sidebar-label {
+    color: var(--azul-primario); 
+    font-weight: bold; 
+    font-size: 0.8rem; 
+    margin-bottom: 5px; 
+    text-transform: uppercase;
+}
+
+.btn-github {
+    background: var(--azul-oscuro); 
+    color: white; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.btn-github:hover {
+    opacity: 0.9;
+}
+
+/* Clase base para TODOS los tags del sitio */
+.meta-badge, .badge-tipo, .project-tag {
+    display: inline-flex;    /* Permite centrado interno */
+    align-items: center;     /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    
+    /* Dimensiones Uniformes */
+    min-width: 100px;        /* Ancho base para que todos se vean iguales */
+    height: 28px;            /* Altura fija */
+    
+    /* Estética */
+    padding: 0 12px;         /* Espacio interno a los lados */
+    font-size: 0.75rem;      /* Tamaño de letra constante */
+    font-weight: 700;        /* Negrita para legibilidad */
+    border-radius: 20px;     /* Bordes redondeados */
+    text-transform: uppercase;
+    text-align: center;
+    border: none;            /* Elimina bordes si los hubiera */
+}
+
+/* Ajuste específico por si el texto es muy largo (como "Memorias de Congreso") */
+.badge-tipo {
+    min-width: 110px;        /* Un poquito más ancho para que quepa bien el texto */
+}

@@ -2,10 +2,12 @@
   titulo: "Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics"
   anio: "2024"
   nivel: "Ingeniería"
+  tipo: ["Artículo", "Congreso"]
   resumen: "Este proyecto presenta el diseño e implementación de un simulador electrónico de bajo costo concebido como un análogo físico para la enseñanza de la desintegración radiactiva. Ante las restricciones logísticas y de seguridad que implica el uso de fuentes radiactivas reales, se desarrolló un sistema que utiliza un microcontrolador Raspberry Pi Pico para emular la actividad radiactiva disminuyendo la intensidad de un LED mediante PWM, medida por un sensor BH1750."
   director: "Dr. Christian Roberto Ibáñez Nangüelú"
   escuela: "Universidad Politécnica de Chiapas"
   github: "https://github.com/cribnez/simulador-fuente-radiactiva" # Cambia esto por tu link real
+  imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_450,c_fill,g_auto,f_auto,q_auto/v1776962812/Captura_de_pantalla_2026-04-23_104631_ncodku.png"
   link: "/proyectos/simulador_fuente_radiactiva.html"
   autores_lista:
     - "Georgina Hernández Santiz"
@@ -15,3 +17,25 @@
     - "Implementación de un análogo físico seguro y de bajo costo."
     - "Emulación precisa de la ley de decaimiento exponencial con Raspberry Pi Pico."
     - "Interfaz gráfica interactiva en Python (PyQt5) para análisis de datos."
+
+- id: monitoreo_geriatrico_iot
+  titulo: "Diseño de un sistema embebido basado en IoT para la monitorización remota de signos vitales en pacientes geriátricos"
+  anio: "2025"
+  nivel: "Ingeniería"
+  tipo: ["Artículo"]
+  resumen: "Este proyecto presenta el diseño y validación de un sistema de telemonitorización de signos vitales en tiempo real para pacientes de la tercera edad. Utiliza un microcontrolador ESP32 y sensores de bajo costo para adquirir datos de ECG, SpO2, frecuencia cardíaca y temperatura. Implementa procesamiento en el borde (edge computing) para optimizar la transmisión de datos a una plataforma IoT, permitiendo una supervisión médica remota constante y eficiente."
+  director: 
+    - "Dr. Christian Roberto Ibáñez Nangüelú"  
+    - "Dra. María de Lourdes Corzo Cuesta"
+  escuela: "Universidad Politécnica de Chiapas"
+  github: "https://github.com/cribnez/telemonitoring-geriatric-vitals-iot"
+  imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,h_563,c_fill,g_auto,f_auto,q_auto/v1776964247/dashboard_hax4sj.jpg"
+  link: "/proyectos/monitoreo_geriatrico_iot.html"
+  autores_lista:
+    - "Wilber Franco Gutiérrez"
+    - "Jose Angel Ramos Escobar"
+  resultados_lista:
+    - "Desarrollo de un prototipo portátil de bajo costo para monitorización continua."
+    - "Integración de múltiples sensores biomédicos (ECG, SpO2, Temperatura) en una sola plataforma."
+    - "Reducción del tráfico de red mediante técnicas de procesamiento en el borde (Edge Computing)."
+    - "Visualización de datos en tiempo real para facilitar la toma de decisiones médicas preventivas."

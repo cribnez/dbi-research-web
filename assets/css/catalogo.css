@@ -7,27 +7,58 @@
     margin-top: 10px;
 }
 
-/* Barra de Búsqueda */
+/* --- Barra de Búsqueda (Versión Final sin Choques) --- */
 .catalogo-search-wrapper {
-    margin-top: -30px; 
+    margin-top: -40px; 
     display: flex; 
-    gap: 15px; 
-    flex-wrap: wrap; 
+    /* Aumentamos el gap para que no choquen */
+    gap: 20px; 
+    flex-wrap: nowrap; 
     justify-content: space-between;
+    background: white;
+    padding: 20px 30px; 
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+    align-items: center;
+    
+    /* Estirado al máximo del contenedor */
+    width: 100%; 
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box; /* Crucial para que el padding no "infle" el ancho */
 }
+
+/* El buscador principal */
 .catalogo-input-container {
-    flex: 2; 
+    flex: 3; /* Le damos más prioridad de crecimiento */
     min-width: 250px;
 }
-.catalogo-input-text {
-    width: 100%; 
-    box-sizing: border-box;
-}
+
+/* Los filtros */
 .catalogo-select {
     flex: 1; 
-    min-width: 150px; 
-    cursor: pointer; 
-    color: #555;
+    min-width: 170px; /* Ancho suficiente para que no se encime el texto */
+    padding: 12px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #ffffff;
+    
+    /* Evita que el navegador le quite espacio al texto */
+    white-space: nowrap; 
+}
+
+/* Ajuste fino para el input de texto */
+.catalogo-input-text {
+    width: 100%; 
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
 }
 
 /* Tarjetas de Proyectos */
@@ -64,3 +95,75 @@
 .proyecto-link-btn {
     font-size: 1rem;
 }
+
+/* --- Barra de Búsqueda (Corregida para una sola fila) --- */
+.catalogo-search-wrapper {
+    margin-top: -30px; 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: nowrap; /* CRITICAL: Evita que se baje a la siguiente fila */
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.catalogo-input-container {
+    flex: 2; /* El buscador ocupa más espacio */
+}
+
+.catalogo-input-text, .catalogo-select {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem; /* Tamaño de letra ajustado */
+    outline: none;
+}
+
+.catalogo-select {
+    flex: 1; /* Los filtros ocupan menos espacio */
+    min-width: 120px;
+}
+
+/* --- Colores Diferentes por Categoría --- */
+/* Clase base para TODOS los tags del sitio */
+.meta-badge, .badge-tipo, .project-tag {
+    display: inline-flex;    /* Permite centrado interno */
+    align-items: center;     /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    
+    /* Dimensiones Uniformes */
+    min-width: 100px;        /* Ancho base para que todos se vean iguales */
+    height: 28px;            /* Altura fija */
+    
+    /* Estética */
+    padding: 0 12px;         /* Espacio interno a los lados */
+    font-size: 0.75rem;      /* Tamaño de letra constante */
+    font-weight: 700;        /* Negrita para legibilidad */
+    border-radius: 20px;     /* Bordes redondeados */
+    text-transform: uppercase;
+    text-align: center;
+    border: none;            /* Elimina bordes si los hubiera */
+}
+
+/* Ajuste específico por si el texto es muy largo (como "Memorias de Congreso") */
+.badge-tipo {
+    min-width: 110px;        /* Un poquito más ancho para que quepa bien el texto */
+}
+
+/* Colores personalizados usando el texto del badge */
+.badge-tipo:contains-text("ARTÍCULO"), 
+.badge-tipo:nth-child(2) { /* Fallback o si prefieres clases específicas */
+    background: #e3f2fd; color: #1976d2; 
+}
+
+/* Opción recomendada: Colores por contenido (Jekyll añade el texto) */
+/* Agregamos estas clases para usarlas en el MD */
+.tipo-tesis { background: #f3e5f5; color: #7b1fa2; }
+.tipo-articulo { background: #e8f5e9; color: #2e7d32; }
+.tipo-congreso { background: #fff3e0; color: #ef6c00; }
+.tipo-prototipo { background: #ffebee; color: #c62828; }
+

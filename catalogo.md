@@ -18,27 +18,47 @@ title: Catálogo
         <div class="catalogo-input-container">
             <input type="text" id="searchInput" placeholder="Buscar por título o autor..." class="search-input catalogo-input-text">
         </div>
+
+        <select id="filterTipo" class="search-input catalogo-select">
+            <option value="todos">Todos los Tipos</option>
+            <option value="Tesis">Tesis</option>
+            <option value="Artículo">Artículos</option>
+            <option value="Congreso">Memorias de Congreso</option>
+            <option value="Prototipo">Prototipos / Software</option>
+        </select>
+
         <select id="filterNivel" class="search-input catalogo-select">
             <option value="todos">Todos los Niveles</option>
             <option value="Ingeniería">Ingeniería</option>
             <option value="Maestría">Maestría</option>
+            <option value="Doctorado">Doctorado</option>
         </select>
+
         <select id="filterAnio" class="search-input catalogo-select">
             <option value="todos">Todos los Años</option>
             <option value="2024">2024</option>
             <option value="2023">2023</option>
+            <option value="2022">2022</option>
         </select>
     </div>
 
     <div class="grid" id="catalogoGrid">
         {% for proyecto in site.data.proyectos %}
-        <div class="card proyecto-item" data-nivel="{{ proyecto.nivel }}" data-anio="{{ proyecto.anio }}">
+        <div class="card proyecto-item" 
+             data-nivel="{{ proyecto.nivel }}" 
+             data-anio="{{ proyecto.anio }}"
+             data-tipo="{{ proyecto.tipo | join: ',' }}"> 
             
             <div>
                 <div class="proyecto-tag-wrapper">
                     <span class="project-tag">
                         {{ proyecto.anio }} | {{ proyecto.nivel }}
                     </span>
+                    
+                    {% for t in proyecto.tipo %}
+                        {% assign tipo_slug = t | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" %}
+                        <span class="badge-tipo tipo-{{ tipo_slug }}">{{ t }}</span>
+                    {% endfor %}
                 </div>
 
                 <h3 class="proyecto-titulo">{{ proyecto.titulo }}</h3>
