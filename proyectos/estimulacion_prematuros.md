@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Simulador de Fuente Radiactiva
-proyecto_id: simulador_fuente_radiactiva
+title: Dispositivo de Estimulación para Prematuros
+proyecto_id: estimulacion_prematuros
 ---
 
 {% assign proyecto_info = site.data.proyectos | where: "id", page.proyecto_id | first %}
@@ -55,16 +55,14 @@ proyecto_id: simulador_fuente_radiactiva
             <h4 class="sidebar-titulo" style="color: var(--azul-oscuro); margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Equipo de Trabajo</h4>
             
             <div class="equipo-block" style="margin-bottom: 25px;">
-                <p class="sidebar-label">Investigadores a cargo (Directores):</p>
+                <p class="sidebar-label">Investigador a cargo (Director):</p>
                 {% for dir in proyecto_info.director %}
                     <p style="margin: 0; color: #333; font-weight: 500;">{{ dir }}</p>
-                {% else %}
-                    <p style="margin: 0; color: #333; font-weight: 500;">{{ proyecto_info.director }}</p>
                 {% endfor %}
             </div>
 
             <div class="equipo-block" style="margin-bottom: 20px;">
-                <p class="sidebar-label">Alumnas autoras:</p>
+                <p class="sidebar-label">Autores:</p>
                 <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.95rem; line-height: 1.6;">
                     {% for autor in proyecto_info.autores_lista %}
                         <li>{{ autor }}</li>

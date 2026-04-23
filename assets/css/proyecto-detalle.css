@@ -184,3 +184,17 @@
 .badge-tipo {
     min-width: 110px;        /* Un poquito más ancho para que quepa bien el texto */
 }
+
+/* Color para Memorias de Congreso - Un tono morado/índigo elegante */
+.tipo-memorias-de-congreso, 
+.tipo-memorias-congreso,
+.tipo-memorias {
+    background-color: #E8EAF6 !important; /* Fondo azul/lavanda claro */
+    color: #3F51B5 !important;           /* Texto índigo */
+}
+
+/* Por si el slug de Liquid no quita los espacios (dependiendo de tu configuración) */
+[class*="Memorias de Congreso"] {
+    background-color: #E8EAF6 !important;
+    color: #3F51B5 !important;
+}
