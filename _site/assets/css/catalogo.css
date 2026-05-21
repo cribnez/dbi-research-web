@@ -246,3 +246,16 @@
     flex: 1;
     min-width: 180px;
 }
+
+/* Color del círculo para Capítulo de Libro / Memorias de Congreso */
+.tipo-capitulo-de-libro::before, 
+.tipo-memorias-de-congreso::before,
+.tipo-investigacion::before {
+    background-color: #3F51B5; /* Color Índigo para resaltar que es científico */
+}
+
+.tipo-capitulo-de-libro,
+.tipo-memorias-de-congreso {
+    background-color: #E8EAF6 !important; /* Lavanda muy claro */
+    color: #3F51B5 !important;           /* Texto Índigo */
+}

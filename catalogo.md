@@ -25,6 +25,7 @@ title: Catálogo
                 <option value="Ingeniería">Ingeniería</option>
                 <option value="Maestría">Maestría</option>
                 <option value="Doctorado">Doctorado</option>
+                <option value="Investigación">Investigación / Publicación</option>
             </optgroup>
             <optgroup label="Vinculación Profesional">
                 <option value="Estadía">Estadías (600h)</option>
@@ -34,6 +35,7 @@ title: Catálogo
 
         <select id="filterTipo" class="search-input catalogo-select">
             <option value="todos">Todos los Formatos</option>
+            <option value="Capítulo de Libro">Capítulos de Libro</option>
             <option value="Artículo">Artículos</option>
             <option value="Congreso">Memorias de Congreso</option>
             <option value="Prototipo">Prototipos / Software</option>
@@ -50,7 +52,9 @@ title: Catálogo
     </div>
 
     <div class="grid" id="catalogoGrid">
-        {% for proyecto in site.data.proyectos %}
+        {% assign proyectos_ordenados = site.data.proyectos | sort: "anio" | reverse %}
+        
+        {% for proyecto in proyectos_ordenados %}
         <div class="card proyecto-item" 
              data-categoria="{{ proyecto.nivel }} {{ proyecto.modalidad }}" 
              data-anio="{{ proyecto.anio }}"

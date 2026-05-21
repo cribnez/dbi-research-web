@@ -268,3 +268,10 @@
     font-weight: bold;
     font-size: 0.9rem;
 }
+
+/* Para CAPÍTULO DE LIBRO o INVESTIGACIÓN (Índigo/Morado) */
+.tipo-capitulo-de-libro::before, 
+.tipo-investigacion::before { 
+    background-color: #3F51B5; 
+}
+
