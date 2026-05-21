@@ -61,3 +61,107 @@
     - "Implementación de un módulo táctil con vibraciones ajustables para promover respuestas neuromotoras."
     - "Integración de estímulos auditivos y visuales dentro de niveles de seguridad clínica."
     - "Validación conceptual del dispositivo como herramienta de apoyo en la neurorrehabilitación temprana."
+
+- id: dispositivo_monitoreo_orina
+  titulo: "Desarrollo de un dispositivo electrónico para el monitoreo no invasivo de parámetros físicos y visuales en orina"
+  anio: "2025"
+  nivel: "Ingeniería"
+  tipo: ["Artículo"]
+  resumen: "Desarrollo de un prototipo electrónico de bajo costo basado en Raspberry Pi para el monitoreo multifuncional de la salud urinaria. Integra un caudalímetro, un sensor ultrasónico y una cámara con algoritmos de visión artificial para medir el flujo máximo (Qmax), estimar el volumen residual post-miccional y realizar un análisis colorimétrico automatizado para la detección de hematuria."
+  director: ["Dr. Christian Roberto Ibáñez Nangüelú", "Dr. Roberto Ibáñez Córdova", "Dra. Diana Paulina Martínez Cancino", "Dr. José Octavio Vázquez Buenos Aires", "Dr. Norberto Urbina Brito", "Dr. Jorge Alberto Rodríguez Ramírez", "Dr. Rigoberto Jiménez Jonapá"]
+  autores_lista: ["Kevin Patricio Carrasco Ruiz", "Georgina Hernández Santiz", "Dorian Alberto Ibáñez Nangüelú"]
+  correo: "221048@ib.upchiapas.edu.mx"
+  escuela: "UP Chiapas / TecNM / TENAM"
+  carrera: "Ingeniería Biomédica y Mecatrónica"
+  link: "/proyectos/dispositivo_monitoreo_orina.html"
+  imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/v1779126206/prototipo_hardware_orina_m5dyfa.png"
+  github: "https://github.com/cribnez/dispositivo-monitoreo-orina"
+  resultados_lista:
+    - "El módulo de uroflujometría fue validado con un error promedio por debajo del 5% respecto a los volúmenes de referencia, mostrando una respuesta lineal y proporcional."
+    - "El sistema registró fielmente las curvas de flujo en forma de campana y calculó con precisión el flujo máximo (Qmax), indicativo de obstrucciones urinarias."
+    - "El módulo de visión artificial, utilizando doble máscara en el espacio HSV, alcanzó una sensibilidad del 95% en la identificación de trazas de sangre (hematuria)."
+    - "Se implementó con éxito una interfaz gráfica estable que permite la visualización en tiempo real del volumen acumulado y genera un reporte médico unificado."
+
+###########################################################
+# SECTION: ESTADÍAS INDUSTRIALES (600)
+###########################################################
+- id: estadia_gabriel_duque
+  titulo: "Estadía Industrial"
+  anio: "2026"
+  nivel: "Ingeniería"
+  modalidad: "Estadía"
+  horas: "600h"
+  periodo: "05 de enero al 21 de abril del 2026"
+  tipo: ["Estadía"]
+  resumen: "Desarrollo e implementación de un sistema basado en Raspberry Pi que utiliza visión artificial para la detección de objetos y geolocalización. El proyecto cumple con las 600 horas de Estadía Industrial, enfocándose en la aplicación de competencias profesionales avanzadas y la entrega de una memoria técnica final."
+  director: ["Dr. Christian Roberto Ibáñez Nangüelú"]
+  autores_lista: ["Gabriel De Jesús Duque Macías"]
+  matricula: "203299"
+  correo: "203299@ib.upchiapas.edu.mx"
+  escuela: "Universidad Politécnica de Chiapas"
+  carrera: "Ingeniería Biomédica"
+  link: "/proyectos/estadia_gabriel_duque.html"
+  imagen: "" 
+  github: "https://drive.google.com/file/d/1sdG5wDrT1u9TQQGVGyWDIeP3jw7AjNVS/view?usp=drive_link"
+
+
+- id: estadia_omar_cueto
+  titulo: "Estadía Industrial"
+  anio: "2026"
+  nivel: "Ingeniería"
+  modalidad: "Estadía"
+  horas: "600h"
+  periodo: "05 de enero al 21 de abril del 2026"
+  tipo: ["Estadía"]
+  resumen: "Realización de la Estadía Industrial correspondiente al 13er cuatrimestre de la carrera de Ingeniería Biomédica en la Universidad Politécnica de Chiapas. El proyecto contempla el cumplimiento de 600 horas de práctica profesional durante el periodo de enero a abril de 2026, enfocándose en la aplicación de competencias del tercer ciclo de formación. Como resultado final, se generará un reporte técnico integral que documente antecedentes, objetivos, desarrollo y resultados obtenidos en el entorno industrial."
+  director: ["Dr. Christian Roberto Ibáñez Nangüelu"]
+  autores_lista: ["Omar Alexis Cueto Aguilar"]
+  matricula: "221006"
+  correo: "221006@upchiapas.edu.mx"
+  escuela: "Universidad Politécnica de Chiapas"
+  carrera: "Ingeniería Biomédica" # <-- NUEVO CAMPO AÑADIDO AQUÍ
+  link: "/proyectos/estadia_omar_cueto.html"
+  imagen: "" 
+  github: "https://drive.google.com/file/d/1WztkRfsFNI-9NJBWHwK7rivtVVmCxyKn/view?usp=drive_link"
+
+###########################################################
+# SECCIÓN: ESTANCIAS INDUSTRIALES II (120 HORAS)
+###########################################################
+
+- id: estancia_maria_landeros
+  titulo: "Estancia Industrial"
+  anio: "2026"
+  nivel: "Ingeniería"
+  modalidad: "Estancia"
+  horas: "120h"
+  periodo: "23 de marzo al 10 de abril del 2026"
+  tipo: ["Estancia"]
+  resumen: "Desarrollo y validación de un sistema orientado a la salud preventiva titulado 'Dispositivo Predictivo de Ataques Cardíacos'. Este proyecto, realizado durante la Estancia Industrial II, integra el procesamiento de señales biomédicas y algoritmos de detección temprana. El trabajo abarca desde el diseño técnico hasta la documentación en una memoria profesional, aplicando estándares de instrumentación médica y ética profesional."
+  director: ["Dr. Christian Roberto Ibáñez Nangüelú"]
+  autores_lista: ["Maria de los Angeles Landeros Tapia"]
+  matricula: "233043"
+  correo: "233043@ib.upchiapas.edu.mx"
+  escuela: "Universidad Politécnica de Chiapas"
+  carrera: "Ingeniería Biomédica"
+  link: "/proyectos/estancia_maria_landeros.html"
+  imagen: "" 
+  github: "https://drive.google.com/file/d/1JgOWO67bRFkgiXRLkedO_DR2qZv7hMdv/view?usp=drive_link"
+
+- id: estancia_fatima_hernandez
+  titulo: "Estancia Industrial"
+  anio: "2026"
+  nivel: "Ingeniería"
+  modalidad: "Estancia"
+  horas: "120h"
+  periodo: "23 de marzo al 10 de abril del 2026"
+  tipo: ["Estancia"]
+  resumen: "Participación en el diseño y desarrollo técnico del 'Dispositivo Predictivo de Ataques Cardiacos' durante la Estancia Industrial II. El proyecto se enfoca en la integración de sensores biomédicos para la detección temprana de anomalías cardiacas, cumpliendo con un ciclo de 120 horas de investigación aplicada y la documentación detallada en una memoria técnica profesional."
+  director: ["Dr. Christian Roberto Ibáñez Nangüelú"]
+  autores_lista: ["Fátima Carol Hernández Ugarte"]
+  matricula: "233060"
+  correo: "233060@ib.upchiapas.edu.mx"
+  escuela: "Universidad Politécnica de Chiapas"
+  carrera: "Ingeniería Biomédica"
+  link: "/proyectos/estancia_fatima_hernandez.html"
+  imagen: "" 
+  github: "https://drive.google.com/file/d/1SdcYpdYot0hmjINWzWAbXrvYGxyvRYHj/view?usp=drive_link"

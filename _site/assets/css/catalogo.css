@@ -179,3 +179,70 @@
     background-color: #E8EAF6 !important;
     color: #3F51B5 !important;
 }
+
+.badge-estadia {
+    background-color: #f3e5f5; /* Un lila muy suave */
+    color: #7b1fa2;           /* Texto morado */
+    border: 1px solid #d1c4e9;
+}
+
+.badge-estancia {
+    background-color: #e3f2fd; /* Azul cielo claro */
+    color: #1976d2;           /* Texto azul */
+    border: 1px solid #bbdefb;
+}
+
+/* Botón Limpiar con fondo blanco y estilo minimalista */
+#btnLimpiar {
+    background-color: #ffffff;    /* Fondo blanco puro */
+    color: #003366;               /* Azul institucional */
+    border: 1px solid #ced4da;    /* Mismo gris que los selectores */
+    border-radius: 8px;           /* Misma redondez que los demás */
+    padding: 0 20px;              /* Espaciado lateral */
+    height: 45px;                 /* Altura igual a los selectores */
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;         /* Menos agresivo que mayúsculas */
+}
+
+/* Efecto hover: un cambio sutil de fondo y borde */
+#btnLimpiar:hover {
+    background-color: #f8f9fa;    /* Gris casi blanco */
+    border-color: #003366;        /* El borde se vuelve azul al pasar el mouse */
+    color: #002244;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Para asegurar que todo esté alineado en la misma fila */
+.catalogo-search-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end; /* Alinea las bases de todos los elementos */
+    margin-bottom: 20px;
+}
+*/
+
+/* Ajuste para que los filtros se vean alineados en la misma fila */
+.catalogo-search-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: stretch; /* Hace que todos tengan la misma altura */
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* Asegurar que el input de búsqueda sea un poco más largo */
+.catalogo-input-container {
+    flex: 2;
+    min-width: 250px;
+}
+
+.catalogo-select {
+    flex: 1;
+    min-width: 180px;
+}

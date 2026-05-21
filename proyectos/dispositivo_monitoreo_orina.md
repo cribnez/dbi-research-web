@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Dispositivo de Estimulación para Prematuros
-proyecto_id: estimulacion_prematuros
+title: Detalle de Investigación
+proyecto_id: dispositivo_monitoreo_orina
 ---
 
 {% assign proyecto_info = site.data.proyectos | where: "id", page.proyecto_id | first %}

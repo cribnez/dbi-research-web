@@ -198,3 +198,73 @@
     background-color: #E8EAF6 !important;
     color: #3F51B5 !important;
 }
+
+/* Estilos para las etiquetas superiores (Badges) */
+.proyecto-detalle-container .meta-badge-modalidad {
+    background-color: #e3f2fd;
+    color: #0055a4;
+    font-weight: bold;
+}
+
+/* Columna de información principal */
+.proyecto-detalle-container .seccion-titulo-azul {
+    color: #003366;
+    border-left: 4px solid #0055a4;
+    padding-left: 10px;
+}
+
+.proyecto-detalle-container .objetivos-titulo {
+    color: #0055a4;
+    margin-top: 25px;
+}
+
+.proyecto-detalle-container .objetivos-lista {
+    list-style: none;
+    padding-left: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.proyecto-detalle-container .objetivos-lista li {
+    margin-bottom: 8px;
+}
+
+.proyecto-detalle-container .objetivos-lista i {
+    color: #0055a4;
+    margin-right: 10px;
+}
+
+/* Sidebar (Barra lateral) */
+.proyecto-detalle-container .sidebar-validacion {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #e9ecef;
+}
+
+.proyecto-detalle-container .sidebar-subtitulo {
+    font-size: 0.85rem;
+    color: #0055a4;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.proyecto-detalle-container .sidebar-info-adicional {
+    border-top: 1px dotted #ccc;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.proyecto-detalle-container .btn-pdf-institucional {
+    display: block;
+    text-align: center;
+    background-color: #003366;
+    color: white !important;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}

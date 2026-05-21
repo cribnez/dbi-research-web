@@ -20,4 +20,18 @@ alumnos:
     institucion: "Universidad Politécnica de Chiapas"
     email: "203340@ib.upchiapas.edu.mx"
     foto: "/assets/img/usuario.png"
+  
+  - nombre: "Kevin Patricio Carrasco Ruiz"
+    rol: "Ing. Biomédica"
+    especialidad: "Estudiante de Ingeniería Biomédica."
+    institucion: "Universidad Politécnica de Chiapas"
+    email: "221048@ib.upchiapas.edu.mx"
+    foto: "/assets/img/usuario.png"
+
+  - nombre: "Raul Abarca Felix"
+    rol: "Ing. Biomédica"
+    especialidad: "Estudiante de Ingeniería Biomédica."
+    institucion: "Universidad Politécnica de Chiapas"
+    email: "231072@ib.upchiapas.edu.mx"
+    foto: "/assets/img/usuario.png"
     

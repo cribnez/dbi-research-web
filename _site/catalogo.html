@@ -36,53 +36,65 @@
 <header class="hero">
     <h1 class="hero-title catalogo-hero-title">Catálogo de Producción Académica</h1>
     <p class="hero-subtitle catalogo-hero-subtitle">
-        Explora las tesis, artículos y proyectos desarrollados por nuestro grupo de investigación.
+        Explora las investigaciones, estadías y proyectos desarrollados por nuestro grupo de investigación.
     </p>
 </header>
 
 <div class="container">
     
     <div class="search-container catalogo-search-wrapper">
-        <div class="catalogo-input-container">
-            <input type="text" id="searchInput" placeholder="Buscar por título o autor..." class="search-input catalogo-input-text" />
+        <div class="catalogo-input-container" style="flex: 2;">
+            <input type="text" id="searchInput" placeholder="Buscar por título, autor o tecnología..." class="search-input catalogo-input-text" />
         </div>
 
+        <select id="filterCategoria" class="search-input catalogo-select">
+            <option value="todos">Todas las Categorías</option>
+            <optgroup label="Investigación Académica">
+                <option value="Ingeniería">Ingeniería</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+            </optgroup>
+            <optgroup label="Vinculación Profesional">
+                <option value="Estadía">Estadías (600h)</option>
+                <option value="Estancia">Estancias (120h)</option>
+            </optgroup>
+        </select>
+
         <select id="filterTipo" class="search-input catalogo-select">
-            <option value="todos">Todos los Tipos</option>
-            <option value="Tesis">Tesis</option>
+            <option value="todos">Todos los Formatos</option>
             <option value="Artículo">Artículos</option>
             <option value="Congreso">Memorias de Congreso</option>
             <option value="Prototipo">Prototipos / Software</option>
+            <option value="Tesis">Tesis</option>
         </select>
 
-        <select id="filterNivel" class="search-input catalogo-select">
-            <option value="todos">Todos los Niveles</option>
-            <option value="Ingeniería">Ingeniería</option>
-            <option value="Maestría">Maestría</option>
-            <option value="Doctorado">Doctorado</option>
-        </select>
+        <button id="btnLimpiar">
+            <i class="fas fa-redo-alt" style="margin-right: 8px; font-size: 0.8rem;"></i> Limpiar
+        </button>
+    </div>
 
-        <select id="filterAnio" class="search-input catalogo-select">
-            <option value="todos">Todos los Años</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-        </select>
+    <div id="contadorResultados" style="margin-bottom: 20px; font-style: italic; color: #666; font-size: 0.9rem;">
+        Mostrando todos los proyectos
     </div>
 
     <div class="grid" id="catalogoGrid">
         
-        <div class="card proyecto-item" data-nivel="Ingeniería" data-anio="2025" data-tipo="Memorias de Congreso"> 
+        <div class="card proyecto-item" data-categoria="Ingeniería " data-anio="2025" data-tipo="Memorias de Congreso" data-fulltext="electronic radioactive source simulator as a tool for teaching nuclear physics georgina hernández santiz adriana jackeline hernández carbajal abigail peláez segura este proyecto presenta el diseño e implementación de un simulador electrónico de bajo costo concebido como un análogo físico para la enseñanza de la desintegración radiactiva. ante las restricciones logísticas y de seguridad que implica el uso de fuentes radiactivas reales, se desarrolló un sistema que utiliza un microcontrolador raspberry pi pico para emular la actividad radiactiva disminuyendo la intensidad de un led mediante pwm, medida por un sensor bh1750."> 
             
             <div>
                 <div class="proyecto-tag-wrapper">
                     <span class="project-tag">
-                        2025 | Ingeniería
+                        2025 | 
+                         
+                            Ingeniería 
+                        
                     </span>
                     
                     
                         
-                        <span class="badge-tipo tipo-memorias de congreso">Memorias de Congreso</span>
+                            
+                            <span class="badge-tipo tipo-memorias-de-congreso">Memorias de Congreso</span>
+                        
                     
                 </div>
 
@@ -107,17 +119,22 @@
             </div>
         </div>
         
-        <div class="card proyecto-item" data-nivel="Ingeniería" data-anio="2025" data-tipo="Artículo"> 
+        <div class="card proyecto-item" data-categoria="Ingeniería " data-anio="2025" data-tipo="Artículo" data-fulltext="diseño de un sistema embebido basado en iot para la monitorización remota de signos vitales en pacientes geriátricos wilber franco gutiérrez jose angel ramos escobar este proyecto presenta el diseño y validación de un sistema de telemonitorización de signos vitales en tiempo real para pacientes de la tercera edad. utiliza un microcontrolador esp32 y sensores de bajo costo para adquirir datos de ecg, spo2, frecuencia cardíaca y temperatura. implementa procesamiento en el borde (edge computing) para optimizar la transmisión de datos a una plataforma iot, permitiendo una supervisión médica remota constante y eficiente."> 
             
             <div>
                 <div class="proyecto-tag-wrapper">
                     <span class="project-tag">
-                        2025 | Ingeniería
+                        2025 | 
+                         
+                            Ingeniería 
+                        
                     </span>
                     
                     
                         
-                        <span class="badge-tipo tipo-articulo">Artículo</span>
+                            
+                            <span class="badge-tipo tipo-articulo">Artículo</span>
+                        
                     
                 </div>
 
@@ -142,17 +159,22 @@
             </div>
         </div>
         
-        <div class="card proyecto-item" data-nivel="Ingeniería" data-anio="2025" data-tipo="Artículo"> 
+        <div class="card proyecto-item" data-categoria="Ingeniería " data-anio="2025" data-tipo="Artículo" data-fulltext="early stimulation device for premature babies calvo cruz diego andrés benitez muñoz josué irving roque lópez (hospital de especialidades pediátricas) este proyecto presenta el diseño de un dispositivo de estimulación sensorial integral (auditiva, táctil y visual) para bebés prematuros. basado en principios de neurociencia del desarrollo y el método de rood, el dispositivo busca mitigar los efectos negativos de la exposición temprana a entornos clínicos. consta de tres módulos independientes que emiten sonidos suaves, vibraciones controladas para respuestas neuromotoras y estímulos visuales breves para apoyar el desarrollo neurológico en etapas críticas."> 
             
             <div>
                 <div class="proyecto-tag-wrapper">
                     <span class="project-tag">
-                        2025 | Ingeniería
+                        2025 | 
+                         
+                            Ingeniería 
+                        
                     </span>
                     
                     
                         
-                        <span class="badge-tipo tipo-articulo">Artículo</span>
+                            
+                            <span class="badge-tipo tipo-articulo">Artículo</span>
+                        
                     
                 </div>
 
@@ -172,6 +194,194 @@
 
             <div class="proyecto-footer">
                 <a href="/dbi-research-web/proyectos/estimulacion_prematuros.html" class="project-link proyecto-link-btn">
+                    Ver detalles →
+                </a>
+            </div>
+        </div>
+        
+        <div class="card proyecto-item" data-categoria="Ingeniería " data-anio="2025" data-tipo="Artículo" data-fulltext="desarrollo de un dispositivo electrónico para el monitoreo no invasivo de parámetros físicos y visuales en orina kevin patricio carrasco ruiz georgina hernández santiz dorian alberto ibáñez nangüelú desarrollo de un prototipo electrónico de bajo costo basado en raspberry pi para el monitoreo multifuncional de la salud urinaria. integra un caudalímetro, un sensor ultrasónico y una cámara con algoritmos de visión artificial para medir el flujo máximo (qmax), estimar el volumen residual post-miccional y realizar un análisis colorimétrico automatizado para la detección de hematuria."> 
+            
+            <div>
+                <div class="proyecto-tag-wrapper">
+                    <span class="project-tag">
+                        2025 | 
+                         
+                            Ingeniería 
+                        
+                    </span>
+                    
+                    
+                        
+                            
+                            <span class="badge-tipo tipo-articulo">Artículo</span>
+                        
+                    
+                </div>
+
+                <h3 class="proyecto-titulo">Desarrollo de un dispositivo electrónico para el monitoreo no invasivo de parámetros físicos y visuales en orina</h3>
+
+                <p class="proyecto-autor">
+                    <strong>Por:</strong> 
+                    
+                        Kevin Patricio Carrasco Ruiz, Georgina Hernández Santiz, Dorian Alberto Ibáñez Nangüelú
+                    
+                </p>
+
+                <p class="proyecto-resumen">
+                    Desarrollo de un prototipo electrónico de bajo costo basado en Raspberry Pi para el monitoreo multifuncional de la salud urinaria. Integr...
+                </p>
+            </div>
+
+            <div class="proyecto-footer">
+                <a href="/dbi-research-web/proyectos/dispositivo_monitoreo_orina.html" class="project-link proyecto-link-btn">
+                    Ver detalles →
+                </a>
+            </div>
+        </div>
+        
+        <div class="card proyecto-item" data-categoria="Ingeniería Estadía" data-anio="2026" data-tipo="Estadía" data-fulltext="estadía industrial gabriel de jesús duque macías desarrollo e implementación de un sistema basado en raspberry pi que utiliza visión artificial para la detección de objetos y geolocalización. el proyecto cumple con las 600 horas de estadía industrial, enfocándose en la aplicación de competencias profesionales avanzadas y la entrega de una memoria técnica final."> 
+            
+            <div>
+                <div class="proyecto-tag-wrapper">
+                    <span class="project-tag">
+                        2026 | 
+                         
+                            Estadía 
+                        
+                    </span>
+                    
+                    
+                        
+                    
+                </div>
+
+                <h3 class="proyecto-titulo">Estadía Industrial</h3>
+
+                <p class="proyecto-autor">
+                    <strong>Por:</strong> 
+                    
+                        Gabriel De Jesús Duque Macías
+                    
+                </p>
+
+                <p class="proyecto-resumen">
+                    Desarrollo e implementación de un sistema basado en Raspberry Pi que utiliza visión artificial para la detección de objetos y geolocaliza...
+                </p>
+            </div>
+
+            <div class="proyecto-footer">
+                <a href="/dbi-research-web/proyectos/estadia_gabriel_duque.html" class="project-link proyecto-link-btn">
+                    Ver detalles →
+                </a>
+            </div>
+        </div>
+        
+        <div class="card proyecto-item" data-categoria="Ingeniería Estadía" data-anio="2026" data-tipo="Estadía" data-fulltext="estadía industrial omar alexis cueto aguilar realización de la estadía industrial correspondiente al 13er cuatrimestre de la carrera de ingeniería biomédica en la universidad politécnica de chiapas. el proyecto contempla el cumplimiento de 600 horas de práctica profesional durante el periodo de enero a abril de 2026, enfocándose en la aplicación de competencias del tercer ciclo de formación. como resultado final, se generará un reporte técnico integral que documente antecedentes, objetivos, desarrollo y resultados obtenidos en el entorno industrial."> 
+            
+            <div>
+                <div class="proyecto-tag-wrapper">
+                    <span class="project-tag">
+                        2026 | 
+                         
+                            Estadía 
+                        
+                    </span>
+                    
+                    
+                        
+                    
+                </div>
+
+                <h3 class="proyecto-titulo">Estadía Industrial</h3>
+
+                <p class="proyecto-autor">
+                    <strong>Por:</strong> 
+                    
+                        Omar Alexis Cueto Aguilar
+                    
+                </p>
+
+                <p class="proyecto-resumen">
+                    Realización de la Estadía Industrial correspondiente al 13er cuatrimestre de la carrera de Ingeniería Biomédica en la Universidad Politéc...
+                </p>
+            </div>
+
+            <div class="proyecto-footer">
+                <a href="/dbi-research-web/proyectos/estadia_omar_cueto.html" class="project-link proyecto-link-btn">
+                    Ver detalles →
+                </a>
+            </div>
+        </div>
+        
+        <div class="card proyecto-item" data-categoria="Ingeniería Estancia" data-anio="2026" data-tipo="Estancia" data-fulltext="estancia industrial maria de los angeles landeros tapia desarrollo y validación de un sistema orientado a la salud preventiva titulado 'dispositivo predictivo de ataques cardíacos'. este proyecto, realizado durante la estancia industrial ii, integra el procesamiento de señales biomédicas y algoritmos de detección temprana. el trabajo abarca desde el diseño técnico hasta la documentación en una memoria profesional, aplicando estándares de instrumentación médica y ética profesional."> 
+            
+            <div>
+                <div class="proyecto-tag-wrapper">
+                    <span class="project-tag">
+                        2026 | 
+                         
+                            Estancia 
+                        
+                    </span>
+                    
+                    
+                        
+                    
+                </div>
+
+                <h3 class="proyecto-titulo">Estancia Industrial</h3>
+
+                <p class="proyecto-autor">
+                    <strong>Por:</strong> 
+                    
+                        Maria de los Angeles Landeros Tapia
+                    
+                </p>
+
+                <p class="proyecto-resumen">
+                    Desarrollo y validación de un sistema orientado a la salud preventiva titulado 'Dispositivo Predictivo de Ataques Cardíacos'. Este proyec...
+                </p>
+            </div>
+
+            <div class="proyecto-footer">
+                <a href="/dbi-research-web/proyectos/estancia_maria_landeros.html" class="project-link proyecto-link-btn">
+                    Ver detalles →
+                </a>
+            </div>
+        </div>
+        
+        <div class="card proyecto-item" data-categoria="Ingeniería Estancia" data-anio="2026" data-tipo="Estancia" data-fulltext="estancia industrial fátima carol hernández ugarte participación en el diseño y desarrollo técnico del 'dispositivo predictivo de ataques cardiacos' durante la estancia industrial ii. el proyecto se enfoca en la integración de sensores biomédicos para la detección temprana de anomalías cardiacas, cumpliendo con un ciclo de 120 horas de investigación aplicada y la documentación detallada en una memoria técnica profesional."> 
+            
+            <div>
+                <div class="proyecto-tag-wrapper">
+                    <span class="project-tag">
+                        2026 | 
+                         
+                            Estancia 
+                        
+                    </span>
+                    
+                    
+                        
+                    
+                </div>
+
+                <h3 class="proyecto-titulo">Estancia Industrial</h3>
+
+                <p class="proyecto-autor">
+                    <strong>Por:</strong> 
+                    
+                        Fátima Carol Hernández Ugarte
+                    
+                </p>
+
+                <p class="proyecto-resumen">
+                    Participación en el diseño y desarrollo técnico del 'Dispositivo Predictivo de Ataques Cardiacos' durante la Estancia Industrial II. El p...
+                </p>
+            </div>
+
+            <div class="proyecto-footer">
+                <a href="/dbi-research-web/proyectos/estancia_fatima_hernandez.html" class="project-link proyecto-link-btn">
                     Ver detalles →
                 </a>
             </div>

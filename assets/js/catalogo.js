@@ -1,50 +1,80 @@
-// assets/js/catalogo.js
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Referencias a los elementos del DOM
     const searchInput = document.getElementById('searchInput');
-    const filterNivel = document.getElementById('filterNivel');
-    const filterAnio = document.getElementById('filterAnio');
-    const filterTipo = document.getElementById('filterTipo'); // 1. Definimos correctamente el selector de tipo
-    const items = document.querySelectorAll('.proyecto-item');
+    const filterCategoria = document.getElementById('filterCategoria');
+    const filterTipo = document.getElementById('filterTipo');
+    const btnLimpiar = document.getElementById('btnLimpiar');
+    const proyectoItems = document.querySelectorAll('.proyecto-item');
+    const contador = document.getElementById('contadorResultados');
 
-    function filtrar() {
-        const txt = searchInput.value.toLowerCase();
-        const nvl = filterNivel.value;
-        const ani = filterAnio.value;
-        const tip = filterTipo.value; // 2. Obtenemos el valor del select de tipos
+    // 2. Función principal de filtrado
+    function filtrarProyectos() {
+        const query = searchInput.value.toLowerCase().trim();
+        const categoriaSeleccionada = filterCategoria.value.toLowerCase();
+        const tipoSeleccionado = filterTipo.value.toLowerCase();
+        
+        let visibles = 0;
 
-        items.forEach(item => {
-            const titulo = item.querySelector('.proyecto-titulo').innerText.toLowerCase();
-            const autor = item.querySelector('.proyecto-autor').innerText.toLowerCase();
-            const itemNivel = item.getAttribute('data-nivel');
-            const itemAnio = item.getAttribute('data-anio');
+        proyectoItems.forEach(item => {
+            // Extraemos los datos de los atributos data- del HTML
+            const textoCompleto = item.getAttribute('data-fulltext') || "";
+            const categoriaCard = item.getAttribute('data-categoria').toLowerCase();
+            const tipoCard = item.getAttribute('data-tipo').toLowerCase();
+
+            // Lógica de coincidencia
+            const coincideTexto = textoCompleto.includes(query);
             
-            // Obtenemos los tipos y los convertimos en un array real
-            const itemTipos = item.getAttribute('data-tipo').split(',');
-
-            const matchTxt = titulo.includes(txt) || autor.includes(txt);
-            const matchNvl = nvl === 'todos' || itemNivel === nvl;
-            const matchAni = ani === 'todos' || itemAnio === ani;
+            // El filtro de categoría busca si el valor seleccionado está contenido 
+            // en el string (ej: "Ingeniería" o "Estadía")
+            const coincideCategoria = (categoriaSeleccionada === 'todos') || 
+                                       (categoriaCard.includes(categoriaSeleccionada));
             
-            // Lógica Multitipo corregida
-            const matchTip = tip === 'todos' || itemTipos.includes(tip);
+            // El filtro de tipo busca en la lista separada por comas
+            const coincideTipo = (tipoSeleccionado === 'todos') || 
+                                 (tipoCard.includes(tipoSeleccionado));
 
-            item.style.display = (matchTxt && matchNvl && matchAni && matchTip) ? 'flex' : 'none';
+            // Mostrar u ocultar con una pequeña transición
+            if (coincideTexto && coincideCategoria && coincideTipo) {
+                item.style.display = 'flex'; // O 'block', según tu CSS
+                item.style.opacity = '1';
+                visibles++;
+            } else {
+                item.style.display = 'none';
+                item.style.opacity = '0';
+            }
         });
+
+        // 3. Actualizar el contador de resultados
+        actualizarContador(visibles, proyectoItems.length);
     }
 
-    // 3. Escuchar eventos (Corregido: cada uno con su respectivo listener)
-    if (searchInput) searchInput.addEventListener('input', filtrar);
-    if (filterNivel) filterNivel.addEventListener('change', filtrar);
-    if (filterAnio) filterAnio.addEventListener('change', filtrar);
-    if (filterTipo) filterTipo.addEventListener('change', filtrar); // Escucha el cambio en Tipos
-
-    // Leer la URL por si viene una búsqueda desde la página de Inicio
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get('search'); 
-    
-    if (query && searchInput) {
-        searchInput.value = query;
-        filtrar(); 
+    // 4. Función para el texto del contador
+    function actualizarContador(mostrados, totales) {
+        if (mostrados === totales) {
+            contador.textContent = `Mostrando todos los proyectos (${totales})`;
+        } else if (mostrados === 0) {
+            contador.textContent = "No se encontraron proyectos que coincidan con tu búsqueda.";
+        } else {
+            contador.textContent = `Se encontraron ${mostrados} de ${totales} proyectos`;
+        }
     }
+
+    // 5. Event Listeners
+    searchInput.addEventListener('input', filtrarProyectos);
+    filterCategoria.addEventListener('change', filtrarProyectos);
+    filterTipo.addEventListener('change', filtrarProyectos);
+
+    // 6. Lógica del Botón Limpiar
+    btnLimpiar.addEventListener('click', function() {
+        searchInput.value = '';
+        filterCategoria.value = 'todos';
+        filterTipo.value = 'todos';
+        filtrarProyectos();
+        
+        // Opcional: poner el foco de nuevo en el buscador
+        searchInput.focus();
+    });
+
+    // Ejecutar una vez al cargar por si hay valores previos en el navegador
+    filtrarProyectos();
 });
