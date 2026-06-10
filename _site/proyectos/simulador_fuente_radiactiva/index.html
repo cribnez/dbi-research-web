@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Fuente Radiactiva | DBI Research Group</title>
+    <title>Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics | DBI Research Group</title>
     
     <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
     
@@ -31,10 +31,8 @@
     </nav>
 
     <main>
-        
-<link rel="stylesheet" href="/dbi-research-web/assets/css/catalogo.css" />
-
-<link rel="stylesheet" href="/dbi-research-web/assets/css/proyecto-detalle.css" />
+        <link rel="stylesheet" href="/dbi-research-web/assets/css/catalogo.css">
+<link rel="stylesheet" href="/dbi-research-web/assets/css/proyecto-detalle.css">
 
 <div class="container proyecto-detalle-container">
     
@@ -45,12 +43,16 @@
     <h1 class="proyecto-header-title">Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics</h1>
     
     <div class="proyecto-meta-tags">
-        <span class="meta-badge badge-anio">Año: 2025</span>
-        <span class="meta-badge badge-nivel">Ingeniería</span>
+        <span class="meta-badge badge-anio">AÑO: 2025</span>
+        
+        
+        <span class="meta-badge meta-badge-modalidad tipo-ingenieria">
+            INGENIERÍA
+        </span>
         
         
             
-            <span class="badge-tipo tipo-memorias de congreso">Memorias de Congreso</span>
+            <span class="meta-badge badge-tipo tipo-memorias-de-congreso">Memorias de Congreso</span>
         
     </div>
 
@@ -60,40 +62,43 @@
         
         <div class="col-info">
             
-            <div class="proyecto-img-wrapper">
-                <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_450,c_fill,g_auto,f_auto,q_auto/v1776962812/Captura_de_pantalla_2026-04-23_104631_ncodku.png" alt="Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics" />
+            
+            <div class="proyecto-img-wrapper" style="text-align: center; margin-bottom: 35px; width: 100%;">
+                <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_450,c_fill,g_auto,f_auto,q_auto/v1776962812/Captura_de_pantalla_2026-04-23_104631_ncodku.png" alt="Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics" style="max-width: 100%; height: auto; max-height: 380px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
             
 
-            <h3 class="seccion-titulo">Resumen del Proyecto</h3>
+            <h3 class="seccion-titulo-azul">Resumen del Proyecto</h3>
             <p class="resumen-texto">
                 Este proyecto presenta el diseño e implementación de un simulador electrónico de bajo costo concebido como un análogo físico para la enseñanza de la desintegración radiactiva. Ante las restricciones logísticas y de seguridad que implica el uso de fuentes radiactivas reales, se desarrolló un sistema que utiliza un microcontrolador Raspberry Pi Pico para emular la actividad radiactiva disminuyendo la intensidad de un LED mediante PWM, medida por un sensor BH1750.
             </p>
 
-            <h3 class="seccion-titulo">Resultados Principales</h3>
-            <ul class="lista-resultados">
+            
+            <h3 class="seccion-titulo-azul">Resultados y Logros</h3>
+            <ul class="objetivos-lista">
                 
-                    <li>Implementación de un análogo físico seguro y de bajo costo.</li>
+                    <li><i class="fas fa-check-circle"></i> Implementación de un análogo físico seguro y de bajo costo.</li>
                 
-                    <li>Emulación precisa de la ley de decaimiento exponencial con Raspberry Pi Pico.</li>
+                    <li><i class="fas fa-check-circle"></i> Emulación precisa de la ley de decaimiento exponencial con Raspberry Pi Pico.</li>
                 
-                    <li>Interfaz gráfica interactiva en Python (PyQt5) para análisis de datos.</li>
+                    <li><i class="fas fa-check-circle"></i> Interfaz gráfica interactiva en Python (PyQt5) para análisis de datos.</li>
                 
             </ul>
+            
         </div>
 
-        <div class="sidebar-equipo">
-            <h4 class="sidebar-titulo" style="color: var(--azul-oscuro); margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Equipo de Trabajo</h4>
+        <div class="sidebar-validacion">
+            <h4 class="sidebar-titulo" style="color: #003366; margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Información Académica</h4>
             
             <div class="equipo-block" style="margin-bottom: 25px;">
-                <p class="sidebar-label">Investigadores a cargo (Directores):</p>
+                <p class="sidebar-subtitulo">Asesores / Co-autores:</p>
                 
                     <p style="margin: 0; color: #333; font-weight: 500;">Dr. Christian Roberto Ibáñez Nangüelú</p>
                 
             </div>
 
             <div class="equipo-block" style="margin-bottom: 20px;">
-                <p class="sidebar-label">Alumnas autoras:</p>
+                <p class="sidebar-subtitulo">Autores principales:</p>
                 <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.95rem; line-height: 1.6;">
                     
                         <li>Georgina Hernández Santiz</li>
@@ -105,22 +110,24 @@
                 </ul>
             </div>
 
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dotted #ccc; font-size: 0.85rem; color: #777;">
+            <div class="sidebar-info-adicional">
                 <p><strong>Laboratorio:</strong> DBI Research Lab</p>
                 <p><strong>Institución:</strong> Universidad Politécnica de Chiapas</p>
+                
             </div>
+            
+            
 
             
             <div style="margin-top: 30px;">
-                <a href="https://github.com/cribnez/simulador-fuente-radiactiva" target="_blank" class="btn-github">
-                    <i class="fab fa-github"></i> Ver documentación completa
+                <a href="https://github.com/cribnez/simulador-fuente-radiactiva" target="_blank" class="btn-pdf-institucional">
+                    <i class="fas fa-award"></i> Ver Repositorio / Código
                 </a>
             </div>
             
         </div>
     </div>
 </div>
-
     </main>
 
     <footer style="text-align: center; padding: 40px 20px; background: white; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 50px;">

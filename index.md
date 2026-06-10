@@ -66,31 +66,39 @@ title: Inicio
     <div class="recent-production">
         <div class="flex-header">
             <h2 class="section-title">Producción Reciente</h2>
-            <a href="{{ '/catalogo.html' | relative_url }}" class="project-link">Ver Catálogo →</a>
+            <a href="{{ '/catalogo' | relative_url }}" class="project-link">Ver Catálogo →</a>
         </div>
 
         <div class="grid">
-            {% for proyecto in site.data.proyectos limit:2 %}
-            <div class="card card-project" style="display: flex; flex-direction: column; justify-content: space-between;">
+            {% assign proyectos_ordenados = site.proyectos | sort: 'anio' | reverse %}
+            {% for proyecto in proyectos_ordenados limit:2 %}
+            <div class="card card-project" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 220px;">
                 <div>
                     <span class="project-tag">
                         {{ proyecto.anio }} | {{ proyecto.nivel }}
                     </span>
-                    <h3 class="project-title">{{ proyecto.titulo }}</h3>
-                    <p class="project-author" style="margin-top: 10px; font-size: 0.9rem; color: #555;">
+                    
+                    <h3 class="project-title" style="margin-top: 12px; margin-bottom: 8px; font-size: 1.2rem; color: #003366; font-weight: bold; line-height: 1.4; display: block !important; visibility: visible !important;">
+                        {% if proyecto.titulo_proyecto %}
+                            {{ proyecto.titulo_proyecto }}
+                        {% elsif proyecto.titulo %}
+                            {{ proyecto.titulo }}
+                        {% else %}
+                            {{ proyecto.title }}
+                        {% endif %}
+                    </h3>
+                    
+                    <p class="project-author" style="margin-top: 5px; font-size: 0.9rem; color: #555;">
                         <strong>Por:</strong> 
-                        {% comment %} 
-                        Esta lógica permite usar el formato viejo (autor) o el nuevo (autores_lista) 
-                        {% endcomment %}
                         {% if proyecto.autor %}
                             {{ proyecto.autor }}
                         {% elsif proyecto.autores_lista %}
-                            {{ proyecto.autores_lista | first }} et al.
+                            {{ proyecto.autores_lista | first }}
                         {% endif %}
                     </p>
                 </div>
                 
-                <a href="{{ proyecto.link | relative_url }}" class="project-link" style="margin-top: 20px;">Leer más →</a>
+                <a href="{{ proyecto.url | relative_url }}" class="project-link" style="margin-top: auto; padding-top: 15px;">Leer más →</a>
             </div>
             {% endfor %}
         </div>
@@ -99,6 +107,6 @@ title: Inicio
 
 <script>
     // Variable global con la ruta del catálogo para que el JS externo la pueda usar
-    const URL_CATALOGO = "{{ '/catalogo.html' | relative_url }}";
+    const URL_CATALOGO = "{{ '/catalogo' | relative_url }}";
 </script>
 <script src="{{ '/assets/js/inicio.js' | relative_url }}"></script>

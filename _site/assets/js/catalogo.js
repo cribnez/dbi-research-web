@@ -1,80 +1,111 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Referencias a los elementos del DOM
+    // 1. Referencias al DOM
     const searchInput = document.getElementById('searchInput');
     const filterCategoria = document.getElementById('filterCategoria');
     const filterTipo = document.getElementById('filterTipo');
     const btnLimpiar = document.getElementById('btnLimpiar');
-    const proyectoItems = document.querySelectorAll('.proyecto-item');
+    const proyectoItems = Array.from(document.querySelectorAll('.proyecto-item'));
     const contador = document.getElementById('contadorResultados');
+    const btnCargarMas = document.getElementById('btnCargarMas');
 
-    // 2. Función principal de filtrado
-    function filtrarProyectos() {
+    // 2. Variables de control para "Cargar más"
+    const itemsPorTanda = 6;
+    let limiteVisible = itemsPorTanda;
+
+    // 3. Función unificada de filtrado y paginación
+    function filtrarYRenderizar() {
         const query = searchInput.value.toLowerCase().trim();
         const categoriaSeleccionada = filterCategoria.value.toLowerCase();
         const tipoSeleccionado = filterTipo.value.toLowerCase();
         
-        let visibles = 0;
+        // Almacenamos temporalmente los elementos que pasan los filtros de búsqueda
+        let itemsQueCoinciden = [];
 
         proyectoItems.forEach(item => {
-            // Extraemos los datos de los atributos data- del HTML
             const textoCompleto = item.getAttribute('data-fulltext') || "";
             const categoriaCard = item.getAttribute('data-categoria').toLowerCase();
             const tipoCard = item.getAttribute('data-tipo').toLowerCase();
 
-            // Lógica de coincidencia
             const coincideTexto = textoCompleto.includes(query);
-            
-            // El filtro de categoría busca si el valor seleccionado está contenido 
-            // en el string (ej: "Ingeniería" o "Estadía")
-            const coincideCategoria = (categoriaSeleccionada === 'todos') || 
-                                       (categoriaCard.includes(categoriaSeleccionada));
-            
-            // El filtro de tipo busca en la lista separada por comas
-            const coincideTipo = (tipoSeleccionado === 'todos') || 
-                                 (tipoCard.includes(tipoSeleccionado));
+            const coincideCategoria = (categoriaSeleccionada === 'todos') || (categoriaCard.includes(categoriaSeleccionada));
+            const coincideTipo = (tipoSeleccionado === 'todos') || (tipoCard.includes(tipoSeleccionado));
 
-            // Mostrar u ocultar con una pequeña transición
             if (coincideTexto && coincideCategoria && coincideTipo) {
-                item.style.display = 'flex'; // O 'block', según tu CSS
-                item.style.opacity = '1';
-                visibles++;
+                itemsQueCoinciden.push(item);
             } else {
-                item.style.display = 'none';
+                // Si no coincide con los filtros, lo ocultamos inmediatamente
+                item.style.setProperty('display', 'none', 'important');
                 item.style.opacity = '0';
             }
         });
 
-        // 3. Actualizar el contador de resultados
-        actualizarContador(visibles, proyectoItems.length);
+        // Aplicamos el límite visible (Paginación) sobre los elementos que pasaron la búsqueda
+        let mostradosEnPantalla = 0;
+        itemsQueCoinciden.forEach((item, index) => {
+            if (index < limiteVisible) {
+                item.style.setProperty('display', 'flex', 'important');
+                item.style.opacity = '1';
+                mostradosEnPantalla++;
+            } else {
+                item.style.setProperty('display', 'none', 'important');
+                item.style.opacity = '0';
+            }
+        });
+
+        // 4. Control visual del botón "Cargar más"
+        if (btnCargarMas) {
+            if (mostradosEnPantalla >= itemsQueCoinciden.length || itemsQueCoinciden.length <= itemsPorTanda) {
+                btnCargarMas.style.setProperty('display', 'none', 'important');
+            } else {
+                btnCargarMas.style.setProperty('display', 'inline-flex', 'important');
+            }
+        }
+
+        // 5. ¡CORRECCIÓN AQUÍ!: Enviamos los que verdaderamente se están mostrando en la interfaz
+        actualizarContador(mostradosEnPantalla, itemsQueCoinciden.length, proyectoItems.length);
     }
 
-    // 4. Función para el texto del contador
-    function actualizarContador(mostrados, totales) {
-        if (mostrados === totales) {
-            contador.textContent = `Mostrando todos los proyectos (${totales})`;
-        } else if (mostrados === 0) {
+    // Función para el texto informativo del contador adaptado a la paginación
+    function actualizarContador(mostradosVisualmente, totalFiltrados, totalAbsoluto) {
+        if (totalFiltrados === 0) {
             contador.textContent = "No se encontraron proyectos que coincidan con tu búsqueda.";
+        } else if (mostradosVisualmente === totalAbsoluto) {
+            contador.textContent = `Mostrando todos los proyectos (${totalAbsoluto})`;
         } else {
-            contador.textContent = `Se encontraron ${mostrados} de ${totales} proyectos`;
+            // Muestra cuántos ve físicamente el usuario del total de coincidencias de su búsqueda
+            contador.textContent = `Viendo ${mostradosVisualmente} de ${totalFiltrados} proyectos encontrados`;
         }
     }
 
-    // 5. Event Listeners
-    searchInput.addEventListener('input', filtrarProyectos);
-    filterCategoria.addEventListener('change', filtrarProyectos);
-    filterTipo.addEventListener('change', filtrarProyectos);
+    // 6. Event Listeners para cambios de filtros (Resetean el límite a 6)
+    const resetearYFiltrar = () => {
+        limiteVisible = itemsPorTanda; // Reinicia la paginación al buscar cosas nuevas
+        filtrarYRenderizar();
+    };
 
-    // 6. Lógica del Botón Limpiar
-    btnLimpiar.addEventListener('click', function() {
-        searchInput.value = '';
-        filterCategoria.value = 'todos';
-        filterTipo.value = 'todos';
-        filtrarProyectos();
-        
-        // Opcional: poner el foco de nuevo en el buscador
-        searchInput.focus();
-    });
+    searchInput.addEventListener('input', resetearYFiltrar);
+    filterCategoria.addEventListener('change', resetearYFiltrar);
+    filterTipo.addEventListener('change', resetearYFiltrar);
 
-    // Ejecutar una vez al cargar por si hay valores previos en el navegador
-    filtrarProyectos();
+    // Evento del botón Cargar Más
+    if (btnCargarMas) {
+        btnCargarMas.addEventListener('click', function() {
+            limiteVisible += itemsPorTanda; // Añade 6 elementos más al límite
+            filtrarYRenderizar();
+        });
+    }
+
+    // Lógica del Botón Limpiar
+    if (btnLimpiar) {
+        btnLimpiar.addEventListener('click', function() {
+            searchInput.value = '';
+            filterCategoria.value = 'todos';
+            filterTipo.value = 'todos';
+            resetearYFiltrar();
+            searchInput.focus();
+        });
+    }
+
+    // Ejecución inicial perfecta
+    filtrarYRenderizar();
 });

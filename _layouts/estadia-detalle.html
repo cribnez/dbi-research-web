@@ -1,0 +1,99 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/catalogo.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/proyecto-detalle.css' | relative_url }}">
+
+<div class="container proyecto-detalle-container">
+    
+    <a href="{{ '/catalogo' | relative_url }}" class="volver-link">
+        <span>←</span> Volver al catálogo
+    </a>
+
+    <h1 class="proyecto-header-title">{{ page.modalidad }} Industrial</h1>
+    
+    <div class="proyecto-meta-tags">
+        <span class="meta-badge badge-anio">AÑO: {{ page.anio }}</span>
+        
+        {% assign modalidad_slug = page.modalidad | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: " ", "-" %}
+        <span class="meta-badge meta-badge-modalidad tipo-{{ modalidad_slug }}">
+            {{ page.modalidad | upcase }}
+        </span>
+
+        {% assign nivel_slug = page.nivel | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: " ", "-" %}
+        <span class="meta-badge badge-nivel tipo-{{ nivel_slug }}">{{ page.nivel | upcase }}</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="proyecto-main-grid">
+        
+        <div class="col-info">
+            {% if page.imagen and page.imagen != "" %}
+            <div class="proyecto-img-wrapper" style="text-align: center; margin-bottom: 35px; width: 100%;">
+                <img src="{{ page.imagen }}" alt="Imagen del Proyecto" style="max-width: 100%; height: auto; max-height: 380px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+            {% endif %}
+
+            <h3 class="seccion-titulo-azul" style="border-left: 4px solid #003366; padding-left: 10px;">
+                Resumen de la {{ page.modalidad }}
+            </h3>
+            <p class="resumen-texto" style="text-align: justify; line-height: 1.6;">
+                {{ page.resumen }}
+            </p>
+
+            <h4 style="color: #003366; margin-top: 25px;"><i class="fas fa-tasks"></i> Objetivos Académicos:</h4>
+            <ul class="objetivos-lista" style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 10px;"></i> Aplicación de competencies profesionales del ciclo correspondiente.</li>
+                <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 10px;"></i> Elaboración de memoria técnica institucional.</li>
+                <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #52c41a; margin-right: 10px;"></i> Cumplimiento de {{ page.horas }} de vinculación profesional.</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-validacion sidebar-equipo" style="background-color: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e9ecef;">
+            
+            <h4 class="sidebar-titulo" style="color: #003366; margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #e9ecef; padding-bottom: 8px;">
+                Validación Institucional
+            </h4>
+            
+            <div style="margin-bottom: 20px;">
+                <p class="sidebar-subtitulo" style="font-size: 0.85rem; color: #003366; font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">
+                    Asesor de {{ page.modalidad }}:
+                </p>
+                {% for dir in page.director %}
+                    <p style="margin: 0; color: #333; font-weight: 500;">{{ dir }}</p>
+                {% endfor %}
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <p class="sidebar-subtitulo" style="font-size: 0.85rem; color: #003366; font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">
+                    Alumno(a) en {{ page.modalidad }}:
+                </p>
+                <p style="margin: 0; color: #555;">
+                    <i class="fas fa-user-graduate" style="color: #003366; margin-right: 8px;"></i>
+                    {{ page.autores_lista | first }}
+                </p>
+            </div>
+
+            <div style="border-top: 1px dotted #ccc; padding-top: 20px; font-size: 0.85rem; color: #666; line-height: 1.7;">
+                <p><strong>Institución:</strong> {{ page.escuela }}</p>
+                <p><strong>Carrera:</strong> {{ page.carrera | default: "Ingeniería Biomédica" }}</p>
+                <p><strong>Matrícula:</strong> {{ page.matricula }}</p>
+                <p><strong>Horas:</strong> {{ page.horas }}</p>
+                {% if page.correo %}
+                    <p><strong>Correo:</strong> <a href="mailto:{{ page.correo }}" style="color: #666; text-decoration: none;">{{ page.correo }}</a></p>
+                {% endif %}
+                <p><strong>Periodo:</strong> {{ page.periodo }}</p>
+            </div>
+
+            {% if page.github %}
+            <div style="margin-top: 25px;">
+                <a href="{{ page.github }}" target="_blank" class="btn-pdf-institucional" style="display: block; text-align: center; background-color: #003366; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                    <i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Ver Carta de Presentación
+                </a>
+            </div>
+            {% endif %}
+            
+        </div>
+    </div>
+</div>

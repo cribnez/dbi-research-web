@@ -7,3 +7,13 @@ url: "https://cribnez.github.io"
 theme: minima
 plugins:
   - jekyll-feed
+
+# --- NUEVA CONFIGURACIÓN DE COLECCIONES ---
+# Esto le dice a Jekyll que cree las páginas de tus proyectos de forma automatizada
+collections:
+  proyectos:
+    output: true
+    permalink: /proyectos/:path/
+  estadias:
+    output: true
+    permalink: /estadias/:path/

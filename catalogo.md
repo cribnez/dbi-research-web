@@ -51,15 +51,16 @@ title: Catálogo
         Mostrando todos los proyectos
     </div>
 
+    {% assign todos_los_items = site.proyectos | concat: site.estadias %}
+    {% assign proyectos_ordenados = todos_los_items | uniq: "url" | sort: "anio" | reverse %}
+
     <div class="grid" id="catalogoGrid">
-        {% assign proyectos_ordenados = site.data.proyectos | sort: "anio" | reverse %}
-        
         {% for proyecto in proyectos_ordenados %}
         <div class="card proyecto-item" 
              data-categoria="{{ proyecto.nivel }} {{ proyecto.modalidad }}" 
              data-anio="{{ proyecto.anio }}"
              data-tipo="{{ proyecto.tipo | join: ',' }}"
-             data-fulltext="{{ proyecto.titulo | downcase }} {{ proyecto.autores_lista | join: ' ' | downcase }} {{ proyecto.resumen | downcase }}"> 
+             data-fulltext="{{ proyecto.title | downcase }} {{ proyecto.autores_lista | join: ' ' | downcase }} {{ proyecto.resumen | downcase }}"> 
             
             <div>
                 <div class="proyecto-tag-wrapper">
@@ -80,7 +81,9 @@ title: Catálogo
                     {% endfor %}
                 </div>
 
-                <h3 class="proyecto-titulo">{{ proyecto.titulo }}</h3>
+                <h3 class="proyecto-titulo">
+                    {{ proyecto.title }}
+                </h3>
 
                 <p class="proyecto-autor">
                     <strong>Por:</strong> 
@@ -97,12 +100,18 @@ title: Catálogo
             </div>
 
             <div class="proyecto-footer">
-                <a href="{{ proyecto.link | relative_url }}" class="project-link proyecto-link-btn">
+                <a href="{{ proyecto.url | relative_url }}" class="project-link proyecto-link-btn">
                     Ver detalles →
                 </a>
             </div>
         </div>
         {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; margin-bottom: 30px;">
+        <button id="btnCargarMas" style="background-color: #003366; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-size: 0.95rem; cursor: pointer; font-weight: bold; transition: background 0.3s; display: inline-flex; align-items: center; gap: 8px;">
+            Cargar más proyectos <i class="fas fa-plus"></i>
+        </button>
     </div>
 </div>
 

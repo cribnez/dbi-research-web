@@ -125,3 +125,16 @@
     align-items: center;
     gap: 6px;
 }
+
+/* Reemplaza o añade esto en assets/css/equipo.css */
+.equipo-specialty-badge {
+    background-color: #e6f0fa !important; /* Azul muy suave de fondo */
+    color: #003366 !important;            /* Texto azul oscuro institucional */
+    border-left: 4px solid #003366;       /* Una pequeña barra elegante a la izquierda */
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 10px 0;
+    font-weight: 500;
+}
