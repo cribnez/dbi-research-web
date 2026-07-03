@@ -63,9 +63,47 @@ title: Inicio
         </div>
     </div>
 
-    <div class="recent-production">
-        <div class="flex-header">
-            <h2 class="section-title">Producción Reciente</h2>
+    <div class="noticias-seccion" style="margin-top: 80px; margin-bottom: 40px;">
+        <div class="flex-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #003366; padding-bottom: 10px; margin-bottom: 25px;">
+            <h2 class="section-title" style="margin: 0; border: none; padding: 0;">
+                <i class="fas fa-newspaper" style="margin-right: 10px;"></i> Últimas Noticias
+            </h2>
+        </div>
+
+        {% assign noticias_ordenadas = site.noticias | reverse %}
+        {% for noticia in noticias_ordenadas limit:3 %}
+        <div class="card-noticia" style="display: flex; flex-wrap: wrap; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; border-left: 5px solid #003366; margin-bottom: 20px; max-width: 850px; margin-left: auto; margin-right: auto;">
+            
+            {% if noticia.imagen_noticia %}
+            <div class="noticia-imagen" style="flex: 0 0 280px; min-height: 220px; background-image: url('{{ noticia.imagen_noticia }}'); background-size: cover; background-position: center;">
+            </div>
+            {% endif %}
+            
+            <div class="noticia-contenido" style="flex: 1; min-width: 300px; padding: 20px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="noticia-meta" style="font-size: 0.8rem; color: #888; margin-bottom: 8px;">
+                    <span style="background: #e6f0fa; color: #003366; padding: 3px 6px; border-radius: 4px; font-weight: bold; margin-right: 8px;">
+                        {{ noticia.categoria_tag }}
+                    </span>
+                    <i class="far fa-calendar-alt"></i> {{ noticia.fecha_texto }}
+                </div>
+                
+                <h3 style="margin: 0 0 10px 0; color: #333; font-size: 1.25rem; font-weight: bold;">
+                    {{ noticia.title }}
+                </h3>
+                
+                <div style="color: #555; line-height: 1.5; margin: 0; font-size: 0.85rem; text-align: justify;">
+                    {{ noticia.content | markdownify }}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <p style="font-style: italic; color: #777;">No hay noticias publicadas por el momento.</p>
+        {% endfor %}
+    </div>
+
+    <div class="recent-production" style="margin-top: 80px;">
+        <div class="flex-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #003366; padding-bottom: 10px; margin-bottom: 30px;">
+            <h2 class="section-title" style="margin: 0; border: none; padding: 0;">Producción Reciente</h2>
             <a href="{{ '/catalogo' | relative_url }}" class="project-link">Ver Catálogo →</a>
         </div>
 
@@ -103,6 +141,7 @@ title: Inicio
             {% endfor %}
         </div>
     </div>
+
 </div>
 
 <script>

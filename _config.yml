@@ -17,3 +17,5 @@ collections:
   estadias:
     output: true
     permalink: /estadias/:path/
+  noticias:
+    output: true
