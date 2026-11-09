@@ -9,4 +9,4 @@ imagen_noticia: "https://res.cloudinary.com/yq49ki4m/image/upload/w_500,h_400,c_
 Participamos con **seis proyectos innovadores** en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!
 
 * 🥉 **3er Lugar (Ingeniería):** *"Analizador Postural con Marcha"*
-* 🎟️ **Pase Nacional:** *"Simulación Inmersiva Hospitalaria (SIH-VR)"*
+* 🏆 **Pase Nacional:** *"Simulación Inmersiva Hospitalaria (SIH-VR)"*

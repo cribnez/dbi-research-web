@@ -1,28 +1,51 @@
-/* assets/css/equipo.css */
+/* =====================================================
+   HERO EQUIPO
+===================================================== */
 
 .equipo-hero {
     padding: 50px 10%;
     text-align: center;
 }
+
+.equipo-hero .hero-title {
+    font-weight: 700;
+}
+
+.equipo-hero .hero-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .equipo-hero h1 {
     font-size: 2.2rem;
     margin: 0;
 }
+
 .equipo-hero p {
     font-size: 1rem;
     opacity: 0.9;
     margin-top: 10px;
 }
 
+/* =====================================================
+   SECCIONES
+===================================================== */
+
 .equipo-section-header {
     text-align: center;
     margin: 50px 0;
 }
+
+.equipo-section-alumnos {
+    margin-top: 80px;
+}
+
 .equipo-section-title {
     color: var(--azul-oscuro);
     font-size: 1.8rem;
     margin: 0;
 }
+
 .equipo-divider {
     width: 40px;
     height: 3px;
@@ -30,11 +53,19 @@
     margin: 10px auto;
 }
 
+/* =====================================================
+   GRID
+===================================================== */
+
 .equipo-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px 20px;
     margin-bottom: 60px;
 }
+
+/* =====================================================
+   TARJETAS
+===================================================== */
 
 .equipo-card {
     text-align: center;
@@ -42,10 +73,23 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     min-height: 320px;
+    height: 100%;
     border-top: 4px solid var(--azul-primario, #0d6efd);
 }
+
+.equipo-card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =====================================================
+   FOTO
+===================================================== */
 
 .equipo-photo-container {
     width: 100px;
@@ -56,37 +100,45 @@
     position: absolute;
     top: -50px;
     background: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .equipo-photo-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
 .equipo-info {
     margin-top: 50px;
     flex-grow: 1;
     width: 100%;
 }
+
 .equipo-name {
     color: var(--azul-oscuro);
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
-.equipo-role {
-    color: #0d6efd;
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
+.equipo-role,
 .equipo-role-alt {
     color: #0d6efd;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 600;
     font-size: 0.85rem;
+}
+
+.equipo-role {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.equipo-role-alt {
+    margin-bottom: 10px;
 }
 
 .equipo-specialty {
@@ -94,28 +146,34 @@
     font-size: 0.8rem;
     margin-bottom: 5px;
 }
+
 .equipo-specialty-badge {
-    font-size: 0.80rem;
-    color: #d35400;
-    background: #fdf2e9;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-weight: bold;
-    margin: 0 auto 10px;
-    display: inline-block;
+    background-color: #e6f0fa;
+    color: #003366;
+    border-left: 4px solid #003366;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 10px 0;
+    font-weight: 500;
+    text-align: left;
 }
 
 .equipo-institution {
-    color: #777;
+    color: #666;
     font-size: 0.75rem;
     line-height: 1.3;
     margin: 0;
-    white-space: normal;
 }
 
+/* =====================================================
+   FOOTER TARJETA
+===================================================== */
+
 .equipo-footer {
-    margin-top: 20px;
-    padding-top: 12px;
+    margin-top: auto;
+    padding-top: 15px;
     border-top: 1px solid #eee;
     width: 100%;
     color: #888;
@@ -126,15 +184,76 @@
     gap: 6px;
 }
 
-/* Reemplaza o añade esto en assets/css/equipo.css */
-.equipo-specialty-badge {
-    background-color: #e6f0fa !important; /* Azul muy suave de fondo */
-    color: #003366 !important;            /* Texto azul oscuro institucional */
-    border-left: 4px solid #003366;       /* Una pequeña barra elegante a la izquierda */
-    padding: 8px 12px;
-    border-radius: 4px;
+.equipo-footer i {
+    margin-right: 5px;
+}
+
+.equipo-email {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.equipo-email:hover {
+    color: #003366;
+}
+
+/* =====================================================
+   PAGINACIÓN
+===================================================== */
+
+.equipo-pagination {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#btnSiguientesAlumnos {
+    background-color: #003366;
+    color: white;
+    padding: 11px 26px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#btnSiguientesAlumnos:hover {
+    background-color: #004a94;
+}
+
+#btnSiguientesAlumnos i {
     font-size: 0.85rem;
-    line-height: 1.4;
-    margin: 10px 0;
-    font-weight: 500;
+}
+
+#paginacionTexto {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .equipo-grid {
+        gap: 60px 20px;
+    }
+
+    .equipo-section-title {
+        font-size: 1.5rem;
+    }
+
+    .equipo-card {
+        min-height: auto;
+    }
+
 }

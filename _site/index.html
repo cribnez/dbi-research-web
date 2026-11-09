@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | DBI Research Group</title>
-    
+
     <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         <div class="logo" style="font-weight: bold; color: #00234b; display: flex; align-items: center; gap: 10px;">
             <i class="fas fa-brain" style="color: #0d6efd;"></i> DBI RESEARCH GROUP
         </div>
-        
+
         <ul class="nav-links">
             <li><a href="/dbi-research-web/">Investigación</a></li>
             <li><a href="/dbi-research-web/catalogo">Catálogo</a></li>
@@ -33,177 +34,277 @@
     <main>
         <header class="hero">
     <div class="badge-tech">Ingeniería y Tecnología</div>
+
     <h1 class="hero-title">
         Dispositivos Biomédicos Inteligentes
     </h1>
+
     <p class="hero-subtitle">
         Innovación en algoritmos de IA y sistemas embebidos aplicados a la salud humana y veterinaria.
     </p>
 </header>
 
 <div class="container">
-    
+
     <div class="search-container">
         <input type="text" id="inputBusquedaHero" placeholder="Buscar tesis, artículos, autores..." class="search-input" />
+
         <button onclick="ejecutarBusqueda()" class="btn-search">
             Buscar
         </button>
     </div>
 
     <div class="section-header">
+
         <h2 class="section-title">Líneas de Investigación</h2>
+
         <div class="divider"></div>
-        
+
         <div class="grid">
+
             <div class="card line-embebidos">
                 <i class="fas fa-microchip icon-line"></i>
                 <h3>Sistemas Embebidos</h3>
-                <p class="card-text">Hardware médico de bajo consumo y alta precisión para entornos clínicos.</p>
+                <p class="card-text">
+                    Hardware médico de bajo consumo y alta precisión para entornos clínicos.
+                </p>
             </div>
+
             <div class="card line-ia">
                 <i class="fas fa-brain icon-line"></i>
                 <h3>Inteligencia Artificial</h3>
-                <p class="card-text">Modelos de visión artificial y Deep Learning para diagnóstico médico.</p>
+                <p class="card-text">
+                    Modelos de visión artificial y Deep Learning para diagnóstico médico.
+                </p>
             </div>
+
             <div class="card line-iot">
                 <i class="fas fa-heartbeat icon-line"></i>
                 <h3>Monitoreo IoT</h3>
-                <p class="card-text">Telemetría y redes de sensores inalámbricos para salud remota.</p>
+                <p class="card-text">
+                    Telemetría y redes de sensores inalámbricos para salud remota.
+                </p>
             </div>
+
         </div>
+
     </div>
 
-    <div class="section-header" style="margin-top: 100px;">
+    <div class="section-header investigadores-section">
+
         <h2 class="section-title">Investigadores Principales</h2>
+
         <div class="divider"></div>
-        
+
         <div class="grid">
+
             
+
             <div class="card card-member">
+
                 <div class="photo-circle">
                     <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_400,h_400,c_fill,g_face/v1776868085/cribn_imtfhl.jpg" alt="Christian Roberto Ibáñez Nangüelú" />
                 </div>
-                <h3 class="member-name">Christian Roberto Ibáñez Nangüelú</h3>
-                <p class="member-role">Investigador Principal</p>
-                <p class="member-inst">Universidad Politécnica de Chiapas</p>
+
+                <h3 class="member-name">
+                    Christian Roberto Ibáñez Nangüelú
+                </h3>
+
+                <p class="member-role">
+                    Investigador Principal
+                </p>
+
+                <p class="member-inst">
+                    Universidad Politécnica de Chiapas
+                </p>
+
             </div>
+
             
+
             <div class="card card-member">
+
                 <div class="photo-circle">
                     <img src="/dbi-research-web/assets/img/usuario.png" alt="Roberto Ibáñez Córdova" />
                 </div>
-                <h3 class="member-name">Roberto Ibáñez Córdova</h3>
-                <p class="member-role">Investigador Principal</p>
-                <p class="member-inst">Tecnológico Nacional de México</p>
+
+                <h3 class="member-name">
+                    Roberto Ibáñez Córdova
+                </h3>
+
+                <p class="member-role">
+                    Investigador Principal
+                </p>
+
+                <p class="member-inst">
+                    Tecnológico Nacional de México
+                </p>
+
             </div>
+
             
+
         </div>
+
     </div>
 
-<div class="noticias-seccion" style="margin-top: 80px; margin-bottom: 40px;">
-        <div class="flex-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #003366; padding-bottom: 10px; margin-bottom: 25px;">
-            <h2 class="section-title" style="margin: 0; border: none; padding: 0;">
-                <i class="fas fa-newspaper" style="margin-right: 10px;"></i> Últimas Noticias
+    <div class="noticias-seccion">
+
+        <div class="flex-header">
+
+            <h2 class="section-title">
+                Últimas Noticias
             </h2>
+
         </div>
 
         
+
         
-        <div class="card-noticia" style="display: flex; flex-wrap: wrap; align-items: center; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 5px solid #003366; margin-bottom: 20px; width: 100%;">
+
+        <div class="card-noticia">
+
             
-            
-            <div class="noticia-imagen" style="flex: 0 0 250px; height: 200px; margin: 20px 0 20px 20px; border-radius: 8px; background-image: url('https://res.cloudinary.com/yq49ki4m/image/upload/w_500,h_400,c_fill,g_auto,q_auto,f_auto/v1783100041/img5_tj2fri.jpg'); background-size: cover; background-position: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+
+            <div class="noticia-imagen" style="background-image: url('https://res.cloudinary.com/yq49ki4m/image/upload/w_500,h_400,c_fill,g_auto,q_auto,f_auto/v1783100041/img5_tj2fri.jpg');">
             </div>
+
             
-            
-            <div class="noticia-contenido" style="flex: 1; min-width: 300px; padding: 20px 30px; display: flex; flex-direction: column; justify-content: center;">
-                <div class="noticia-meta" style="font-size: 0.8rem; color: #888; margin-bottom: 8px;">
-                    <span style="background: #e6f0fa; color: #003366; padding: 3px 6px; border-radius: 4px; font-weight: bold; margin-right: 8px;">
+
+            <div class="noticia-contenido">
+
+                <div class="noticia-meta">
+
+                    <span class="noticia-categoria">
                         Logro Académico
                     </span>
-                    <i class="far fa-calendar-alt"></i> Junio, 2026
+
+                    <i class="far fa-calendar-alt"></i>
+                    Junio, 2026
+
                 </div>
-                
-                <h3 style="margin: 0 0 10px 0; color: #333; font-size: 1.25rem; font-weight: bold;">
+
+                <h3 class="noticia-titulo">
                     Triunfo en ExpoCiencias Chiapas 2026
                 </h3>
-                
-                <div style="color: #555; line-height: 1.5; margin: 0; font-size: 0.85rem; text-align: justify;">
+
+                <div class="noticia-texto">
                     <p>Participamos con <strong>seis proyectos innovadores</strong> en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!</p>
 
 <ul>
   <li>🥉 <strong>3er Lugar (Ingeniería):</strong> <em>“Analizador Postural con Marcha”</em></li>
-  <li>🎟️ <strong>Pase Nacional:</strong> <em>“Simulación Inmersiva Hospitalaria (SIH-VR)”</em></li>
+  <li>🏆 <strong>Pase Nacional:</strong> <em>“Simulación Inmersiva Hospitalaria (SIH-VR)”</em></li>
 </ul>
 
                 </div>
+
             </div>
+
         </div>
+
         
+
     </div>
 
-    <div class="recent-production" style="margin-top: 80px;">
-        <div class="flex-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #003366; padding-bottom: 10px; margin-bottom: 30px;">
-            <h2 class="section-title" style="margin: 0; border: none; padding: 0;">Producción Reciente</h2>
-            <a href="/dbi-research-web/catalogo" class="project-link">Ver Catálogo →</a>
+    <div class="recent-production">
+
+        <div class="flex-header">
+
+            <h2 class="section-title">
+                Producción Reciente
+            </h2>
+
+            <a href="/dbi-research-web/catalogo" class="project-link">
+                Ver Catálogo &rarr;
+            </a>
+
         </div>
 
         <div class="grid">
+
             
+
             
-            <div class="card card-project" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 220px;">
+
+            <div class="card card-project">
+
                 <div>
+
                     <span class="project-tag">
                         2025 | Ingeniería
                     </span>
-                    
-                    <h3 class="project-title" style="margin-top: 12px; margin-bottom: 8px; font-size: 1.2rem; color: #003366; font-weight: bold; line-height: 1.4; display: block !important; visibility: visible !important;">
+
+                    <h3 class="project-title">
+
                         
                             Desarrollo de un dispositivo electrónico para el monitoreo no invasivo de parámetros físicos y visuales en orina
                         
+
                     </h3>
-                    
-                    <p class="project-author" style="margin-top: 5px; font-size: 0.9rem; color: #555;">
-                        <strong>Por:</strong> 
+
+                    <p class="project-author">
+
+                        <strong>Por:</strong>
+
                         
                             Kevin Patricio Carrasco Ruiz
                         
+
                     </p>
+
                 </div>
-                
-                <a href="/dbi-research-web/proyectos/dispositivo_monitoreo_orina/" class="project-link" style="margin-top: auto; padding-top: 15px;">Leer más →</a>
+
+                <a href="/dbi-research-web/proyectos/dispositivo_monitoreo_orina/" class="project-link project-link-bottom">
+                    Leer más &rarr;
+                </a>
+
             </div>
+
             
-            <div class="card card-project" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 220px;">
+
+            <div class="card card-project">
+
                 <div>
+
                     <span class="project-tag">
                         2025 | Ingeniería
                     </span>
-                    
-                    <h3 class="project-title" style="margin-top: 12px; margin-bottom: 8px; font-size: 1.2rem; color: #003366; font-weight: bold; line-height: 1.4; display: block !important; visibility: visible !important;">
+
+                    <h3 class="project-title">
+
                         
                             Electronic Radioactive Source Simulator as a Tool for Teaching Nuclear Physics
                         
+
                     </h3>
-                    
-                    <p class="project-author" style="margin-top: 5px; font-size: 0.9rem; color: #555;">
-                        <strong>Por:</strong> 
+
+                    <p class="project-author">
+
+                        <strong>Por:</strong>
+
                         
                             Georgina Hernández Santiz
                         
+
                     </p>
+
                 </div>
-                
-                <a href="/dbi-research-web/proyectos/simulador_fuente_radiactiva/" class="project-link" style="margin-top: auto; padding-top: 15px;">Leer más →</a>
+
+                <a href="/dbi-research-web/proyectos/simulador_fuente_radiactiva/" class="project-link project-link-bottom">
+                    Leer más &rarr;
+                </a>
+
             </div>
+
             
+
         </div>
+
     </div>
 
 </div>
 
 <script>
-    // Variable global con la ruta del catálogo para que el JS externo la pueda usar
     const URL_CATALOGO = "/dbi-research-web/catalogo";
 </script>
 

@@ -8,8 +8,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# --- NUEVA CONFIGURACIÓN DE COLECCIONES ---
-# Esto le dice a Jekyll que cree las páginas de tus proyectos de forma automatizada
+# Configuración de colecciones
 collections:
   proyectos:
     output: true
@@ -19,3 +18,4 @@ collections:
     permalink: /estadias/:path/
   noticias:
     output: true
+    permalink: /noticias/:path/

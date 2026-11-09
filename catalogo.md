@@ -1,53 +1,73 @@
 ---
-layout: default
+layout: catalogo
 title: Catálogo
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/catalogo.css' | relative_url }}">
-
 <header class="hero">
-    <h1 class="hero-title catalogo-hero-title">Catálogo de Producción Académica</h1>
+    <h1 class="hero-title">Catálogo de Producción Académica</h1>
     <p class="hero-subtitle catalogo-hero-subtitle">
         Explora las investigaciones, estadías y proyectos desarrollados por nuestro grupo de investigación.
     </p>
 </header>
 
 <div class="container">
-    
+
     <div class="search-container catalogo-search-wrapper">
-        <div class="catalogo-input-container" style="flex: 2;">
-            <input type="text" id="searchInput" placeholder="Buscar por título, autor o tecnología..." class="search-input catalogo-input-text">
+
+        <div class="catalogo-input-container">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar por título, autor o tecnología..."
+                class="search-input catalogo-input-text"
+                aria-label="Buscar proyectos">
         </div>
 
-        <select id="filterCategoria" class="search-input catalogo-select">
-            <option value="todos">Todas las Categorías</option>
+        <select
+            id="filterCategoria"
+            class="search-input catalogo-select"
+            aria-label="Filtrar por categoría">
+
+            <option value="todos">Todas las categorías</option>
+
             <optgroup label="Investigación Académica">
                 <option value="Ingeniería">Ingeniería</option>
                 <option value="Maestría">Maestría</option>
                 <option value="Doctorado">Doctorado</option>
-                <option value="Investigación">Investigación / Publicación</option>
+                <option value="Investigación / Publicación">
+                    Investigación / Publicación
+                </option>
             </optgroup>
+
             <optgroup label="Vinculación Profesional">
-                <option value="Estadía">Estadías (600h)</option>
-                <option value="Estancia">Estancias (120h)</option>
+                <option value="Estadías">Estadías (600 h)</option>
+                <option value="Estancia">Estancias (120 h)</option>
             </optgroup>
+
         </select>
 
-        <select id="filterTipo" class="search-input catalogo-select">
-            <option value="todos">Todos los Formatos</option>
+        <select
+            id="filterTipo"
+            class="search-input catalogo-select"
+            aria-label="Filtrar por formato">
+
+            <option value="todos">Todos los formatos</option>
             <option value="Capítulo de Libro">Capítulos de Libro</option>
             <option value="Artículo">Artículos</option>
             <option value="Congreso">Memorias de Congreso</option>
             <option value="Prototipo">Prototipos / Software</option>
             <option value="Tesis">Tesis</option>
+
         </select>
 
-        <button id="btnLimpiar">
-            <i class="fas fa-redo-alt" style="margin-right: 8px; font-size: 0.8rem;"></i> Limpiar
+        <button id="btnLimpiar" type="button">
+            <i class="fas fa-redo-alt"></i>
+            Limpiar
         </button>
+
     </div>
 
-    <div id="contadorResultados" style="margin-bottom: 20px; font-style: italic; color: #666; font-size: 0.9rem;">
+    <div id="contadorResultados" class="contador-resultados">
         Mostrando todos los proyectos
     </div>
 
@@ -55,30 +75,41 @@ title: Catálogo
     {% assign proyectos_ordenados = todos_los_items | uniq: "url" | sort: "anio" | reverse %}
 
     <div class="grid" id="catalogoGrid">
+
         {% for proyecto in proyectos_ordenados %}
-        <div class="card proyecto-item" 
-             data-categoria="{{ proyecto.nivel }} {{ proyecto.modalidad }}" 
-             data-anio="{{ proyecto.anio }}"
-             data-tipo="{{ proyecto.tipo | join: ',' }}"
-             data-fulltext="{{ proyecto.title | downcase }} {{ proyecto.autores_lista | join: ' ' | downcase }} {{ proyecto.resumen | downcase }}"> 
-            
+
+        <div
+            class="card proyecto-item"
+            data-categoria="{{ proyecto.nivel }} {{ proyecto.modalidad }}"
+            data-anio="{{ proyecto.anio }}"
+            data-tipo="{{ proyecto.tipo | join: ',' }}"
+            data-fulltext="{{ proyecto.title | downcase }} {{ proyecto.autores_lista | join: ' ' | downcase }} {{ proyecto.resumen | downcase }}">
+
             <div>
+
                 <div class="proyecto-tag-wrapper">
+
                     <span class="project-tag">
-                        {{ proyecto.anio }} | 
-                        {% if proyecto.modalidad %} 
-                            {{ proyecto.modalidad }} 
-                        {% else %} 
-                            {{ proyecto.nivel }} 
+                        {{ proyecto.anio }} |
+                        {% if proyecto.modalidad %}
+                            {{ proyecto.modalidad }}
+                        {% else %}
+                            {{ proyecto.nivel }}
                         {% endif %}
                     </span>
-                    
+
                     {% for t in proyecto.tipo %}
                         {% if t != proyecto.modalidad %}
-                            {% assign tipo_slug = t | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: " ", "-" %}
-                            <span class="badge-tipo tipo-{{ tipo_slug }}">{{ t }}</span>
+
+                            {% assign tipo_slug = t | slugify %}
+
+                            <span class="badge-tipo tipo-{{ tipo_slug }}">
+                                {{ t }}
+                            </span>
+
                         {% endif %}
                     {% endfor %}
+
                 </div>
 
                 <h3 class="proyecto-titulo">
@@ -86,7 +117,8 @@ title: Catálogo
                 </h3>
 
                 <p class="proyecto-autor">
-                    <strong>Por:</strong> 
+                    <strong>Por:</strong>
+
                     {% if proyecto.autor %}
                         {{ proyecto.autor }}
                     {% elsif proyecto.autores_lista %}
@@ -97,22 +129,31 @@ title: Catálogo
                 <p class="proyecto-resumen">
                     {{ proyecto.resumen | truncate: 140 }}
                 </p>
+
             </div>
 
             <div class="proyecto-footer">
-                <a href="{{ proyecto.url | relative_url }}" class="project-link proyecto-link-btn">
-                    Ver detalles →
+                <a href="{{ proyecto.url | relative_url }}"
+                   class="project-link proyecto-link-btn">
+                    Ver detalles &rarr;
                 </a>
             </div>
+
         </div>
+
         {% endfor %}
+
     </div>
 
-    <div style="text-align: center; margin-top: 40px; margin-bottom: 30px;">
-        <button id="btnCargarMas" style="background-color: #003366; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-size: 0.95rem; cursor: pointer; font-weight: bold; transition: background 0.3s; display: inline-flex; align-items: center; gap: 8px;">
-            Cargar más proyectos <i class="fas fa-plus"></i>
+    <div class="catalogo-load-more">
+
+        <button id="btnCargarMas" type="button">
+            Cargar más proyectos
+            <i class="fas fa-plus"></i>
         </button>
+
     </div>
+
 </div>
 
 <script src="{{ '/assets/js/catalogo.js' | relative_url }}"></script>

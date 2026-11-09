@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | DBI Research Group</title>
-    
-    <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
-    
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    {% if page.page_css %}
+    <link rel="stylesheet" href="{{ page.page_css | relative_url }}">
+    {% endif %}
 </head>
 <body>
 
@@ -15,12 +18,12 @@
         <div class="logo" style="font-weight: bold; color: #00234b; display: flex; align-items: center; gap: 10px;">
             <i class="fas fa-brain" style="color: #0d6efd;"></i> DBI RESEARCH GROUP
         </div>
-        
+
         <ul class="nav-links">
-            <li><a href="/dbi-research-web/">Investigación</a></li>
-            <li><a href="/dbi-research-web/catalogo">Catálogo</a></li>
-            <li><a href="/dbi-research-web/equipo">Equipo</a></li>
-            <li><a href="/dbi-research-web/galeria">Galería</a></li>
+            <li><a href="{{ '/' | relative_url }}">Investigación</a></li>
+            <li><a href="{{ '/catalogo' | relative_url }}">Catálogo</a></li>
+            <li><a href="{{ '/equipo' | relative_url }}">Equipo</a></li>
+            <li><a href="{{ '/galeria' | relative_url }}">Galería</a></li>
         </ul>
 
         <div class="nav-auth">

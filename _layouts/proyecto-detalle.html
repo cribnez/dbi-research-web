@@ -1,98 +1,193 @@
 ---
 layout: default
 ---
+
 <link rel="stylesheet" href="{{ '/assets/css/catalogo.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/proyecto-detalle.css' | relative_url }}">
 
 <div class="container proyecto-detalle-container">
-    
+
     <a href="{{ '/catalogo' | relative_url }}" class="volver-link">
         <span>←</span> Volver al catálogo
     </a>
 
-    <h1 class="proyecto-header-title">{{ page.title }}</h1>
-    
+    <h1 class="proyecto-header-title">
+        {{ page.title }}
+    </h1>
+
     <div class="proyecto-meta-tags">
-        <span class="meta-badge badge-anio">AÑO: {{ page.anio }}</span>
-        
-        {% assign modalidad_slug = page.nivel | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: " ", "-" %}
+
+        <span class="meta-badge badge-anio">
+            AÑO: {{ page.anio }}
+        </span>
+
+        {% assign modalidad_slug = page.nivel | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: "ñ", "n" | replace: " ", "-" %}
+
         <span class="meta-badge meta-badge-modalidad tipo-{{ modalidad_slug }}">
             {{ page.nivel | upcase }}
         </span>
-        
+
         {% for t in page.tipo %}
-            {% assign tipo_slug = t | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: " ", "-" %}
-            <span class="meta-badge badge-tipo tipo-{{ tipo_slug }}">{{ t }}</span>
+
+            {% assign tipo_slug = t | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: "ñ", "n" | replace: " ", "-" %}
+
+            <span class="meta-badge badge-tipo tipo-{{ tipo_slug }}">
+                {{ t }}
+            </span>
+
         {% endfor %}
+
     </div>
 
     <div class="divider"></div>
 
     <div class="proyecto-main-grid">
-        
+
         <div class="col-info">
-            
+
             {% if page.imagen and page.imagen != "" %}
-            <div class="proyecto-img-wrapper" style="text-align: center; margin-bottom: 35px; width: 100%;">
-                <img src="{{ page.imagen }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; max-height: 380px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+            <div class="proyecto-img-wrapper">
+
+                <img
+                    src="{{ page.imagen }}"
+                    alt="{{ page.title }}"
+                    class="proyecto-imagen">
+
             </div>
+
             {% endif %}
 
-            <h3 class="seccion-titulo-azul">Resumen del Proyecto</h3>
+            <h3 class="seccion-titulo-azul">
+                Resumen del Proyecto
+            </h3>
+
             <p class="resumen-texto">
                 {{ page.resumen }}
             </p>
 
             {% if page.resultados_lista %}
-            <h3 class="seccion-titulo-azul">Resultados y Logros</h3>
+
+            <h3 class="seccion-titulo-azul">
+                Resultados y Logros
+            </h3>
+
             <ul class="objetivos-lista">
+
                 {% for resultado in page.resultados_lista %}
-                    <li><i class="fas fa-check-circle"></i> {{ resultado }}</li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        {{ resultado }}
+                    </li>
                 {% endfor %}
+
             </ul>
+
             {% endif %}
+
         </div>
 
         <div class="sidebar-validacion">
-            <h4 class="sidebar-titulo" style="color: #003366; margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Información Académica</h4>
-            
-            <div class="equipo-block" style="margin-bottom: 25px;">
-                <p class="sidebar-subtitulo">Asesores / Co-autores:</p>
+
+            <h4 class="sidebar-titulo">
+                Información Académica
+            </h4>
+
+            <div class="equipo-block">
+
+                <p class="sidebar-subtitulo">
+                    Asesores / Co-autores:
+                </p>
+
                 {% if page.director %}
-                    <p style="margin: 0; color: #333; font-weight: 500;">{{ page.director | join: ", " }}</p>
+
+                <ul class="asesores-lista">
+
+                    {% for asesor in page.director %}
+                        <li>{{ asesor }}</li>
+                    {% endfor %}
+
+                </ul>
+
                 {% endif %}
+
             </div>
 
-            <div class="equipo-block" style="margin-bottom: 20px;">
-                <p class="sidebar-subtitulo">Autores principales:</p>
-                <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+            <div class="equipo-block">
+
+                <p class="sidebar-subtitulo">
+                    Autores principales:
+                </p>
+
+                <ul class="autores-lista">
+
                     {% for autor in page.autores_lista %}
                         <li>{{ autor }}</li>
                     {% endfor %}
+
                 </ul>
+
             </div>
 
             <div class="sidebar-info-adicional">
-                <p><strong>Laboratorio:</strong> DBI Research Lab</p>
-                <p><strong>Institución:</strong> {{ page.escuela }}</p>
-                {% if page.editorial %}<p><strong>Editorial:</strong> {{ page.editorial }}</p>{% endif %}
+
+                <p>
+                    <strong>Laboratorio:</strong>
+                    DBI Research Lab
+                </p>
+
+                <p>
+                    <strong>Institución:</strong>
+                    {{ page.escuela }}
+                </p>
+
+                {% if page.editorial %}
+                <p>
+                    <strong>Editorial:</strong>
+                    {{ page.editorial }}
+                </p>
+                {% endif %}
+
             </div>
-            
+
             {% if page.doi_link %}
-            <div style="margin-top: 25px;">
-                <a href="{{ page.doi_link }}" target="_blank" class="btn-pdf-institucional" style="background-color: #3F51B5;">
-                    <i class="fas fa-book"></i> Ver Publicación (DOI)
+
+            <div class="sidebar-boton">
+
+                <a
+                    href="{{ page.doi_link }}"
+                    target="_blank"
+                    class="btn-pdf-institucional btn-doi">
+
+                    <i class="fas fa-book"></i>
+                    Ver Publicación (DOI)
+
                 </a>
+
             </div>
+
             {% endif %}
 
             {% if page.github %}
-            <div style="margin-top: 30px;">
-                <a href="{{ page.github }}" target="_blank" class="btn-pdf-institucional">
-                    <i class="fas fa-award"></i> Ver Repositorio / Código
+
+            <div class="sidebar-boton">
+
+                <a
+                    href="{{ page.github }}"
+                    target="_blank"
+                    class="btn-pdf-institucional">
+
+                    <i class="fas fa-award"></i>
+                    Ver Repositorio / Código
+
                 </a>
+
             </div>
+
             {% endif %}
+
         </div>
+
     </div>
+
 </div>
