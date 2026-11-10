@@ -3,8 +3,8 @@
 .resumen-texto {
     color: #444; 
     line-height: 1.8;       /* Un poco más de espacio entre líneas para mejor lectura */
-    text-align: justify;    /* Justificación mágica */
-    hyphens: auto;          /* Opcional: añade guiones si una palabra es muy larga */
+    text-align: justify;    /* Justificación */
+    hyphens: auto;
     margin-bottom: 25px;
 }
 
@@ -18,7 +18,7 @@
     color: #444;
     line-height: 1.6;
     margin-bottom: 10px;
-    text-align: justify;    /* También justificamos los puntos de la lista */
+    text-align: justify;
 }
 
 .proyecto-detalle-container {
@@ -85,35 +85,20 @@
 
 /* Estilos de Imagen */
 .proyecto-img-wrapper {
-    width: 100%; 
-    margin-bottom: 30px; 
-    border-radius: 12px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* assets/css/proyecto-detalle.css */
-
-.proyecto-img-wrapper {
-    width: 100%;           /* Ocupa todo el ancho de la columna izquierda */
-    max-width: 100%;       /* Asegura que no se pase del contenedor */
-    
-    /* ESTO ES LO NUEVO: Proporción Rectangular */
-    aspect-ratio: 16 / 9;  /* Mantiene la proporción aunque cambie el tamaño */
-    
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
     margin: 0 auto 30px auto; 
     border-radius: 12px; 
     overflow: hidden; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    
-    background-color: #f0f0f0; /* Fondo gris suave por si tarda en cargar */
+    background-color: #f0f0f0;
 }
 
-/* Asegura que la imagen interna rellene el rectángulo */
 .proyecto-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta la imagen para rellenar el rectángulo sin estirarla */
+    object-fit: cover;
     display: block;
 }
 
@@ -124,7 +109,7 @@
     margin-top: 30px;
 }
 
-/* Barra Lateral (Equipo) */
+/* Barra Lateral (Sidebar Validación / Información Académica) */
 .sidebar-equipo {
     background: #f8f9fa; 
     padding: 25px; 
@@ -141,62 +126,43 @@
     text-transform: uppercase;
 }
 
-.btn-github {
-    background: var(--azul-oscuro); 
-    color: white; 
-    padding: 12px 20px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
-    font-size: 0.9rem;
-    transition: opacity 0.2s;
-}
-
-.btn-github:hover {
-    opacity: 0.9;
-}
-
 /* Clase base para TODOS los tags del sitio */
 .meta-badge, .badge-tipo, .project-tag {
-    display: inline-flex;    /* Permite centrado interno */
-    align-items: center;     /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    
-    /* Dimensiones Uniformes */
-    min-width: 100px;        /* Ancho base para que todos se vean iguales */
-    height: 28px;            /* Altura fija */
-    
-    /* Estética */
-    padding: 0 12px;         /* Espacio interno a los lados */
-    font-size: 0.75rem;      /* Tamaño de letra constante */
-    font-weight: 700;        /* Negrita para legibilidad */
-    border-radius: 20px;     /* Bordes redondeados */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 28px;
+    padding: 0 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px;
     text-transform: uppercase;
     text-align: center;
-    border: none;            /* Elimina bordes si los hubiera */
+    border: none;
 }
 
-/* Ajuste específico por si el texto es muy largo (como "Memorias de Congreso") */
 .badge-tipo {
-    min-width: 110px;        /* Un poquito más ancho para que quepa bien el texto */
+    min-width: 110px;
 }
 
-/* Color para Memorias de Congreso - Un tono morado/índigo elegante */
+/* Color para Memorias de Congreso */
 .tipo-memorias-de-congreso, 
 .tipo-memorias-congreso,
 .tipo-memorias {
-    background-color: #E8EAF6 !important; /* Fondo azul/lavanda claro */
-    color: #3F51B5 !important;           /* Texto índigo */
+    background-color: #E8EAF6 !important;
+    color: #3F51B5 !important;
 }
 
-/* Por si el slug de Liquid no quita los espacios (dependiendo de tu configuración) */
 [class*="Memorias de Congreso"] {
     background-color: #E8EAF6 !important;
     color: #3F51B5 !important;
+}
+
+/* Para CAPÍTULO DE LIBRO o INVESTIGACIÓN (Índigo/Morado) */
+.tipo-capitulo-de-libro::before, 
+.tipo-investigacion::before { 
+    background-color: #3F51B5; 
 }
 
 /* Estilos para las etiquetas superiores (Badges) */
@@ -257,39 +223,6 @@
     color: #666;
 }
 
-.proyecto-detalle-container .btn-pdf-institucional {
-    display: block;
-    text-align: center;
-    background-color: #003366;
-    color: white !important;
-    padding: 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-/* Para CAPÍTULO DE LIBRO o INVESTIGACIÓN (Índigo/Morado) */
-.tipo-capitulo-de-libro::before, 
-.tipo-investigacion::before { 
-    background-color: #3F51B5; 
-}
-
-.proyecto-img-wrapper {
-    text-align: center;
-    margin-bottom: 35px;
-    width: 100%;
-}
-
-.proyecto-imagen {
-    max-width: 100%;
-    height: auto;
-    max-height: 380px;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
 .sidebar-titulo {
     color: #003366;
     margin-top: 0;
@@ -326,9 +259,72 @@
 }
 
 .sidebar-boton {
-    margin-top: 25px;
+    margin-top: 16px;
 }
 
+/* ========================================================
+   BOTONES DE ACCIÓN EN SIDEBAR (Diferenciados por tipo)
+   ======================================================== */
+.proyecto-detalle-container .btn-pdf-institucional {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    background-color: #003366;
+    color: #ffffff !important;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.proyecto-detalle-container .btn-pdf-institucional:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    filter: brightness(1.08);
+    color: #ffffff !important;
+}
+
+/* 1. Botón DOI / Publicación Académica (Púrpura / Índigo Académico) */
+.proyecto-detalle-container .btn-doi,
 .btn-doi {
-    background-color: #3F51B5;
+    background-color: #4338ca !important; /* Indigo vibrante */
+}
+.proyecto-detalle-container .btn-doi:hover,
+.btn-doi:hover {
+    background-color: #3730a3 !important;
+}
+
+/* 2. Botón GitHub / Repositorio y Código (Gris muy oscuro oficial GitHub) */
+.proyecto-detalle-container .btn-github,
+.btn-github {
+    background-color: #24292e !important; /* GitHub Brand Dark */
+}
+.proyecto-detalle-container .btn-github:hover,
+.btn-github:hover {
+    background-color: #0f1419 !important;
+}
+
+/* 3. Botón Constancia / Documento Institucional (Rojo PDF) */
+.proyecto-detalle-container .btn-drive,
+.btn-drive {
+    background-color: #c5221f !important; /* PDF Red */
+}
+.proyecto-detalle-container .btn-drive:hover,
+.btn-drive:hover {
+    background-color: #a51d1a !important;
+}
+
+/* 4. Botón YouTube / Demostración en Video (Rojo YouTube) */
+.proyecto-detalle-container .btn-youtube,
+.btn-youtube {
+    background-color: #e62117 !important; /* YouTube Red */
+}
+.proyecto-detalle-container .btn-youtube:hover,
+.btn-youtube:hover {
+    background-color: #cc1810 !important;
 }
