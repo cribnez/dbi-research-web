@@ -127,7 +127,7 @@ title: Catálogo
 
                     {% for t in proyecto.tipo %}
                         {% if t != proyecto.modalidad %}
-                            {% assign tipo_slug = t | slugify %}
+                            {% assign tipo_slug = t | downcase | replace: "á", "a" | replace: "é", "e" | replace: "í", "i" | replace: "ó", "o" | replace: "ú", "u" | replace: "ñ", "n" | replace: " ", "-" %}
                             <span class="badge-tipo tipo-{{ tipo_slug }}">
                                 {{ t }}
                             </span>

@@ -13,7 +13,8 @@ autores_lista:
   - "Emiliano García Domínguez"
 escuela: "Universidad Politécnica de Chiapas / Tecnológico Nacional de México"
 palabras_clave: ["Realidad Virtual", "Aprendizaje Práctico", "Infraestructura Hospitalaria", "Simulación Médica", "Meta Quest 3S", "Reconocimiento Espacial"]
-imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/v1794259488/Captura_de_pantalla_2026-11-09_152430_sndftq.png"
+doi_link: "https://doi.org/10.37811/cli_w1336"
+imagen: "https://img.youtube.com/vi/vgRTEwfugSY/maxresdefault.jpg"
 github:
 youtube: "https://www.youtube.com/watch?v=vgRTEwfugSY"
 drive: "https://drive.google.com/file/d/1_iy0nDVRqoNTO-Q44B09FIQ3Godqdep9/view?usp=drive_link"

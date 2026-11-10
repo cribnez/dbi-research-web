@@ -8,14 +8,14 @@ resumen: "El cáncer colorrectal constituye una de las principales causas de mor
 director:
   - "Dr. Christian Roberto Ibáñez Nangüelú"
   - "Dra. Diana Paulina Martínez Cancino"
-  - "Omar Alejandro Olvera Guerrero"
+  - "Dr. Omar Alejandro Olvera Guerrero"
 autores_lista:
   - "Jorge Said Vázquez Villalobos"
   - "Georgina Hernández Santiz"
 
 escuela: "Universidad Politécnica de Chiapas"
 doi_link: "https://doi.org/10.70747/cr.v5i4.1300"
-imagen: ""
+imagen: "https://img.youtube.com/vi/u_Nl9OxAPsg/maxresdefault.jpg"
 github: "https://github.com/cribnez/PolySeg-YOLO"
 youtube: "https://www.youtube.com/watch?v=u_Nl9OxAPsg"
 palabras_clave:
