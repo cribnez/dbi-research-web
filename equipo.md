@@ -17,58 +17,66 @@ title: Nuestro Equipo
 
     <div class="equipo-section-header">
         <h2 class="equipo-section-title">
-            Investigadores Principales
+            Investigadores y Colaboradores
         </h2>
         <div class="equipo-divider"></div>
+        <p class="equipo-section-desc">
+            Cuerpo docente y especialistas multidisciplinarios encargados de dirigir, formular y asesorar las líneas de investigación, desarrollo tecnológico y proyectos de vinculación del grupo.
+        </p>
     </div>
 
-    <div class="grid equipo-grid equipo-investigadores-grid">
+    <div class="equipo-investigadores-grid">
 
         {% for miembro in site.data.equipo.investigadores %}
 
-        <div class="card equipo-card">
+        <div class="equipo-card-horizontal">
 
-            <div class="equipo-card-content">
-
-                <div class="equipo-photo-container">
+            <div class="equipo-card-side-photo">
+                <div class="equipo-photo-circle">
                     <img
                         src="{{ miembro.foto | relative_url }}"
                         alt="Foto de {{ miembro.nombre }}">
                 </div>
+            </div>
 
-                <div class="equipo-info">
+            <div class="equipo-card-body">
 
+                <div class="equipo-card-header">
                     <h3 class="equipo-name">
                         {{ miembro.nombre }}
                     </h3>
 
-                    <p class="equipo-role">
+                    <div class="equipo-role">
                         {{ miembro.rol }}
-                    </p>
+                    </div>
 
-                    <p class="equipo-specialty">
-                        {{ miembro.especialidad }}
-                    </p>
-
-                    <p class="equipo-institution">
-                        {{ miembro.institucion }}
-                    </p>
-
+                    <div class="equipo-institution">
+                        <i class="fas fa-university"></i>
+                        <span>{{ miembro.institucion }}</span>
+                    </div>
                 </div>
 
-            </div>
+                {% if miembro.descripcion %}
+                <p class="equipo-bio">
+                    {{ miembro.descripcion }}
+                </p>
+                {% elsif miembro.especialidad %}
+                <p class="equipo-specialty">
+                    {{ miembro.especialidad }}
+                </p>
+                {% endif %}
 
-            <div class="equipo-footer">
-
-                <i class="far fa-envelope"></i>
-
-                <a
-                    href="mailto:{{ miembro.email }}"
-                    class="equipo-email">
-
-                    {{ miembro.email }}
-
-                </a>
+                {% if miembro.email and miembro.email != "" %}
+                <div class="equipo-card-contact">
+                    <a
+                        href="mailto:{{ miembro.email }}"
+                        class="equipo-email-link"
+                        title="Contactar a {{ miembro.nombre }}">
+                        <i class="far fa-envelope"></i>
+                        <span>{{ miembro.email }}</span>
+                    </a>
+                </div>
+                {% endif %}
 
             </div>
 
@@ -81,13 +89,13 @@ title: Nuestro Equipo
     <div class="equipo-section-header equipo-section-alumnos">
 
         <h2 class="equipo-section-title">
-            Colaboradores y Estudiantes
+            Formación de Capital Humano
         </h2>
 
         <div class="equipo-divider"></div>
 
         <p class="equipo-section-desc">
-            Estudiantes de pregrado y posgrado en formación y desarrollo de proyectos de investigación.
+            Estudiantes en formación profesional incorporados al desarrollo de proyectos de investigación científica y tecnológica.
         </p>
 
     </div>

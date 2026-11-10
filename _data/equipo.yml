@@ -1,17 +1,35 @@
 investigadores:
   - nombre: "Christian Roberto Ibáñez Nangüelú"
     rol: "Investigador Principal"
-    especialidad: "Especialista en IA"
+    especialidad: "Inteligencia Artificial y Sistemas Embebidos"
     institucion: "Universidad Politécnica de Chiapas"
     email: "cribn@ib.upchiapas.edu.mx"
     foto: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_400,h_400,c_fill,g_face/v1776868085/cribn_imtfhl.jpg"
+    descripcion: "Profesor-Investigador en Ingeniería Biomédica en la Universidad Politécnica de Chiapas, enfocado en modelos de IA aplicada, sistemas embebidos e instrumentación para la salud."
 
   - nombre: "Roberto Ibáñez Córdova"
-    rol: "Investigador Principal"
-    especialidad: "Visión Artificial"
+    rol: "Investigador Colaborador"
+    especialidad: "Visión Artificial y Control"
     institucion: "Tecnológico Nacional de México"
     email: "roberto.ic@tuxtla.tecnm.mx"
     foto: "/assets/img/usuario.png"
+    descripcion: "Profesor-Investigador del TecNM Tuxtla Gutiérrez, especialista en sistemas de visión artificial, procesamiento digital de imágenes y automatización."
+
+  - nombre: "Diana Paulina Martínez Cancino"
+    rol: "Investigadora Colaboradora"
+    especialidad: "Instrumentación Biomédica"
+    institucion: "Universidad Politécnica de Chiapas"
+    email: ""
+    foto: "/assets/img/usuario.png"
+    descripcion: "Profesora investigadora de la Licenciatura en Ingeniería Biomédica de la Universidad Politécnica de Chiapas, donde lidera el grupo de investigación 'Instrumentación biomédica'."
+
+  - nombre: "José Octavio Vázquez Buenos Aires"
+    rol: "Investigador Colaborador"
+    especialidad: "Doctorado en Ingeniería"
+    institucion: "Universidad Politécnica de Chiapas"
+    email: ""
+    foto: "/assets/img/usuario.png"
+    descripcion: "Profesor-Investigador de Tiempo Completo de la carrera de Ingeniería Biomédica en la Universidad Politécnica de Chiapas y coordinador del Doctorado en Ingeniería a partir de 2023."
 
 alumnos:
   - nombre: "Georgina Hernández Santiz"
