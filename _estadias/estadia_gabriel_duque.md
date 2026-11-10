@@ -14,6 +14,6 @@ autores_lista: ["Gabriel De Jesús Duque Macías"]
 matricula: "203299"
 escuela: "Universidad Politécnica de Chiapas"
 carrera: "Ingeniería Biomédica"
-github: "https://drive.google.com/file/d/1sdG5wDrT1u9TQQGVGyWDIeP3jw7AjNVS/view?usp=drive_link"
+drive: "https://drive.google.com/file/d/1sdG5wDrT1u9TQQGVGyWDIeP3jw7AjNVS/view?usp=drive_link"
 imagen: ""
 ---

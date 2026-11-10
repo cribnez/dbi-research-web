@@ -8,6 +8,7 @@ resumen: "Este proyecto presenta el diseño e implementación de un simulador el
 director: ["Dr. Christian Roberto Ibáñez Nangüelú"]
 escuela: "Universidad Politécnica de Chiapas"
 github: "https://github.com/cribnez/simulador-fuente-radiactiva"
+drive: "https://drive.google.com/file/d/1_tnGUOmvm4FfwIHsZZChoRrMj_8R_ZaP/view?usp=drive_link"
 imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_450,c_fill,g_auto,f_auto,q_auto/v1776962812/Captura_de_pantalla_2026-04-23_104631_ncodku.png"
 autores_lista:
   - "Georgina Hernández Santiz"

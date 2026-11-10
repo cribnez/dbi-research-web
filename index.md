@@ -106,14 +106,18 @@ title: Inicio
         <div class="flex-header">
 
             <h2 class="section-title">
-                Últimas Noticias
+                Última Noticia
             </h2>
+
+            <a href="{{ '/noticias' | relative_url }}" class="project-link">
+                Ver todas las noticias &rarr;
+            </a>
 
         </div>
 
         {% assign noticias_ordenadas = site.noticias | reverse %}
 
-        {% for noticia in noticias_ordenadas limit:3 %}
+        {% for noticia in noticias_ordenadas limit:1 %}
 
         <div class="card-noticia">
 

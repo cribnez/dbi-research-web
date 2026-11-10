@@ -9,7 +9,7 @@ title: Nuestro Equipo
     </h1>
 
     <p class="hero-subtitle">
-        Talento dedicado a la investigación y desarrollo.
+        Talento dedicado a la investigación y desarrollo de tecnologías biomédicas.
     </p>
 </header>
 
@@ -22,7 +22,7 @@ title: Nuestro Equipo
         <div class="equipo-divider"></div>
     </div>
 
-    <div class="grid equipo-grid">
+    <div class="grid equipo-grid equipo-investigadores-grid">
 
         {% for miembro in site.data.equipo.investigadores %}
 
@@ -78,7 +78,7 @@ title: Nuestro Equipo
 
     </div>
 
-    <div class="equipo-section-header">
+    <div class="equipo-section-header equipo-section-alumnos">
 
         <h2 class="equipo-section-title">
             Colaboradores y Estudiantes
@@ -86,58 +86,59 @@ title: Nuestro Equipo
 
         <div class="equipo-divider"></div>
 
+        <p class="equipo-section-desc">
+            Estudiantes de pregrado y posgrado en formación y desarrollo de proyectos de investigación.
+        </p>
+
     </div>
 
-    <div class="grid equipo-grid" id="alumnosGrid">
+    <div class="directorio-alumnos" id="directorioAlumnos">
 
         {% for miembro in site.data.equipo.alumnos %}
 
-        <div class="card equipo-card alumno-item">
+        <div class="directorio-item">
 
-            <div class="equipo-card-content">
+            <div class="directorio-left">
 
-                <div class="equipo-photo-container">
+                <div class="directorio-avatar">
                     <img
                         src="{{ miembro.foto | relative_url }}"
                         alt="Foto de {{ miembro.nombre }}">
                 </div>
 
-                <div class="equipo-info">
+                <div class="directorio-info">
 
-                    <h3 class="equipo-name">
+                    <h3 class="directorio-nombre">
                         {{ miembro.nombre }}
                     </h3>
 
-                    <p class="equipo-role-alt">
-                        {{ miembro.rol }}
-                    </p>
-
-                    {% if miembro.especialidad %}
-                    <div class="equipo-specialty-badge">
-                        {{ miembro.especialidad }}
+                    <div class="directorio-meta">
+                        <span class="directorio-rol">{{ miembro.rol }}</span>
+                        <span class="directorio-sep">&bull;</span>
+                        <span class="directorio-inst">{{ miembro.institucion }}</span>
                     </div>
-                    {% endif %}
-
-                    <p class="equipo-institution">
-                        {{ miembro.institucion }}
-                    </p>
 
                 </div>
 
             </div>
 
-            <div class="equipo-footer">
+            <div class="directorio-badge-col">
+                {% if miembro.especialidad %}
+                <span class="directorio-badge">
+                    <i class="fas fa-tag"></i>
+                    {{ miembro.especialidad }}
+                </span>
+                {% endif %}
+            </div>
 
-                <i class="far fa-envelope"></i>
-
+            <div class="directorio-right">
                 <a
                     href="mailto:{{ miembro.email }}"
-                    class="equipo-email">
-
-                    {{ miembro.email }}
-
+                    class="directorio-email-btn"
+                    title="Enviar correo a {{ miembro.nombre }}">
+                    <i class="far fa-envelope"></i>
+                    <span>{{ miembro.email }}</span>
                 </a>
-
             </div>
 
         </div>
@@ -146,126 +147,4 @@ title: Nuestro Equipo
 
     </div>
 
-    <div class="equipo-pagination">
-
-        <button id="btnSiguientesAlumnos">
-
-            Ver siguientes alumnos
-
-            <i class="fas fa-arrow-right"></i>
-
-        </button>
-
-        <div id="paginacionTexto"></div>
-
-    </div>
-
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const alumnosPorPagina = 6;
-    const alumnos = Array.from(
-        document.querySelectorAll("#alumnosGrid .alumno-item")
-    );
-
-    const boton = document.getElementById("btnSiguientesAlumnos");
-    const textoPagina = document.getElementById("paginacionTexto");
-
-    let indiceInicial = 0;
-
-    function mostrarBloque() {
-
-        alumnos.forEach((alumno, index) => {
-
-            if (
-                index >= indiceInicial &&
-                index < indiceInicial + alumnosPorPagina
-            ) {
-
-                alumno.style.setProperty(
-                    "display",
-                    "flex",
-                    "important"
-                );
-
-            } else {
-
-                alumno.style.setProperty(
-                    "display",
-                    "none",
-                    "important"
-                );
-
-            }
-
-        });
-
-        const totalPaginas =
-            Math.ceil(alumnos.length / alumnosPorPagina);
-
-        const paginaActual =
-            Math.floor(indiceInicial / alumnosPorPagina) + 1;
-
-        if (textoPagina && totalPaginas > 0) {
-
-            textoPagina.textContent =
-                `Mostrando grupo ${paginaActual} de ${totalPaginas}`;
-
-        }
-
-        if (indiceInicial + alumnosPorPagina >= alumnos.length) {
-
-            boton.innerHTML =
-                '<i class="fas fa-undo"></i> Volver al inicio';
-
-        } else {
-
-            boton.innerHTML =
-                'Ver siguientes alumnos <i class="fas fa-arrow-right"></i>';
-
-        }
-
-    }
-
-    if (alumnos.length > 0) {
-
-        mostrarBloque();
-
-        if (alumnos.length <= alumnosPorPagina) {
-
-            boton.style.display = "none";
-
-            if (textoPagina) {
-                textoPagina.style.display = "none";
-            }
-
-        }
-
-    } else {
-
-        boton.style.display = "none";
-
-    }
-
-    boton.addEventListener("click", function () {
-
-        indiceInicial += alumnosPorPagina;
-
-        if (indiceInicial >= alumnos.length) {
-            indiceInicial = 0;
-        }
-
-        mostrarBloque();
-
-        document
-            .querySelector(".equipo-section-header:last-of-type")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    });
-
-});
-</script>

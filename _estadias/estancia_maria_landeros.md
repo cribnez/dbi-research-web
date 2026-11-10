@@ -14,6 +14,6 @@ autores_lista: ["Maria de los Angeles Landeros Tapia"]
 matricula: "233043"
 escuela: "Universidad Politécnica de Chiapas"
 carrera: "Ingeniería Biomédica"
-github: "https://drive.google.com/file/d/1JgOWO67bRFkgiXRLkedO_DR2qZv7hMdv/view?usp=drive_link"
+drive: "https://drive.google.com/file/d/1JgOWO67bRFkgiXRLkedO_DR2qZv7hMdv/view?usp=drive_link"
 imagen: ""
 ---

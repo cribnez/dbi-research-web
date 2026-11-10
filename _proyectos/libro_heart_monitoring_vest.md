@@ -8,7 +8,7 @@ resumen: "Desarrollo de un chaleco electrónico (MAC) para el monitoreo no invas
 director: ["Dr. Christian Roberto Ibáñez Nangüelú"]
 autores_lista: ["Ana Lorena García Zárate", "Anali Elizabeth González Espinosa"]
 escuela: "Universidad Politécnica de Chiapas"
-github: "https://drive.google.com/file/d/10V4lbRzLANXBMys5jGivXIGVA7A4PFj0/view?usp=drive_link"
+drive: "https://drive.google.com/file/d/10V4lbRzLANXBMys5jGivXIGVA7A4PFj0/view?usp=drive_link"
 doi_link: "https://link.springer.com/chapter/10.1007/978-3-031-46933-6_38"
 imagen: ""
 resultados_lista:

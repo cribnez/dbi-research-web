@@ -14,6 +14,6 @@ autores_lista: ["Fátima Carol Hernández Ugarte"]
 matricula: "233060"
 escuela: "Universidad Politécnica de Chiapas"
 carrera: "Ingeniería Biomédica"
-github: "https://drive.google.com/file/d/1SdcYpdYot0hmjINWzWAbXrvYGxyvRYHj/view?usp=drive_link"
+drive: "https://drive.google.com/file/d/1SdcYpdYot0hmjINWzWAbXrvYGxyvRYHj/view?usp=drive_link"
 imagen: ""
 ---

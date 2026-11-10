@@ -14,6 +14,6 @@ autores_lista: ["Omar Alexis Cueto Aguilar"]
 matricula: "221006"
 escuela: "Universidad Politécnica de Chiapas"
 carrera: "Ingeniería Biomédica"
-github: "https://drive.google.com/file/d/1WztkRfsFNI-9NJBWHwK7rivtVVmCxyKn/view?usp=drive_link"
+drive: "https://drive.google.com/file/d/1WztkRfsFNI-9NJBWHwK7rivtVVmCxyKn/view?usp=drive_link"
 imagen: ""
 ---

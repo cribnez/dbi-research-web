@@ -10,7 +10,7 @@ investigadores:
     rol: "Investigador Principal"
     especialidad: "Visión Artificial"
     institucion: "Tecnológico Nacional de México"
-    email: "correo@ejemplo.com"
+    email: "roberto.ic@tuxtla.tecnm.mx"
     foto: "/assets/img/usuario.png"
 
 alumnos:
@@ -20,7 +20,21 @@ alumnos:
     institucion: "Universidad Politécnica de Chiapas"
     email: "203340@ib.upchiapas.edu.mx"
     foto: "/assets/img/usuario.png"
-  
+
+  - nombre: "Luis Arturo López Aguilar"
+    rol: "Ing. Biomédica"
+    especialidad: "Realidad Virtual y Simulación Médica"
+    institucion: "Universidad Politécnica de Chiapas"
+    email: "233040@ib.upchiapas.edu.mx"
+    foto: "/assets/img/usuario.png"
+
+  - nombre: "Emiliano García Domínguez"
+    rol: "Ing. Biomédica"
+    especialidad: "Realidad Virtual y Simulación Médica"
+    institucion: "Universidad Politécnica de Chiapas"
+    email: "233104@ib.upchiapas.edu.mx"
+    foto: "/assets/img/usuario.png"
+
   - nombre: "Kevin Patricio Carrasco Ruiz"
     rol: "Ing. Biomédica"
     especialidad: "Estudiante de Ingeniería Biomédica."
