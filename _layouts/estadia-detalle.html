@@ -86,10 +86,36 @@ layout: default
                 <p><strong>Periodo:</strong> {{ page.periodo }}</p>
             </div>
 
+            {% if page.github %}
+
+            <div class="sidebar-boton">
+
+                <a
+                    href="{{ page.github }}"
+                    target="_blank"
+                    class="btn-pdf-institucional">
+
+                    <i class="fas fa-award"></i>
+                    Ver Repositorio / Código
+
+                </a>
+
+            </div>
+
+            {% endif %}
+
             {% if page.drive %}
             <div style="margin-top: 25px;">
-                <a href="{{ page.drive }}" target="_blank" class="btn-pdf-institucional" style="display: block; text-align: center; background-color: #003366; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
-                    <i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Ver Carta de Presentación
+                <a href="{{ page.drive }}" target="_blank" class="btn-pdf-institucional" style="display: block; text-align: center; background-color: #c5221f; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                    <i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Ver Constancia
+                </a>
+            </div>
+            {% endif %}
+
+            {% if page.youtube %}
+            <div style="margin-top: 25px;">
+                <a href="{{ page.youtube }}" target="_blank" class="btn-pdf-institucional" style="display: block; text-align: center; background-color: #e62117; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                    <i class="fab fa-youtube" style="margin-right: 8px;"></i> Ver Video en YouTube
                 </a>
             </div>
             {% endif %}
