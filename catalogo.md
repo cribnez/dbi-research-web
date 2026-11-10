@@ -189,12 +189,9 @@ title: Catálogo
 
     </div>
 
-    <!-- Botón Cargar Más -->
-    <div class="catalogo-load-more">
-        <button id="btnCargarMas" type="button">
-            Cargar más proyectos
-            <i class="fas fa-plus"></i>
-        </button>
+    <!-- Paginación Numérica -->
+    <div class="catalogo-pagination" id="catalogoPagination" aria-label="Paginación de proyectos">
+        <!-- Generado dinámicamente con JS -->
     </div>
 
 </div>

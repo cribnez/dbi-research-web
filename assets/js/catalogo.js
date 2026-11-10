@@ -6,14 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const pills = Array.from(document.querySelectorAll('.catalogo-pill'));
     const proyectoItems = Array.from(document.querySelectorAll('.proyecto-item'));
     const contador = document.getElementById('contadorResultados');
-    const btnCargarMas = document.getElementById('btnCargarMas');
+    const paginationContainer = document.getElementById('catalogoPagination');
+    const catalogoGrid = document.getElementById('catalogoGrid');
 
-    // 2. Variables de control de paginación
-    const itemsPorTanda = 6;
-    let limiteVisible = itemsPorTanda;
+    // 2. Control de paginación numérica
+    const itemsPorPagina = 9;
+    let paginaActual = 1;
     let filtroPillActivo = 'todos';
+    let itemsFiltrados = [];
 
-    // 3. Función auxiliar para normalizar texto (quita acentos y minúsculas)
+    // 3. Normalizador de texto (sin acentos, minúsculas)
     function normalizar(texto) {
         return (texto || '')
             .toLowerCase()
@@ -22,25 +24,25 @@ document.addEventListener('DOMContentLoaded', function () {
             .trim();
     }
 
-    // 4. Función principal de filtrado y renderizado
-    function filtrarYRenderizar() {
+    // 4. Filtrado principal
+    function aplicarFiltros() {
         const query = normalizar(searchInput ? searchInput.value : '');
         const anioSeleccionado = filterAnio ? filterAnio.value : 'todos';
 
-        let itemsQueCoinciden = [];
+        itemsFiltrados = [];
 
         proyectoItems.forEach(item => {
             const textoCompleto = normalizar(item.getAttribute('data-fulltext'));
             const anioCard = (item.getAttribute('data-anio') || '').trim();
             const tipoCard = normalizar(item.getAttribute('data-tipo'));
 
-            // A. Coincidencia por texto libre (título, autores, resumen, etc.)
+            // A. Búsqueda por texto libre
             const coincideTexto = !query || textoCompleto.includes(query);
 
-            // B. Coincidencia por año
+            // B. Búsqueda por año
             const coincideAnio = (anioSeleccionado === 'todos') || (anioCard === anioSeleccionado);
 
-            // C. Coincidencia por píldora / categoría rápida
+            // C. Búsqueda por categoría / píldora rápida
             let coincidePill = true;
             if (filtroPillActivo === 'articulo') {
                 coincidePill = tipoCard.includes('articulo');
@@ -55,89 +57,155 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (coincideTexto && coincideAnio && coincidePill) {
-                itemsQueCoinciden.push(item);
+                itemsFiltrados.push(item);
             } else {
                 item.style.setProperty('display', 'none', 'important');
                 item.style.opacity = '0';
             }
         });
 
-        // 5. Aplicar paginación progresiva sobre los que pasaron los filtros
-        let mostradosEnPantalla = 0;
-        itemsQueCoinciden.forEach((item, index) => {
-            if (index < limiteVisible) {
-                item.style.setProperty('display', 'flex', 'important');
-                item.style.opacity = '1';
-                mostradosEnPantalla++;
-            } else {
-                item.style.setProperty('display', 'none', 'important');
-                item.style.opacity = '0';
-            }
-        });
-
-        // 6. Control visual del botón "Cargar más"
-        if (btnCargarMas) {
-            if (mostradosEnPantalla >= itemsQueCoinciden.length || itemsQueCoinciden.length <= itemsPorTanda) {
-                btnCargarMas.style.setProperty('display', 'none', 'important');
-            } else {
-                btnCargarMas.style.setProperty('display', 'inline-flex', 'important');
-            }
+        // Aseguramos que la página actual no sobrepase el total
+        const totalPaginas = Math.ceil(itemsFiltrados.length / itemsPorPagina) || 1;
+        if (paginaActual > totalPaginas) {
+            paginaActual = 1;
         }
 
-        // 7. Actualizar el contador de resultados
-        actualizarContador(mostradosEnPantalla, itemsQueCoinciden.length, proyectoItems.length);
+        renderizarPagina(false);
     }
 
-    // Actualiza el texto informativo sobre la cantidad mostrada
-    function actualizarContador(mostradosVisualmente, totalFiltrados, totalAbsoluto) {
+    // 5. Renderizado de la página actual y sus botones
+    function renderizarPagina(hacerScroll = true) {
+        const totalItems = itemsFiltrados.length;
+        const totalPaginas = Math.ceil(totalItems / itemsPorPagina);
+
+        const inicio = (paginaActual - 1) * itemsPorPagina;
+        const fin = inicio + itemsPorPagina;
+
+        // Ocultar todos los que pasaron los filtros salvo los del rango
+        itemsFiltrados.forEach((item, index) => {
+            if (index >= inicio && index < fin) {
+                item.style.setProperty('display', 'flex', 'important');
+                item.style.opacity = '1';
+            } else {
+                item.style.setProperty('display', 'none', 'important');
+                item.style.opacity = '0';
+            }
+        });
+
+        // Actualizar contador informativo
+        actualizarContador(inicio, fin, totalItems, proyectoItems.length);
+
+        // Renderizar barra de botones de paginación
+        renderizarBotonesPaginacion(totalPaginas);
+
+        // Scroll suave al inicio del catálogo al cambiar de página
+        if (hacerScroll && catalogoGrid) {
+            catalogoGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // 6. Generador de la barra de paginación numérica
+    function renderizarBotonesPaginacion(totalPaginas) {
+        if (!paginationContainer) return;
+
+        // Si solo hay 1 página o ninguna, ocultamos la barra
+        if (totalPaginas <= 1) {
+            paginationContainer.innerHTML = '';
+            paginationContainer.style.display = 'none';
+            return;
+        }
+
+        paginationContainer.style.display = 'flex';
+        let html = '';
+
+        // Botón Anterior
+        const disabledPrev = (paginaActual === 1) ? 'disabled' : '';
+        html += `<button type="button" class="pagination-btn pagination-nav" data-page="${paginaActual - 1}" ${disabledPrev} title="Página anterior">
+            <i class="fas fa-chevron-left"></i> Anterior
+        </button>`;
+
+        // Botones numéricos con rango elíptico
+        const paginasAMostrar = calcularRangoPaginas(paginaActual, totalPaginas);
+
+        paginasAMostrar.forEach(p => {
+            if (p === '...') {
+                html += `<span class="pagination-ellipsis">&hellip;</span>`;
+            } else {
+                const activeClass = (p === paginaActual) ? 'active' : '';
+                html += `<button type="button" class="pagination-btn pagination-num ${activeClass}" data-page="${p}" title="Ir a la página ${p}">
+                    ${p}
+                </button>`;
+            }
+        });
+
+        // Botón Siguiente
+        const disabledNext = (paginaActual === totalPaginas) ? 'disabled' : '';
+        html += `<button type="button" class="pagination-btn pagination-nav" data-page="${paginaActual + 1}" ${disabledNext} title="Página siguiente">
+            Siguiente <i class="fas fa-chevron-right"></i>
+        </button>`;
+
+        paginationContainer.innerHTML = html;
+
+        // Event listeners a los botones generados
+        paginationContainer.querySelectorAll('.pagination-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                if (this.disabled) return;
+                const targetPage = parseInt(this.getAttribute('data-page'), 10);
+                if (targetPage && targetPage !== paginaActual && targetPage >= 1 && targetPage <= totalPaginas) {
+                    paginaActual = targetPage;
+                    renderizarPagina(true);
+                }
+            });
+        });
+    }
+
+    // Algoritmo de rango de páginas
+    function calcularRangoPaginas(actual, total) {
+        if (total <= 7) {
+            return Array.from({ length: total }, (_, i) => i + 1);
+        }
+        if (actual <= 4) {
+            return [1, 2, 3, 4, 5, '...', total];
+        }
+        if (actual >= total - 3) {
+            return [1, '...', total - 4, total - 3, total - 2, total - 1, total];
+        }
+        return [1, '...', actual - 1, actual, actual + 1, '...', total];
+    }
+
+    // 7. Actualización del contador
+    function actualizarContador(inicio, fin, totalFiltrados, totalAbsoluto) {
         if (!contador) return;
 
         if (totalFiltrados === 0) {
             contador.textContent = 'No se encontraron proyectos con los filtros seleccionados.';
-        } else if (totalFiltrados === totalAbsoluto && mostradosVisualmente === totalAbsoluto) {
-            contador.textContent = `Mostrando todos los proyectos (${totalAbsoluto})`;
-        } else if (totalFiltrados === totalAbsoluto) {
-            contador.textContent = `Mostrando ${mostradosVisualmente} de ${totalAbsoluto} proyectos`;
+        } else if (totalFiltrados <= itemsPorPagina) {
+            contador.textContent = `Mostrando todos los proyectos encontrados (${totalFiltrados})`;
         } else {
-            contador.textContent = `Mostrando ${mostradosVisualmente} de ${totalFiltrados} proyectos encontrados`;
+            const hasta = Math.min(fin, totalFiltrados);
+            contador.textContent = `Mostrando ${inicio + 1} a ${hasta} de ${totalFiltrados} proyectos (Página ${paginaActual} de ${Math.ceil(totalFiltrados / itemsPorPagina)})`;
         }
     }
 
-    // 8. Eventos de los filtros rápidos (Píldoras)
+    // 8. Event listeners para filtros (resetean a la página 1)
+    const resetearYFiltrar = () => {
+        paginaActual = 1;
+        aplicarFiltros();
+    };
+
+    if (searchInput) searchInput.addEventListener('input', resetearYFiltrar);
+    if (filterAnio) filterAnio.addEventListener('change', resetearYFiltrar);
+
     pills.forEach(pill => {
         pill.addEventListener('click', function () {
             pills.forEach(p => p.classList.remove('active'));
             this.classList.add('active');
             filtroPillActivo = this.getAttribute('data-filter') || 'todos';
-            limiteVisible = itemsPorTanda;
-            filtrarYRenderizar();
+            resetearYFiltrar();
         });
     });
 
-    // 9. Eventos para búsqueda por texto y selector de año
-    if (searchInput) {
-        searchInput.addEventListener('input', function () {
-            limiteVisible = itemsPorTanda;
-            filtrarYRenderizar();
-        });
-    }
-
-    if (filterAnio) {
-        filterAnio.addEventListener('change', function () {
-            limiteVisible = itemsPorTanda;
-            filtrarYRenderizar();
-        });
-    }
-
-    // 10. Botón "Cargar más"
-    if (btnCargarMas) {
-        btnCargarMas.addEventListener('click', function () {
-            limiteVisible += itemsPorTanda;
-            filtrarYRenderizar();
-        });
-    }
-
-    // 11. Botón "Limpiar"
+    // 9. Botón Limpiar
     if (btnLimpiar) {
         btnLimpiar.addEventListener('click', function () {
             if (searchInput) searchInput.value = '';
@@ -148,12 +216,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (pillTodos) pillTodos.classList.add('active');
             filtroPillActivo = 'todos';
 
-            limiteVisible = itemsPorTanda;
-            filtrarYRenderizar();
+            resetearYFiltrar();
             if (searchInput) searchInput.focus();
         });
     }
 
-    // 12. Render inicial
-    filtrarYRenderizar();
+    // 10. Ejecución inicial
+    aplicarFiltros();
 });
