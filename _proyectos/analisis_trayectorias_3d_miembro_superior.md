@@ -30,7 +30,7 @@ palabras_clave:
 
 imagen: "https://img.youtube.com/vi/zTUrN62HUNo/maxresdefault.jpg"
 
-github:
+github: "https://github.com/cribnez/cap-data"
 
 youtube: "https://youtube.com/watch?v=zTUrN62HUNo"
 
