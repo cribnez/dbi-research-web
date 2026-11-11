@@ -1,7 +1,7 @@
 ---
 layout: proyecto-detalle
 title: "Prototipo de Monitoreo y Trazabilidad para la Cadena de Frío en Vacunas"
-anio: "2026"
+anio: "2024"
 nivel: "Ingeniería"
 tipo: ["Artículo", "Prototipo"]
 doi_link: "https://doi.org/10.37811/cl_rcm.v8i2.10786"
