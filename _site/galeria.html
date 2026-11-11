@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | DBI Research Group</title>
+
+    <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" style="font-weight: bold; color: #00234b; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-brain" style="color: #0d6efd;"></i> DBI RESEARCH GROUP
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/dbi-research-web/">Investigación</a></li>
+            <li><a href="/dbi-research-web/catalogo">Catálogo</a></li>
+            <li><a href="/dbi-research-web/noticias">Noticias</a></li>
+            <li><a href="/dbi-research-web/equipo">Equipo</a></li>
+            <li><a href="/dbi-research-web/galeria">Galería</a></li>
+        </ul>
+
+        <div class="nav-auth">
+            <a href="#" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                <i class="fas fa-lock"></i> Admin
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <link rel="stylesheet" href="/dbi-research-web/assets/css/galeria.css">
+
+<header class="hero">
+    <h1 class="hero-title">Galería de Actividades</h1>
+    <p class="hero-subtitle">
+        Momentos clave de nuestra labor investigativa.
+    </p>
+</header>
+
+<div class="container galeria-container">
+
+    <div class="galeria-filtros">
+
+        <div class="galeria-filtros-wrapper">
+            <button class="filter-btn active" onclick="filterGallery('todos', this)">
+                Todos
+            </button>
+
+            <button class="filter-btn" onclick="filterGallery('2026', this)">
+                2026
+            </button>
+
+            <button class="filter-btn" onclick="filterGallery('2025', this)">
+                2025
+            </button>
+
+            <button class="filter-btn" onclick="filterGallery('2024', this)">
+                2024
+            </button>
+        </div>
+
+    </div>
+
+    <div class="grid gallery-grid" id="galleryGrid">
+
+        
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        <div class="card gallery-item" data-anio="2026" onclick="openModal('Expociencias Chiapas 2026', 'Un total de 6 proyectos de base tecnológica compitieron firmemente en la categoría de Ciencias de la Ingeniería', 'https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,h_1000,c_fill,g_auto:face,q_auto,f_auto,e_improve/v1783100041/img4_i05d1b.jpg ; https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1783100041/img2_cqhomq.jpg ; https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1783100041/img3_zhtzgm.jpg ; https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1783100041/img5_tj2fri.jpg ; https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1783100041/img1_jwlgev.jpg; https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,h_1000,c_fill,g_auto:face,q_auto,f_auto,e_improve/v1783100953/img6_xrjztq.jpg')">
+
+            <img src="https://res.cloudinary.com/yq49ki4m/image/upload/w_1000,h_1000,c_fill,g_auto:face,q_auto,f_auto,e_improve/v1783100041/img4_i05d1b.jpg" class="gallery-thumb" alt="Expociencias Chiapas 2026" />
+
+            
+
+            
+            <div class="gallery-count-badge">
+                +5
+            </div>
+            
+
+            <div class="gallery-overlay">
+
+                <h3 class="gallery-overlay-title">
+                    Expociencias Chiapas 2026
+                </h3>
+
+                <span class="gallery-overlay-year">
+                    2026
+                </span>
+
+            </div>
+
+        </div>
+
+        
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        <div class="card gallery-item" data-anio="2026" onclick="openModal('Exposición de Proyectos en Laboratorio', 'Planeación de actividades del semestre A2024.', 'https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_500,c_fill,g_auto:subject,q_auto,f_auto/v1776874705/WhatsApp_Image_2026-04-22_at_10.17.39_AM_crejmm.jpg; https://res.cloudinary.com/dxcfe76rj/image/upload/w_1200,q_auto,f_auto,e_improve/v1776874706/img1_2_fm4gv0.jpg')">
+
+            <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_800,h_500,c_fill,g_auto:subject,q_auto,f_auto/v1776874705/WhatsApp_Image_2026-04-22_at_10.17.39_AM_crejmm.jpg" class="gallery-thumb" alt="Exposición de Proyectos en Laboratorio" />
+
+            
+
+            
+            <div class="gallery-count-badge">
+                +1
+            </div>
+            
+
+            <div class="gallery-overlay">
+
+                <h3 class="gallery-overlay-title">
+                    Exposición de Proyectos en Laboratorio
+                </h3>
+
+                <span class="gallery-overlay-year">
+                    2026
+                </span>
+
+            </div>
+
+        </div>
+
+        
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        <div class="card gallery-item" data-anio="2025" onclick="openModal('Expociencias Chiapas 2025', 'Sistema Asistido para el Control de Medicación en Adultos Mayores. Presentación y exposición de prototipos.', 'https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1776880963/expociencias_2025_waeyue.jpg ; https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1776888318/img2_exp_p5aaef.jpg ; https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1776888318/img1_exp_uxlfxu.jpg')">
+
+            <img src="https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,q_auto,f_auto,e_improve,c_limit/v1776880963/expociencias_2025_waeyue.jpg" class="gallery-thumb" alt="Expociencias Chiapas 2025" />
+
+            
+
+            
+            <div class="gallery-count-badge">
+                +2
+            </div>
+            
+
+            <div class="gallery-overlay">
+
+                <h3 class="gallery-overlay-title">
+                    Expociencias Chiapas 2025
+                </h3>
+
+                <span class="gallery-overlay-year">
+                    2025
+                </span>
+
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+<div id="galleryModal" class="gallery-modal" onclick="closeModal()">
+
+    <span class="close-btn" onclick="closeModal()">
+        &times;
+    </span>
+
+    <div class="gallery-modal-image-wrapper">
+
+        <button id="prevBtn" class="gallery-nav-btn" onclick="prevImg(event)">
+            ❮
+        </button>
+
+        <img id="modalImg" class="gallery-modal-image" onclick="event.stopPropagation()" alt="Imagen ampliada" />
+
+        <button id="nextBtn" class="gallery-nav-btn" onclick="nextImg(event)">
+            ❯
+        </button>
+
+    </div>
+
+    <div class="gallery-modal-info" onclick="event.stopPropagation()">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDesc"></p>
+
+        <span id="imgCounter"></span>
+
+    </div>
+
+</div>
+
+<script>
+    const GLOBAL_BASE_URL = '/dbi-research-web/assets/img/';
+</script>
+
+<script src="/dbi-research-web/assets/js/galeria.js"></script>
+
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px 20px; background: white; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 50px;">
+        <p>&copy; 2024 DBI Research Group. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

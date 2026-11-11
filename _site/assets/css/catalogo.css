@@ -1,0 +1,591 @@
+/* =====================================================
+   CATÁLOGO - ESTILOS GENERALES Y HERO
+===================================================== */
+
+.catalogo-hero-title {
+    margin: 0;
+}
+
+.catalogo-hero-subtitle {
+    margin-top: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.catalogo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =====================================================
+   BARRA DE BÚSQUEDA Y CONTROLES PRINCIPALES
+===================================================== */
+
+.catalogo-search-bar {
+    margin-top: -35px;
+    display: flex;
+    gap: 15px;
+    background: #ffffff;
+    padding: 16px 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 35, 75, 0.08);
+    align-items: center;
+    border: 1px solid #eef2f6;
+    margin-bottom: 22px;
+}
+
+.catalogo-input-wrapper {
+    flex: 3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+}
+
+.catalogo-input-wrapper .search-icon {
+    position: absolute;
+    left: 15px;
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+.catalogo-input-text {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    font-size: 0.95rem;
+    outline: none;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.catalogo-input-text:focus {
+    background: #ffffff;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+.catalogo-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.catalogo-select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.catalogo-select-wrapper .select-icon {
+    position: absolute;
+    left: 12px;
+    color: #64748b;
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+.catalogo-select-anio {
+    padding: 12px 14px 12px 34px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #334155;
+    background-color: #f8fafc;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.catalogo-select-anio:focus {
+    border-color: #0d6efd;
+    background-color: #ffffff;
+}
+
+.btn-limpiar {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-limpiar:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+/* =====================================================
+   PÍLDORAS / FILTROS RÁPIDOS (CHIPS)
+===================================================== */
+
+.catalogo-pills-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.catalogo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 25px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.catalogo-pill i {
+    font-size: 0.82rem;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.catalogo-pill:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+    color: #0f172a;
+    transform: translateY(-1px);
+}
+
+.catalogo-pill.active {
+    background: #003366;
+    color: #ffffff;
+    border-color: #003366;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.22);
+}
+
+.catalogo-pill.active i {
+    color: #ffffff;
+}
+
+/* =====================================================
+   CONTADOR DE RESULTADOS
+===================================================== */
+
+.contador-resultados {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 24px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* =====================================================
+   CUADRÍCULA DE PROYECTOS (CARDS)
+===================================================== */
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.proyecto-item {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 35, 75, 0.05);
+    border: 1px solid #eef2f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.proyecto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 35, 75, 0.1);
+    border-color: #cbd5e1;
+}
+
+/* Miniatura / Banner Superior */
+.proyecto-thumb {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    background: #f1f5f9;
+}
+
+.proyecto-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.proyecto-item:hover .proyecto-thumb img {
+    transform: scale(1.04);
+}
+
+/* Fallbacks con gradientes temáticos elegantes */
+.proyecto-thumb-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.proyecto-thumb-fallback i {
+    font-size: 2.2rem;
+    opacity: 0.9;
+}
+
+.thumb-estadia {
+    background: linear-gradient(135deg, #005c8a, #0088cc);
+}
+
+.thumb-libro {
+    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+}
+
+.thumb-congreso {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+}
+
+.thumb-general {
+    background: linear-gradient(135deg, #00234b, #004d80);
+}
+
+/* Cuerpo de la tarjeta */
+.proyecto-card-body {
+    padding: 20px 22px 15px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.proyecto-tag-wrapper {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Tag de Año y Nivel */
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+/* Badges por Formato de Producto (Código de color vibrante) */
+.badge-tipo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Artículo: Azul científico */
+.tipo-articulo,
+.tipo-artículo,
+.tipo-artculo,
+[class*="tipo-art"] {
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+}
+
+/* Capítulo de Libro: Morado editorial */
+.tipo-capitulo-de-libro,
+.tipo-capítulo-de-libro,
+.tipo-captulo-de-libro,
+[class*="tipo-cap"] {
+    background-color: #f3e8ff !important;
+    color: #7e22ce !important;
+}
+
+/* Congreso y Memorias: Verde logro/evento */
+.tipo-congreso,
+.tipo-memorias-de-congreso,
+[class*="tipo-congreso"],
+[class*="tipo-memorias"] {
+    background-color: #dcfce7 !important;
+    color: #15803d !important;
+}
+
+/* Prototipo / Software: Naranja tecnológico */
+.tipo-prototipo,
+[class*="tipo-prototipo"] {
+    background-color: #ffedd5 !important;
+    color: #c2410c !important;
+}
+
+/* Estadía / Estancia: Cian vinculación */
+.tipo-estadia,
+.tipo-estadía,
+.tipo-estancia,
+[class*="tipo-estad"] {
+    background-color: #cffafe !important;
+    color: #0e7490 !important;
+}
+
+/* Título */
+.proyecto-titulo {
+    margin: 0 0 10px 0;
+    font-size: 1.15rem;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.proyecto-titulo a {
+    color: #00234b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.proyecto-titulo a:hover {
+    color: #0d6efd;
+}
+
+/* Autor */
+.proyecto-autor {
+    font-size: 0.84rem;
+    color: #64748b;
+    margin: 0 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.4;
+}
+
+.proyecto-autor i {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* Resumen */
+.proyecto-resumen {
+    color: #475569;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+    flex-grow: 1;
+}
+
+/* =====================================================
+   PIE DE TARJETA Y RECURSOS
+===================================================== */
+
+.proyecto-footer {
+    padding: 14px 22px;
+    border-top: 1px solid #f1f5f9;
+    background: #fafcff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.proyecto-resources {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.micro-res-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.micro-res-badge i {
+    font-size: 0.72rem;
+}
+
+.badge-doi {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.badge-code {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.badge-yt {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.project-link-btn {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #003366;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+    margin-left: auto;
+}
+
+.project-link-btn:hover {
+    color: #0d6efd;
+    transform: translateX(3px);
+}
+
+/* =====================================================
+   PAGINACIÓN NUMÉRICA
+===================================================== */
+
+.catalogo-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 40px auto 70px auto;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 9px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.pagination-btn i {
+    font-size: 0.8rem;
+}
+
+.pagination-nav {
+    padding: 0 16px;
+    gap: 7px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.pagination-btn.active {
+    background: #003366;
+    color: #ffffff;
+    border-color: #003366;
+    box-shadow: 0 4px 14px rgba(0, 51, 102, 0.24);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #94a3b8;
+    box-shadow: none;
+}
+
+.pagination-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 42px;
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 850px) {
+    .catalogo-search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: -20px;
+        padding: 14px;
+    }
+
+    .catalogo-filter-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .catalogo-select-wrapper {
+        flex: 1;
+    }
+
+    .catalogo-select-anio {
+        width: 100%;
+    }
+
+    .catalogo-pills-container {
+        gap: 8px;
+    }
+
+    .catalogo-pill {
+        padding: 7px 14px;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+    }
+}
