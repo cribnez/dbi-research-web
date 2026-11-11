@@ -73,7 +73,7 @@ title: Inicio
 
         <div class="grid">
 
-            {% for miembro in site.data.equipo.investigadores limit:3 %}
+            {% for miembro in site.data.equipo.investigadores limit:2 %}
 
             <div class="card card-member">
 

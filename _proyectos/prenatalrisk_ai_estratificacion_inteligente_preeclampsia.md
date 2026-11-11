@@ -36,6 +36,8 @@ imagen: "https://img.youtube.com/vi/3ELui7-5pMU/maxresdefault.jpg"
 
 drive:
 
+youtube: "https://www.youtube.com/watch?v=3ELui7-5pMU"
+
 resultados_lista:
   - "Desarrollo de una plataforma web inteligente para la estratificación del riesgo de preeclampsia en pacientes embarazadas."
   - "Implementación de un motor híbrido que combina reglas clínicas basadas en las guías GPC-IMSS 2017 y FIGO 2019 con algoritmos de aprendizaje automático."
