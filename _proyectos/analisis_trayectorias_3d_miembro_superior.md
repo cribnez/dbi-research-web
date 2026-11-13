@@ -34,7 +34,7 @@ github: "https://github.com/cribnez/cap-data"
 
 youtube: "https://youtube.com/watch?v=zTUrN62HUNo"
 
-drive:
+drive: "https://drive.google.com/file/d/1d32uleE1YovdaIPO-inAWHwN_dRDoMZQ/view?usp=drive_link"
 
 doi_link:
 

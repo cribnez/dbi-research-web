@@ -10,6 +10,7 @@ autores_lista: ["Kevin Patricio Carrasco Ruiz", "Georgina Hernández Santiz", "D
 escuela: "UP Chiapas / TecNM / TENAM"
 imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,h_563,c_fill,g_auto,f_auto,q_auto/v1779126206/prototipo_hardware_orina_m5dyfa.png"
 github: "https://github.com/cribnez/dispositivo-monitoreo-orina"
+drive: "https://www.revistatecnologiadigital.com/pdf/15_03_002_desarrollo_dispositivo_monitoreo_no_invasivo_parametros_orina.pdf"
 resultados_lista:
   - "El módulo de uroflujometría fue validado con un error promedio por debajo del 5% respecto a los volúmenes de referencia, mostrando una respuesta lineal y proporcional."
   - "El sistema registró fielmente las curvas de flujo en forma de campana y calculó con precisión el flujo máximo (Qmax), indicativo de obstrucciones urinarias."

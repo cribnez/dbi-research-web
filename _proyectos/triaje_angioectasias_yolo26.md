@@ -34,7 +34,7 @@ github:
 
 youtube: "https://www.youtube.com/watch?v=moXWDhfrH0A"
 
-drive:
+drive: "https://drive.google.com/file/d/19aziDA71nIu72K4-pIv4ui3AZZxBXKs8/view?usp=drive_link"
 
 doi_link:
 

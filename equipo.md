@@ -126,6 +126,12 @@ title: Nuestro Equipo
                         <span class="directorio-inst">{{ miembro.institucion }}</span>
                     </div>
 
+                    {% if miembro.descripcion and miembro.descripcion != "" %}
+                    <p class="directorio-desc">
+                        {{ miembro.descripcion }}
+                    </p>
+                    {% endif %}
+
                 </div>
 
             </div>
@@ -140,6 +146,7 @@ title: Nuestro Equipo
             </div>
 
             <div class="directorio-right">
+                {% if miembro.email and miembro.email != "" %}
                 <a
                     href="mailto:{{ miembro.email }}"
                     class="directorio-email-btn"
@@ -147,6 +154,7 @@ title: Nuestro Equipo
                     <i class="far fa-envelope"></i>
                     <span>{{ miembro.email }}</span>
                 </a>
+                {% endif %}
             </div>
 
         </div>
@@ -155,4 +163,16 @@ title: Nuestro Equipo
 
     </div>
 
+    <!-- Contador informativo de alumnos -->
+    <p class="alumnos-contador-texto" id="alumnosContadorTexto">
+        Mostrando alumnos...
+    </p>
+
+    <!-- Paginación Numérica idéntica al catálogo -->
+    <div class="catalogo-pagination" id="alumnosPagination" aria-label="Paginación de alumnos">
+        <!-- Generado dinámicamente con JS -->
+    </div>
+
 </div>
+
+<script src="{{ '/assets/js/equipo.js' | relative_url }}"></script>
