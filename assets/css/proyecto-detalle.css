@@ -150,13 +150,13 @@
 .tipo-memorias-de-congreso, 
 .tipo-memorias-congreso,
 .tipo-memorias {
-    background-color: #dcfce7 !important;
-    color: #15803d !important;
+    background-color: #d1fae5 !important;
+    color: #065f46 !important;
 }
 
 [class*="Memorias de Congreso"] {
-    background-color: #dcfce7 !important;
-    color: #15803d !important;
+    background-color: #d1fae5 !important;
+    color: #065f46 !important;
 }
 
 /* =====================================================
@@ -164,57 +164,57 @@
    Mismos colores que catalogo.css para consistencia
    ===================================================== */
 
-/* Artículo: Azul científico */
+/* Artículo: Azul lavanda */
 .tipo-articulo,
 .tipo-artículo,
 .tipo-artculo,
 [class*="tipo-art"] {
-    background-color: #e0f2fe !important;
-    color: #0369a1 !important;
+    background-color: #dbeafe !important;
+    color: #1e40af !important;
 }
 
-/* Capítulo de Libro: Morado editorial */
+/* Capítulo de Libro: Lavanda violeta */
 .tipo-capitulo-de-libro,
 .tipo-capítulo-de-libro,
 .tipo-captulo-de-libro,
 [class*="tipo-cap"] {
-    background-color: #f3e8ff !important;
-    color: #7e22ce !important;
+    background-color: #ede9fe !important;
+    color: #5b21b6 !important;
 }
 
-/* Congreso: Verde logro/evento */
+/* Congreso: Verde menta */
 .tipo-congreso,
 [class*="tipo-congreso"] {
-    background-color: #dcfce7 !important;
-    color: #15803d !important;
+    background-color: #d1fae5 !important;
+    color: #065f46 !important;
 }
 
-/* Prototipo / Software: Naranja tecnológico */
+/* Prototipo / Software: Rosa coral */
 .tipo-prototipo,
 .tipo-software,
 [class*="tipo-prototipo"],
 [class*="tipo-software"] {
-    background-color: #ffedd5 !important;
-    color: #c2410c !important;
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
 }
 
-/* Estadía / Estancia: Amarillo vinculación */
+/* Estadía / Estancia: Turquesa claro */
 .tipo-estadia,
 .tipo-estadía,
 .tipo-estancia,
 [class*="tipo-estad"] {
-    background-color: #fef9c3 !important;
-    color: #854d0e !important;
+    background-color: #ccfbf1 !important;
+    color: #115e59 !important;
 }
 
-/* Conferencia / Ponencia: Ámbar dorado */
+/* Conferencia / Ponencia: Rosa durazno */
 .tipo-conferencia,
 .tipo-ponencia,
 .tipo-ponente-invitado,
 [class*="tipo-conferencia"],
 [class*="tipo-ponencia"] {
-    background-color: #fef3c7 !important;
-    color: #92400e !important;
+    background-color: #fce7f3 !important;
+    color: #9d174d !important;
 }
 
 /* Para CAPÍTULO DE LIBRO o INVESTIGACIÓN (barra lateral ::before) */
@@ -233,25 +233,25 @@
 /* Cuando la modalidad tiene una clase tipo-* específica, el color de tipo gana */
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-estadi"],
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-estanci"] {
-    background-color: #fef9c3 !important;
-    color: #854d0e !important;
+    background-color: #ccfbf1 !important;
+    color: #115e59 !important;
 }
 
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-prototipo"],
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-software"] {
-    background-color: #ffedd5 !important;
-    color: #c2410c !important;
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
 }
 
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-congreso"] {
-    background-color: #dcfce7 !important;
-    color: #15803d !important;
+    background-color: #d1fae5 !important;
+    color: #065f46 !important;
 }
 
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-conferencia"],
 .proyecto-detalle-container .meta-badge-modalidad[class*="tipo-ponente"] {
-    background-color: #fef3c7 !important;
-    color: #92400e !important;
+    background-color: #fce7f3 !important;
+    color: #9d174d !important;
 }
 
 /* Columna de información principal */
@@ -409,4 +409,10 @@
 .proyecto-detalle-container .btn-youtube:hover,
 .btn-youtube:hover {
     background-color: #cc1810 !important;
+}
+
+/* Badge constancia (ícono en pie de tarjeta del catálogo) */
+.badge-constancia {
+    background: #ede9fe;
+    color: #5b21b6;
 }

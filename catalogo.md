@@ -161,9 +161,14 @@ title: Catálogo
             <!-- Pie de tarjeta -->
             <div class="proyecto-footer">
                 <div class="proyecto-resources">
-                    {% if proyecto.doi_link %}
+                    {% if proyecto.doi_link and proyecto.doi_link != "" %}
                         <span class="micro-res-badge badge-doi" title="Publicación indexada con DOI">
                             <i class="fas fa-book"></i> DOI
+                        </span>
+                    {% endif %}
+                    {% if proyecto.drive and proyecto.drive != "" %}
+                        <span class="micro-res-badge badge-constancia" title="Constancia de participación">
+                            <i class="fas fa-file-lines"></i> Constancia
                         </span>
                     {% endif %}
                     {% if proyecto.github %}
