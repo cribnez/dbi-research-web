@@ -13,7 +13,6 @@ director:
 autores_lista:
   - "Francisco Daniel Jiménez Cunjamá"
   - "Luis Enrique Inchaustequi Pérez"
-  - "Dr. Christian Roberto Ibáñez Nangüelú"
 
 escuela: "Universidad Politécnica de Chiapas"
 

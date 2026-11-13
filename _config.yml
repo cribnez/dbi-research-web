@@ -19,3 +19,6 @@ collections:
   noticias:
     output: true
     permalink: /noticias/:path/
+  eventos:
+    output: true
+    permalink: /eventos/:path/

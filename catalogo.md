@@ -75,7 +75,7 @@ title: Catálogo
         Mostrando todos los proyectos
     </div>
 
-    {% assign todos_los_items = site.proyectos | concat: site.estadias %}
+    {% assign todos_los_items = site.proyectos | concat: site.estadias | concat: site.eventos %}
     {% assign proyectos_ordenados = todos_los_items | uniq: "url" | sort: "anio" | reverse %}
 
     <!-- Cuadrícula de Proyectos -->
@@ -179,7 +179,7 @@ title: Catálogo
                 </div>
 
                 <a href="{{ proyecto.url | relative_url }}" class="project-link-btn">
-                    Ver detalles &rarr;
+                    Ver detalles&nbsp;&rarr;
                 </a>
             </div>
 
