@@ -28,11 +28,11 @@ palabras_clave:
   - "Equidad Algorítmica"
   - "Retención Académica"
 
-imagen:
+imagen: "https://img.youtube.com/vi/0Dd-wzNhnxA/hqdefault.jpg"
 
 github: "https://github.com/cribnez/Predictive-Academic-Retention-XGBoost"
 
-youtube:
+youtube: "https://youtu.be/0Dd-wzNhnxA"
 
 drive: "https://drive.google.com/file/d/1AoClQ3htNoxHBVvujJRmMEt4710L6yDX/view?usp=drive_link"
 
