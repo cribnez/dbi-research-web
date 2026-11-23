@@ -6,6 +6,18 @@
 
     {% seo %}
 
+    {% if page.resumen and page.resumen != "" %}
+    <meta name="description" content="{{ page.resumen | strip_html | strip_newlines | truncate: 160 | escape }}">
+    <meta property="og:description" content="{{ page.resumen | strip_html | strip_newlines | truncate: 160 | escape }}">
+    <meta name="twitter:description" content="{{ page.resumen | strip_html | strip_newlines | truncate: 160 | escape }}">
+    {% endif %}
+
+    {% if page.imagen and page.imagen != "" %}
+    <meta property="og:image" content="{{ page.imagen }}">
+    <meta name="twitter:image" content="{{ page.imagen }}">
+    <meta name="twitter:card" content="summary_large_image">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
