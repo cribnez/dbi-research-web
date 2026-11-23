@@ -11,16 +11,16 @@
 <meta property="og:locale" content="es_MX" />
 <meta name="description" content="Innovación en IA y Sistemas Embebidos aplicados a la salud." />
 <meta name="twitter:description" property="og:description" content="Innovación en IA y Sistemas Embebidos aplicados a la salud." />
-<link rel="canonical" href="http://localhost:4000/dbi-research-web/estadias/estadia_omar_cueto/" />
-<meta property="og:url" content="http://localhost:4000/dbi-research-web/estadias/estadia_omar_cueto/" />
+<link rel="canonical" href="https://cribnez.github.io/dbi-research-web/estadias/estadia_omar_cueto/" />
+<meta property="og:url" content="https://cribnez.github.io/dbi-research-web/estadias/estadia_omar_cueto/" />
 <meta property="og:site_name" content="Dispositivos Biomédicos Inteligentes" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-11-23T14:04:06-06:00" />
-<meta property="article:modified_time" content="2026-11-23T14:04:06-06:00" />
+<meta property="article:published_time" content="2026-11-23T14:49:16-06:00" />
+<meta property="article:modified_time" content="2026-11-23T14:49:16-06:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Estadía Industrial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-11-23T14:04:06-06:00","datePublished":"2026-11-23T14:04:06-06:00","description":"Innovación en IA y Sistemas Embebidos aplicados a la salud.","headline":"Estadía Industrial","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dbi-research-web/estadias/estadia_omar_cueto/"},"url":"http://localhost:4000/dbi-research-web/estadias/estadia_omar_cueto/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-11-23T14:49:16-06:00","datePublished":"2026-11-23T14:49:16-06:00","description":"Innovación en IA y Sistemas Embebidos aplicados a la salud.","headline":"Estadía Industrial","mainEntityOfPage":{"@type":"WebPage","@id":"https://cribnez.github.io/dbi-research-web/estadias/estadia_omar_cueto/"},"url":"https://cribnez.github.io/dbi-research-web/estadias/estadia_omar_cueto/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -162,7 +162,7 @@
             <!-- Botón Compartir en WhatsApp -->
             <div class="sidebar-boton">
                 <a
-                    href="https://api.whatsapp.com/send?text=Te%20comparto%20esta%20estad%C3%ADa%20de%20DBI%20Research:%20Estad%C3%ADa+Industrial%20http://localhost:4000/dbi-research-web/estadias/estadia_omar_cueto/"
+                    href="https://api.whatsapp.com/send?text=Te%20comparto%20esta%20estad%C3%ADa%20de%20DBI%20Research:%20Estad%C3%ADa+Industrial%20https://cribnez.github.io/dbi-research-web/estadias/estadia_omar_cueto/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn-pdf-institucional btn-whatsapp"
@@ -170,6 +170,18 @@
                     <i class="fab fa-whatsapp"></i>
                     Compartir en WhatsApp
                 </a>
+            </div>
+
+            <!-- Botón Copiar Enlace -->
+            <div class="sidebar-boton">
+                <button
+                    type="button"
+                    class="btn-pdf-institucional btn-copy-link"
+                    onclick="copiarEnlaceDirecto(this)"
+                    title="Copiar enlace directo de esta estadía">
+                    <i class="fas fa-link"></i>
+                    <span>Copiar Enlace</span>
+                </button>
             </div>
 
         </div>
@@ -180,6 +192,48 @@
     <footer style="text-align: center; padding: 40px 20px; background: white; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 50px;">
         <p style="margin: 0;">&copy; 2026 DBI Research Group &bull; Universidad Politécnica de Chiapas. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Script global de utilidad (Copiar Enlace) -->
+    <script>
+    function copiarEnlaceDirecto(btn) {
+        var url = window.location.href;
+        var contenidoOriginal = btn.innerHTML;
+        
+        function mostrarConfirmacion() {
+            btn.innerHTML = '<i class="fas fa-check"></i> <span>¡Enlace copiado!</span>';
+            btn.classList.add('btn-copied');
+            setTimeout(function() {
+                btn.innerHTML = contenidoOriginal;
+                btn.classList.remove('btn-copied');
+            }, 2500);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(url).then(mostrarConfirmacion).catch(function() {
+                copiarConFallback(url, mostrarConfirmacion);
+            });
+        } else {
+            copiarConFallback(url, mostrarConfirmacion);
+        }
+    }
+
+    function copiarConFallback(texto, callback) {
+        var tempInput = document.createElement('input');
+        tempInput.style.position = 'fixed';
+        tempInput.style.opacity = '0';
+        tempInput.value = texto;
+        document.body.appendChild(tempInput);
+        tempInput.focus();
+        tempInput.select();
+        try {
+            document.execCommand('copy');
+            callback();
+        } catch (err) {
+            console.error('Error al copiar enlace:', err);
+        }
+        document.body.removeChild(tempInput);
+    }
+    </script>
 
 </body>
 </html>

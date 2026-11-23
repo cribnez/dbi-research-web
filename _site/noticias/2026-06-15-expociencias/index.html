@@ -11,8 +11,8 @@
 <meta property="og:locale" content="es_MX" />
 <meta name="description" content="Participamos con seis proyectos innovadores en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!" />
 <meta name="twitter:description" property="og:description" content="Participamos con seis proyectos innovadores en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!" />
-<link rel="canonical" href="http://localhost:4000/dbi-research-web/noticias/2026-06-15-expociencias/" />
-<meta property="og:url" content="http://localhost:4000/dbi-research-web/noticias/2026-06-15-expociencias/" />
+<link rel="canonical" href="https://cribnez.github.io/dbi-research-web/noticias/2026-06-15-expociencias/" />
+<meta property="og:url" content="https://cribnez.github.io/dbi-research-web/noticias/2026-06-15-expociencias/" />
 <meta property="og:site_name" content="Dispositivos Biomédicos Inteligentes" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-06-15T00:00:00-06:00" />
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Triunfo en ExpoCiencias Chiapas 2026" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-15T00:00:00-06:00","datePublished":"2026-06-15T00:00:00-06:00","description":"Participamos con seis proyectos innovadores en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!","headline":"Triunfo en ExpoCiencias Chiapas 2026","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dbi-research-web/noticias/2026-06-15-expociencias/"},"url":"http://localhost:4000/dbi-research-web/noticias/2026-06-15-expociencias/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-15T00:00:00-06:00","datePublished":"2026-06-15T00:00:00-06:00","description":"Participamos con seis proyectos innovadores en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!","headline":"Triunfo en ExpoCiencias Chiapas 2026","mainEntityOfPage":{"@type":"WebPage","@id":"https://cribnez.github.io/dbi-research-web/noticias/2026-06-15-expociencias/"},"url":"https://cribnez.github.io/dbi-research-web/noticias/2026-06-15-expociencias/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -72,6 +72,48 @@
     <footer style="text-align: center; padding: 40px 20px; background: white; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 50px;">
         <p style="margin: 0;">&copy; 2026 DBI Research Group &bull; Universidad Politécnica de Chiapas. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Script global de utilidad (Copiar Enlace) -->
+    <script>
+    function copiarEnlaceDirecto(btn) {
+        var url = window.location.href;
+        var contenidoOriginal = btn.innerHTML;
+        
+        function mostrarConfirmacion() {
+            btn.innerHTML = '<i class="fas fa-check"></i> <span>¡Enlace copiado!</span>';
+            btn.classList.add('btn-copied');
+            setTimeout(function() {
+                btn.innerHTML = contenidoOriginal;
+                btn.classList.remove('btn-copied');
+            }, 2500);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(url).then(mostrarConfirmacion).catch(function() {
+                copiarConFallback(url, mostrarConfirmacion);
+            });
+        } else {
+            copiarConFallback(url, mostrarConfirmacion);
+        }
+    }
+
+    function copiarConFallback(texto, callback) {
+        var tempInput = document.createElement('input');
+        tempInput.style.position = 'fixed';
+        tempInput.style.opacity = '0';
+        tempInput.value = texto;
+        document.body.appendChild(tempInput);
+        tempInput.focus();
+        tempInput.select();
+        try {
+            document.execCommand('copy');
+            callback();
+        } catch (err) {
+            console.error('Error al copiar enlace:', err);
+        }
+        document.body.removeChild(tempInput);
+    }
+    </script>
 
 </body>
 </html>

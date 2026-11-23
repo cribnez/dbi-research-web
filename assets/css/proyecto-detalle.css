@@ -425,6 +425,32 @@
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
+/* 6. Botón Copiar Enlace Directo */
+.proyecto-detalle-container .btn-copy-link,
+.btn-copy-link {
+    background-color: #f8fafc !important;
+    color: #003366 !important;
+    border: 1.5px solid #cbd5e1 !important;
+    cursor: pointer;
+    width: 100%;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.proyecto-detalle-container .btn-copy-link:hover,
+.btn-copy-link:hover {
+    background-color: #003366 !important;
+    color: #ffffff !important;
+    border-color: #003366 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.18);
+}
+.btn-copy-link.btn-copied {
+    background-color: #16a34a !important; /* Verde éxito */
+    color: #ffffff !important;
+    border-color: #16a34a !important;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25) !important;
+}
+
 /* Badge constancia (ícono en pie de tarjeta del catálogo) */
 .badge-constancia {
     background: #ede9fe;
