@@ -1,18 +1,22 @@
 title: Dispositivos Biomédicos Inteligentes
-description: Innovación en IA y Sistemas Embebidos.
+description: Innovación en IA y Sistemas Embebidos aplicados a la salud.
 baseurl: "/dbi-research-web"
 url: "https://cribnez.github.io"
+lang: es-MX
+locale: es_MX
 
 # Ajustes de Jekyll
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Configuración de colecciones
 collections:
   proyectos:
     output: true
-    permalink: /proyectos/:path/
+    permalink: /proyectos/:name/
   estadias:
     output: true
     permalink: /estadias/:path/

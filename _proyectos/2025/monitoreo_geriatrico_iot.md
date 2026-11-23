@@ -9,6 +9,7 @@ director:
   - "Dr. Christian Roberto Ibáñez Nangüelú"  
   - "Dra. María de Lourdes Corzo Cuesta"
 escuela: "Universidad Politécnica de Chiapas"
+doi_link: "https://www.revistatecnologiadigital.com/pdf/15_03_003_diseno_sistema_embebido_IoT_monitorizacion_remota_signos_geriatricos.pdf"
 github: "https://github.com/cribnez/telemonitoring-geriatric-vitals-iot"
 imagen: "https://res.cloudinary.com/dxcfe76rj/image/upload/w_1000,h_563,c_fill,g_auto,f_auto,q_auto/v1776964247/dashboard_hax4sj.jpg"
 autores_lista:
