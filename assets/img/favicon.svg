@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Degradado de los trazos: Azul marino profundo a Azul primario tecnológico -->
+    <linearGradient id="dbiGradInv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00234b"/>
+      <stop offset="100%" stop-color="#0d6efd"/>
+    </linearGradient>
+    <!-- Degradado de fondo: Blanco a azul hielo translúcido -->
+    <linearGradient id="dbiBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8f2fe"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo redondeado claro (azul hielo suave) -->
+  <rect width="64" height="64" rx="14" fill="url(#dbiBgGrad)"/>
+  <!-- Borde fino institucional -->
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#0d6efd" stroke-opacity="0.3" stroke-width="2"/>
+  
+  <!-- Isotipo: Cerebro biomédico en trazos azul marino y azul primario -->
+  <g fill="none" stroke="url(#dbiGradInv)" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Hemisferio Izquierdo -->
+    <path d="M30 16 C24 16 19 19 18 24 C16 26 15 29 16 33 C15 36 17 40 20 42 C20 46 24 48 29 48 C29.7 48 30 47 30 46"/>
+    <!-- Hemisferio Derecho -->
+    <path d="M34 16 C40 16 45 19 46 24 C48 26 49 29 48 33 C49 36 47 40 44 42 C44 46 40 48 35 48 C34.3 48 34 47 34 46"/>
+    
+    <!-- Surco central / Tronco -->
+    <path d="M32 18 L32 46"/>
+    
+    <!-- Conexiones / Nodos neuronales -->
+    <path d="M30 25 C25 25 22 28 22 31"/>
+    <path d="M34 25 C39 25 42 28 42 31"/>
+    <path d="M30 37 C26 37 23 35 21 34"/>
+    <path d="M34 37 C38 37 41 35 43 34"/>
+  </g>
+  
+  <!-- Puntos y nodos de circuito biomédico -->
+  <circle cx="22" cy="31" r="2.2" fill="#0d6efd"/>
+  <circle cx="42" cy="31" r="2.2" fill="#0d6efd"/>
+  <circle cx="21" cy="34" r="1.8" fill="#00234b"/>
+  <circle cx="43" cy="34" r="1.8" fill="#00234b"/>
+  <circle cx="32" cy="22" r="1.8" fill="#0d6efd"/>
+  <circle cx="32" cy="33" r="1.8" fill="#00234b"/>
+  <circle cx="32" cy="42" r="1.8" fill="#0d6efd"/>
+</svg>

@@ -122,6 +122,19 @@ layout: default
             </div>
             {% endif %}
 
+            <!-- Botón Compartir en WhatsApp -->
+            <div class="sidebar-boton">
+                <a
+                    href="https://api.whatsapp.com/send?text=Te%20comparto%20esta%20estad%C3%ADa%20de%20DBI%20Research:%20{{ page.title | url_encode }}%20{{ page.url | absolute_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-pdf-institucional btn-whatsapp"
+                    title="Compartir esta estadía por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    Compartir en WhatsApp
+                </a>
+            </div>
+
         </div>
     </div>
 </div>

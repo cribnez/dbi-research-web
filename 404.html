@@ -1,0 +1,172 @@
+---
+layout: default
+title: "Página no encontrada"
+permalink: /404.html
+---
+
+<style>
+.error-404-wrapper {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 90px 20px;
+}
+
+.error-404-card {
+    background: #ffffff;
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 35, 75, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.error-404-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.error-404-code {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, #0a2e61 0%, #0d6efd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+}
+
+.error-404-title {
+    font-size: 1.65rem;
+    color: #00234b;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+}
+
+.error-404-desc {
+    font-size: 1.02rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0 auto 32px auto;
+    max-width: 520px;
+}
+
+.error-404-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.btn-404-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #003366;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.15);
+}
+
+.btn-404-primary:hover {
+    background: #0d6efd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.25);
+    color: #ffffff;
+}
+
+.btn-404-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8fafc;
+    color: #00234b;
+    border: 1px solid #cbd5e1;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-404-secondary:hover {
+    background: #e2e8f0;
+    color: #00234b;
+    border-color: #94a3b8;
+}
+
+.error-404-links {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 24px;
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+.error-404-links a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 8px;
+}
+
+.error-404-links a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div class="container error-404-wrapper">
+    <div class="error-404-card">
+        
+        <div class="error-404-badge">
+            <i class="fas fa-exclamation-triangle"></i> ERROR HTTP 404
+        </div>
+
+        <div class="error-404-code">404</div>
+
+        <h1 class="error-404-title">Página o Proyecto No Encontrado</h1>
+
+        <p class="error-404-desc">
+            El recurso o enlace que intentas consultar no existe, fue reorganizado o ha cambiado de dirección dentro del repositorio de <strong>DBI Research Group</strong>.
+        </p>
+
+        <div class="error-404-actions">
+            <a href="{{ '/catalogo' | relative_url }}" class="btn-404-primary">
+                <i class="fas fa-th-large"></i>
+                <span>Ver Catálogo de Proyectos</span>
+            </a>
+            <a href="{{ '/' | relative_url }}" class="btn-404-secondary">
+                <i class="fas fa-home"></i>
+                <span>Volver al Inicio</span>
+            </a>
+        </div>
+
+        <div class="error-404-links">
+            <span>Accesos rápidos:</span>
+            <a href="{{ '/equipo' | relative_url }}">Equipo</a> &bull;
+            <a href="{{ '/noticias' | relative_url }}">Noticias</a> &bull;
+            <a href="{{ '/galeria' | relative_url }}">Galería</a>
+        </div>
+
+    </div>
+</div>
