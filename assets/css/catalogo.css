@@ -25,6 +25,8 @@
 
 .catalogo-search-bar {
     margin-top: -35px;
+    position: relative;
+    z-index: 20;
     display: flex;
     gap: 15px;
     background: #ffffff;

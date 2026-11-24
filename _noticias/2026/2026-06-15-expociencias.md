@@ -3,6 +3,7 @@ layout: default
 title: "Triunfo en ExpoCiencias Chiapas 2026"
 fecha_texto: "Junio, 2026"
 categoria_tag: "Logro Académico"
+anio: "2026"
 imagen_noticia: "https://res.cloudinary.com/yq49ki4m/image/upload/w_500,h_400,c_fill,g_auto,q_auto,f_auto/v1783100041/img5_tj2fri.jpg"
 ---
 

@@ -11,14 +11,14 @@
 <meta property="og:locale" content="es_MX" />
 <meta name="description" content="Innovación en IA y Sistemas Embebidos aplicados a la salud." />
 <meta name="twitter:description" property="og:description" content="Innovación en IA y Sistemas Embebidos aplicados a la salud." />
-<link rel="canonical" href="http://localhost:4000/dbi-research-web/noticias.html" />
-<meta property="og:url" content="http://localhost:4000/dbi-research-web/noticias.html" />
+<link rel="canonical" href="https://cribnez.github.io/dbi-research-web/noticias.html" />
+<meta property="og:url" content="https://cribnez.github.io/dbi-research-web/noticias.html" />
 <meta property="og:site_name" content="Dispositivos Biomédicos Inteligentes" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Noticias" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Innovación en IA y Sistemas Embebidos aplicados a la salud.","headline":"Noticias","url":"http://localhost:4000/dbi-research-web/noticias.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Innovación en IA y Sistemas Embebidos aplicados a la salud.","headline":"Noticias","url":"https://cribnez.github.io/dbi-research-web/noticias.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/dbi-research-web/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    
+    <link rel="stylesheet" href="/dbi-research-web/assets/css/noticias.css">
     
 </head>
 <body>
@@ -51,8 +53,8 @@
         </ul>
 
         <div class="nav-auth">
-            <a href="#" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                <i class="fas fa-lock"></i> Admin
+            <a href="mailto:cribn@ib.upchiapas.edu.mx" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+                <i class="fas fa-envelope"></i> Contacto
             </a>
         </div>
     </nav>
@@ -67,32 +69,55 @@
 
 <div class="container" style="margin-top: 40px; margin-bottom: 60px;">
 
-    <div style="margin-bottom: 25px; color: #666; font-size: 0.95rem;">
-        Mostrando todas las noticias y eventos publicados:
+    <!-- Filtros por Año (generados automáticamente) -->
+    <div class="noticias-filtros">
+        <div class="noticias-filtros-wrapper">
+            <button class="filter-btn active" onclick="filterNoticias('todos', this)">
+                Todos
+            </button>
+
+            
+            
+            <button class="filter-btn" onclick="filterNoticias('2026', this)">
+                2026
+            </button>
+            
+        </div>
     </div>
 
+    <!-- Contador de resultados -->
+    <div id="noticiasContador" class="noticias-contador">
+        Mostrando todas las noticias
+    </div>
+
+    <!-- Listado de noticias -->
     
     
-    <article class="card-noticia" style="display: flex; flex-wrap: wrap; align-items: stretch; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 5px solid #003366; margin-bottom: 25px; width: 100%; overflow: hidden;">
+    <article class="card-noticia" data-anio="2026" data-categoria="Conferencia">
         
         
-        <div class="noticia-imagen" style="flex: 0 0 260px; min-height: 200px; background-image: url('https://res.cloudinary.com/dxcfe76rj/image/upload/v1794260074/Captura_de_pantalla_2026-11-09_153410_iwctql.png'); background-size: cover; background-position: center;">
+        <div class="noticia-imagen" style="background-image: url('https://res.cloudinary.com/dxcfe76rj/image/upload/v1794260074/Captura_de_pantalla_2026-11-09_153410_iwctql.png');">
         </div>
         
         
-        <div class="noticia-contenido" style="flex: 1; min-width: 300px; padding: 25px 30px; display: flex; flex-direction: column; justify-content: center;">
-            <div class="noticia-meta" style="font-size: 0.85rem; color: #888; margin-bottom: 10px;">
-                <span style="background: #e6f0fa; color: #003366; padding: 4px 8px; border-radius: 4px; font-weight: bold; margin-right: 10px;">
+        <div class="noticia-contenido">
+            <div class="noticia-meta">
+                <span class="noticia-badge-categoria">
                     Conferencia
                 </span>
-                <i class="far fa-calendar-alt"></i> 15 de julio, 2026
+                <span class="noticia-badge-anio">
+                    <i class="far fa-calendar-alt"></i> 2026
+                </span>
+                <span class="noticia-fecha">
+                    15 de julio, 2026
+                </span>
             </div>
             
-            <h2 style="margin: 0 0 12px 0; color: #003366; font-size: 1.35rem; font-weight: bold; line-height: 1.3;">
+            <h2 class="noticia-titulo">
                 Conferencia en el 1er. Foro Regional de Cuerpos Académicos
             </h2>
             
-            <div style="color: #444; line-height: 1.6; font-size: 0.95rem; text-align: justify;">
+            <div class="noticia-cuerpo">
                 <p>El <strong>Dr. Christian Roberto Ibáñez Nangüelú</strong> participó como ponente en el <em>1er. Foro Regional de Cuerpos Académicos y Grupos de Investigación</em> (UP Chiapas), impartiendo la conferencia:</p>
 
 <blockquote>
@@ -105,26 +130,31 @@
         </div>
     </article>
     
-    <article class="card-noticia" style="display: flex; flex-wrap: wrap; align-items: stretch; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 5px solid #003366; margin-bottom: 25px; width: 100%; overflow: hidden;">
+    <article class="card-noticia" data-anio="2026" data-categoria="Logro Académico">
         
         
-        <div class="noticia-imagen" style="flex: 0 0 260px; min-height: 200px; background-image: url('https://res.cloudinary.com/yq49ki4m/image/upload/w_500,h_400,c_fill,g_auto,q_auto,f_auto/v1783100041/img5_tj2fri.jpg'); background-size: cover; background-position: center;">
+        <div class="noticia-imagen" style="background-image: url('https://res.cloudinary.com/yq49ki4m/image/upload/w_500,h_400,c_fill,g_auto,q_auto,f_auto/v1783100041/img5_tj2fri.jpg');">
         </div>
         
         
-        <div class="noticia-contenido" style="flex: 1; min-width: 300px; padding: 25px 30px; display: flex; flex-direction: column; justify-content: center;">
-            <div class="noticia-meta" style="font-size: 0.85rem; color: #888; margin-bottom: 10px;">
-                <span style="background: #e6f0fa; color: #003366; padding: 4px 8px; border-radius: 4px; font-weight: bold; margin-right: 10px;">
+        <div class="noticia-contenido">
+            <div class="noticia-meta">
+                <span class="noticia-badge-categoria">
                     Logro Académico
                 </span>
-                <i class="far fa-calendar-alt"></i> Junio, 2026
+                <span class="noticia-badge-anio">
+                    <i class="far fa-calendar-alt"></i> 2026
+                </span>
+                <span class="noticia-fecha">
+                    Junio, 2026
+                </span>
             </div>
             
-            <h2 style="margin: 0 0 12px 0; color: #003366; font-size: 1.35rem; font-weight: bold; line-height: 1.3;">
+            <h2 class="noticia-titulo">
                 Triunfo en ExpoCiencias Chiapas 2026
             </h2>
             
-            <div style="color: #444; line-height: 1.6; font-size: 0.95rem; text-align: justify;">
+            <div class="noticia-cuerpo">
                 <p>Participamos con <strong>seis proyectos innovadores</strong> en ExpoCiencias Chiapas. ¡Felicidades a todos nuestros estudiantes por su excelente representación y a los equipos galardonados!</p>
 
 <ul>
@@ -136,8 +166,97 @@
         </div>
     </article>
     
+    <article class="card-noticia" data-anio="2026" data-categoria="Reconocimiento">
+        
+        
+        
+        <div class="noticia-contenido">
+            <div class="noticia-meta">
+                <span class="noticia-badge-categoria">
+                    Reconocimiento
+                </span>
+                <span class="noticia-badge-anio">
+                    <i class="far fa-calendar-alt"></i> 2026
+                </span>
+                <span class="noticia-fecha">
+                    Mayo, 2026
+                </span>
+            </div>
+            
+            <h2 class="noticia-titulo">
+                Nombramiento al Sistema Estatal de Investigadores de Chiapas
+            </h2>
+            
+            <div class="noticia-cuerpo">
+                <p>La <strong>Agencia Digital Tecnológica del Estado de Chiapas</strong>, con fundamento en el Artículo 48 de la Ley de Ciencia, Tecnología e Innovación del Estado de Chiapas, otorgó el nombramiento como integrantes del <strong>Sistema Estatal de Investigadores</strong> a dos miembros del grupo DBI:</p>
+
+<ul>
+  <li>🎓 <strong>Dr. Christian Roberto Ibáñez Nangüelú</strong> — <em>Categoría VI: Investigador Científico o Tecnólogo Honorífico</em></li>
+  <li>🎓 <strong>Dra. Diana Martínez Cancino</strong> — <em>Categoría VI: Investigadora Científica o Tecnóloga Honorífica</em></li>
+</ul>
+
+<p>Este reconocimiento acredita su producción en la ciencia, tecnología e innovación en el Estado de Chiapas, con vigencia del <strong>18 de mayo de 2026 al 31 de diciembre de 2029</strong>.</p>
+
+<p>¡Felicidades a ambos investigadores por este importante logro que fortalece la presencia del grupo DBI en el ecosistema científico y tecnológico de Chiapas! 🏆</p>
+
+            </div>
+        </div>
+    </article>
+    
+    <article class="card-noticia" data-anio="2026" data-categoria="Reconocimiento Nacional">
+        
+        
+        
+        <div class="noticia-contenido">
+            <div class="noticia-meta">
+                <span class="noticia-badge-categoria">
+                    Reconocimiento Nacional
+                </span>
+                <span class="noticia-badge-anio">
+                    <i class="far fa-calendar-alt"></i> 2026
+                </span>
+                <span class="noticia-fecha">
+                    Enero, 2026
+                </span>
+            </div>
+            
+            <h2 class="noticia-titulo">
+                Ingreso al Sistema Nacional de Investigadoras e Investigadores (SNII)
+            </h2>
+            
+            <div class="noticia-cuerpo">
+                <p>La <strong>Secretaría de Ciencia, Humanidades, Tecnología e Innovación (Secihti)</strong>, a través del <strong>Sistema Nacional de Investigadoras e Investigadores (SNII)</strong>, ha otorgado el reconocimiento y distinción como:</p>
+
+<h3 id="candidatoa-a-investigadora-nacional"><strong>Candidato(a) a Investigador(a) Nacional</strong></h3>
+
+<p>a dos distinguidos miembros del Grupo de Investigación DBI:</p>
+
+<ul>
+  <li>🎖️ <strong>Dr. Christian Roberto Ibáñez Nangüelú</strong> — <em>Candidato a Investigador Nacional</em></li>
+  <li>🎖️ <strong>Dra. Diana Martínez Cancino</strong> — <em>Candidata a Investigadora Nacional</em></li>
+</ul>
+
+<p>Esta distinción se otorga en reconocimiento a su contribución al desarrollo nacional mediante el fortalecimiento y la consolidación de las capacidades científicas y tecnológicas del país en materia de <strong>humanidades, ciencias, tecnologías e innovación</strong>, particularmente en el desarrollo de dispositivos biomédicos inteligentes, sistemas embebidos, inteligencia artificial y salud digital.</p>
+
+<p>El nombramiento cuenta con una vigencia del <strong>01 de enero de 2026 al 31 de diciembre de 2029</strong>, refrendando el compromiso del cuerpo académico con la investigación de alto impacto en Chiapas y en todo México.</p>
+
+<p>¡Una enorme felicitación al Dr. Christian y a la Dra. Diana por este destacado logro en el máximo sistema científico nacional! 🇲🇽🔬</p>
+
+            </div>
+        </div>
+    </article>
+    
+
+    <!-- Mensaje cuando no hay resultados del filtro -->
+    <div id="noticiasVacio" class="noticias-vacio" style="display: none;">
+        <i class="fas fa-newspaper" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.4;"></i>
+        <p>No hay noticias registradas para este año.</p>
+    </div>
 
 </div>
+
+<script src="/dbi-research-web/assets/js/noticias.js"></script>
+
 
     </main>
 
@@ -145,7 +264,30 @@
         <p style="margin: 0;">&copy; 2026 DBI Research Group &bull; Universidad Politécnica de Chiapas. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script global de utilidad (Copiar Enlace) -->
+    <!-- Botón flotante Volver Arriba -->
+    <button id="btnScrollTop" class="btn-scroll-top" onclick="scrollToTop()" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Script global de utilidad (Copiar Enlace y Volver Arriba) -->
+    <script>
+    (function() {
+        var btnScrollTop = document.getElementById('btnScrollTop');
+        if (btnScrollTop) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnScrollTop.classList.add('visible');
+                } else {
+                    btnScrollTop.classList.remove('visible');
+                }
+            }, { passive: true });
+        }
+    })();
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
     <script>
     function copiarEnlaceDirecto(btn) {
         var url = window.location.href;

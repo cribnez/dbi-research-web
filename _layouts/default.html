@@ -45,8 +45,8 @@
         </ul>
 
         <div class="nav-auth">
-            <a href="#" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                <i class="fas fa-lock"></i> Admin
+            <a href="mailto:cribn@ib.upchiapas.edu.mx" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+                <i class="fas fa-envelope"></i> Contacto
             </a>
         </div>
     </nav>
@@ -59,7 +59,30 @@
         <p style="margin: 0;">&copy; {{ site.time | date: '%Y' }} DBI Research Group &bull; Universidad Politécnica de Chiapas. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script global de utilidad (Copiar Enlace) -->
+    <!-- Botón flotante Volver Arriba -->
+    <button id="btnScrollTop" class="btn-scroll-top" onclick="scrollToTop()" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Script global de utilidad (Copiar Enlace y Volver Arriba) -->
+    <script>
+    (function() {
+        var btnScrollTop = document.getElementById('btnScrollTop');
+        if (btnScrollTop) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnScrollTop.classList.add('visible');
+                } else {
+                    btnScrollTop.classList.remove('visible');
+                }
+            }, { passive: true });
+        }
+    })();
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
     <script>
     function copiarEnlaceDirecto(btn) {
         var url = window.location.href;

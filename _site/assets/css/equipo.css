@@ -2,22 +2,7 @@
    HERO EQUIPO
 ===================================================== */
 
-.equipo-hero {
-    padding: 50px 10%;
-    text-align: center;
-}
-
-.equipo-hero .hero-title {
-    font-weight: 700;
-}
-
-.equipo-hero .hero-subtitle {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-top: 10px;
-}
+/* Hereda estilos globales de .hero */
 
 /* =====================================================
    SECCIONES Y ENCABEZADOS
@@ -34,7 +19,7 @@
 
 .equipo-section-title {
     color: var(--azul-oscuro, #00234b);
-    font-size: 1.85rem;
+    font-size: 2rem;
     font-weight: 700;
     margin: 0;
 }

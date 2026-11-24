@@ -227,4 +227,31 @@ layout: default
 
     </div>
 
+    {% if page.previous or page.next %}
+    <nav class="proyecto-nav" aria-label="Navegación entre proyectos">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" class="proyecto-nav-card proyecto-nav-prev">
+            <span class="proyecto-nav-label">
+                <i class="fas fa-arrow-left"></i> Proyecto anterior
+                {% if page.previous.anio %}&bull; {{ page.previous.anio }}{% endif %}
+            </span>
+            <span class="proyecto-nav-title">{{ page.previous.title | truncate: 70 }}</span>
+        </a>
+        {% else %}
+        <div class="proyecto-nav-spacer"></div>
+        {% endif %}
+
+        {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" class="proyecto-nav-card proyecto-nav-next">
+            <span class="proyecto-nav-label">
+                {% if page.next.anio %}{{ page.next.anio }} &bull; {% endif %}Proyecto siguiente <i class="fas fa-arrow-right"></i>
+            </span>
+            <span class="proyecto-nav-title">{{ page.next.title | truncate: 70 }}</span>
+        </a>
+        {% else %}
+        <div class="proyecto-nav-spacer"></div>
+        {% endif %}
+    </nav>
+    {% endif %}
+
 </div>

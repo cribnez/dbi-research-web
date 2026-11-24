@@ -1,0 +1,180 @@
+/* ===================================
+   Noticias - Filtros y Tarjetas
+   DBI Research Group
+   =================================== */
+
+/* --- Filtros por Año --- */
+.noticias-filtros {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.noticias-filtros-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.noticias-filtros .filter-btn {
+    padding: 8px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.noticias-filtros .filter-btn:hover {
+    border-color: #0d6efd;
+    color: #0d6efd;
+    background: #f0f7ff;
+}
+
+.noticias-filtros .filter-btn.active {
+    background: #003366;
+    color: #ffffff;
+    border-color: #003366;
+}
+
+/* --- Contador --- */
+.noticias-contador {
+    color: #64748b;
+    font-size: 0.92rem;
+    margin-bottom: 25px;
+    padding-left: 4px;
+}
+
+/* --- Tarjeta de Noticia --- */
+.card-noticia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #003366;
+    margin-bottom: 25px;
+    width: 100%;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-noticia:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-noticia.oculta {
+    display: none !important;
+}
+
+/* --- Imagen de la Noticia --- */
+.noticia-imagen {
+    flex: 0 0 260px;
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- Contenido de la Noticia --- */
+.noticia-contenido {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Meta (badges + fecha) --- */
+.noticia-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.noticia-badge-categoria {
+    background: #e6f0fa;
+    color: #003366;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.noticia-badge-anio {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.noticia-fecha {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* --- Título --- */
+.noticia-titulo {
+    margin: 0 0 12px 0;
+    color: #003366;
+    font-size: 1.35rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+/* --- Cuerpo del texto --- */
+.noticia-cuerpo {
+    color: #444;
+    line-height: 1.65;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.noticia-cuerpo p {
+    margin: 0 0 8px 0;
+}
+
+.noticia-cuerpo ul {
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+/* --- Mensaje vacío --- */
+.noticias-vacio {
+    text-align: center;
+    padding: 50px 20px;
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+.noticias-vacio p {
+    margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .noticia-imagen {
+        flex: 0 0 100%;
+        min-height: 180px;
+    }
+
+    .noticia-contenido {
+        min-width: unset;
+        padding: 20px;
+    }
+
+    .noticia-titulo {
+        font-size: 1.15rem;
+    }
+}

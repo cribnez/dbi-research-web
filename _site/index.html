@@ -11,14 +11,14 @@
 <meta property="og:locale" content="es_MX" />
 <meta name="description" content="Innovación en IA y Sistemas Embebidos aplicados a la salud." />
 <meta name="twitter:description" property="og:description" content="Innovación en IA y Sistemas Embebidos aplicados a la salud." />
-<link rel="canonical" href="http://localhost:4000/dbi-research-web/" />
-<meta property="og:url" content="http://localhost:4000/dbi-research-web/" />
+<link rel="canonical" href="https://cribnez.github.io/dbi-research-web/" />
+<meta property="og:url" content="https://cribnez.github.io/dbi-research-web/" />
 <meta property="og:site_name" content="Dispositivos Biomédicos Inteligentes" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Inicio" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Innovación en IA y Sistemas Embebidos aplicados a la salud.","headline":"Inicio","name":"Dispositivos Biomédicos Inteligentes","url":"http://localhost:4000/dbi-research-web/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"Innovación en IA y Sistemas Embebidos aplicados a la salud.","headline":"Inicio","name":"Dispositivos Biomédicos Inteligentes","url":"https://cribnez.github.io/dbi-research-web/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -51,15 +51,18 @@
         </ul>
 
         <div class="nav-auth">
-            <a href="#" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                <i class="fas fa-lock"></i> Admin
+            <a href="mailto:cribn@ib.upchiapas.edu.mx" style="background: #003366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+                <i class="fas fa-envelope"></i> Contacto
             </a>
         </div>
     </nav>
 
     <main>
-        <header class="hero">
-    <div class="badge-tech">Ingeniería y Tecnología</div>
+        <header class="hero hero-tech">
+    <div class="hero-badges">
+        <span class="badge-tech">Ingeniería y Tecnología</span>
+        <span class="badge-inst"><i class="fas fa-university"></i> Universidad Politécnica de Chiapas</span>
+    </div>
 
     <h1 class="hero-title">
         Dispositivos Biomédicos Inteligentes
@@ -72,13 +75,25 @@
 
 <div class="container">
 
-    <div class="search-container">
-        <input type="text" id="inputBusquedaHero" placeholder="Buscar tesis, artículos, autores..." class="search-input" />
+    <div class="search-wrapper">
+        <div class="search-container">
+            <input type="text" id="inputBusquedaHero" placeholder="Buscar tesis, artículos, autores..." class="search-input" />
 
-        <button onclick="ejecutarBusqueda()" class="btn-search">
-            Buscar
-        </button>
+            <button onclick="ejecutarBusqueda()" class="btn-search">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </div>
+
+        <div class="quick-tags">
+            <span class="quick-tags-label">Explorar:</span>
+            <a href="/dbi-research-web/catalogo?search=IA" class="quick-tag">Inteligencia Artificial</a>
+            <a href="/dbi-research-web/catalogo?search=IoT" class="quick-tag">Monitoreo IoT</a>
+            <a href="/dbi-research-web/catalogo?search=Rehabilitacion" class="quick-tag">Rehabilitación</a>
+            <a href="/dbi-research-web/catalogo?search=ECG" class="quick-tag">Señales ECG</a>
+        </div>
     </div>
+
+    
 
     <div class="section-header">
 
@@ -122,7 +137,7 @@
 
         <div class="divider"></div>
 
-        <div class="grid">
+        <div class="grid grid-investigadores">
 
             
 
@@ -164,6 +179,50 @@
 
                 <p class="member-inst">
                     Tecnológico Nacional de México
+                </p>
+
+            </div>
+
+            
+
+            <div class="card card-member">
+
+                <div class="photo-circle">
+                    <img src="/dbi-research-web/assets/img/usuario.png" alt="Diana Paulina Martínez Cancino" />
+                </div>
+
+                <h3 class="member-name">
+                    Diana Paulina Martínez Cancino
+                </h3>
+
+                <p class="member-role">
+                    Investigadora Colaboradora
+                </p>
+
+                <p class="member-inst">
+                    Universidad Politécnica de Chiapas
+                </p>
+
+            </div>
+
+            
+
+            <div class="card card-member">
+
+                <div class="photo-circle">
+                    <img src="/dbi-research-web/assets/img/usuario.png" alt="José Octavio Vázquez Buenos Aires" />
+                </div>
+
+                <h3 class="member-name">
+                    José Octavio Vázquez Buenos Aires
+                </h3>
+
+                <p class="member-role">
+                    Investigador Colaborador
+                </p>
+
+                <p class="member-inst">
+                    Universidad Politécnica de Chiapas
                 </p>
 
             </div>
@@ -251,7 +310,7 @@
 
         </div>
 
-        <div class="grid">
+        <div class="grid grid-production">
 
             
 
@@ -261,9 +320,16 @@
 
                 <div>
 
-                    <span class="project-tag">
-                        2026 | Investigación
-                    </span>
+                    <div class="project-tags-row">
+                        <span class="project-tag">
+                            2026 | Investigación
+                        </span>
+                        
+                        <span class="project-type-badge">
+                            Congreso
+                        </span>
+                        
+                    </div>
 
                     <h3 class="project-title">
 
@@ -272,6 +338,12 @@
                         
 
                     </h3>
+
+                    
+                    <p class="project-excerpt">
+                        WalkSENS-6M es un sistema biomédico portátil diseñado para el monitoreo automático, simultáneo y continuo de la ...
+                    </p>
+                    
 
                     <p class="project-author">
 
@@ -297,9 +369,16 @@
 
                 <div>
 
-                    <span class="project-tag">
-                        2026 | Ingeniería
-                    </span>
+                    <div class="project-tags-row">
+                        <span class="project-tag">
+                            2026 | Ingeniería
+                        </span>
+                        
+                        <span class="project-type-badge">
+                            SoftwareCongreso
+                        </span>
+                        
+                    </div>
 
                     <h3 class="project-title">
 
@@ -308,6 +387,12 @@
                         
 
                     </h3>
+
+                    
+                    <p class="project-excerpt">
+                        El presente trabajo desarrolla una estación de asistencia diagnóstica para agilizar la revisión gastroenterológi...
+                    </p>
+                    
 
                     <p class="project-author">
 
@@ -322,6 +407,55 @@
                 </div>
 
                 <a href="/dbi-research-web/proyectos/triaje-angioectasias-yolo26/" class="project-link project-link-bottom">
+                    Leer más &rarr;
+                </a>
+
+            </div>
+
+            
+
+            <div class="card card-project">
+
+                <div>
+
+                    <div class="project-tags-row">
+                        <span class="project-tag">
+                            2026 | Ingeniería
+                        </span>
+                        
+                        <span class="project-type-badge">
+                            CongresoPrototipo
+                        </span>
+                        
+                    </div>
+
+                    <h3 class="project-title">
+
+                        
+                            Simulación Inmersiva de Infraestructura Hospitalaria (SIH-VR)
+                        
+
+                    </h3>
+
+                    
+                    <p class="project-excerpt">
+                        La formación en ciencias de la salud se enfrenta habitualmente a una marcada desconexión entre los conceptos teó...
+                    </p>
+                    
+
+                    <p class="project-author">
+
+                        <strong>Por:</strong>
+
+                        
+                            Luis Arturo López Aguilar
+                        
+
+                    </p>
+
+                </div>
+
+                <a href="/dbi-research-web/proyectos/simulacion-inmersiva-hospitalaria-vr/" class="project-link project-link-bottom">
                     Leer más &rarr;
                 </a>
 
@@ -348,7 +482,30 @@
         <p style="margin: 0;">&copy; 2026 DBI Research Group &bull; Universidad Politécnica de Chiapas. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script global de utilidad (Copiar Enlace) -->
+    <!-- Botón flotante Volver Arriba -->
+    <button id="btnScrollTop" class="btn-scroll-top" onclick="scrollToTop()" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Script global de utilidad (Copiar Enlace y Volver Arriba) -->
+    <script>
+    (function() {
+        var btnScrollTop = document.getElementById('btnScrollTop');
+        if (btnScrollTop) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btnScrollTop.classList.add('visible');
+                } else {
+                    btnScrollTop.classList.remove('visible');
+                }
+            }, { passive: true });
+        }
+    })();
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
     <script>
     function copiarEnlaceDirecto(btn) {
         var url = window.location.href;

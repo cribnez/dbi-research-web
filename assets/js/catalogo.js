@@ -221,6 +221,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 10. Ejecución inicial
+    // 10. Leer parámetro ?search= si viene desde la portada
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    if (searchParam && searchInput) {
+        searchInput.value = searchParam;
+    }
+
+    // 11. Ejecución inicial
     aplicarFiltros();
 });

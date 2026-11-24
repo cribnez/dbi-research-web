@@ -19,17 +19,12 @@ title: Galería
                 Todos
             </button>
 
-            <button class="filter-btn" onclick="filterGallery('2026', this)">
-                2026
+            {% assign anios_galeria = site.data.galeria | map: "anio" | uniq | sort | reverse %}
+            {% for anio in anios_galeria %}
+            <button class="filter-btn" onclick="filterGallery('{{ anio }}', this)">
+                {{ anio }}
             </button>
-
-            <button class="filter-btn" onclick="filterGallery('2025', this)">
-                2025
-            </button>
-
-            <button class="filter-btn" onclick="filterGallery('2024', this)">
-                2024
-            </button>
+            {% endfor %}
         </div>
 
     </div>
@@ -60,12 +55,16 @@ title: Galería
         <div
             class="card gallery-item"
             data-anio="{{ item.anio }}"
-            onclick="openModal('{{ item.titulo }}', '{{ item.descripcion }}', '{{ item.imagen }}')">
+            data-titulo="{{ item.titulo | escape }}"
+            data-desc="{{ item.descripcion | escape }}"
+            data-imagenes="{{ item.imagen | escape }}"
+            onclick="openModalFromCard(this)">
 
             <img
                 src="{{ ruta_final }}"
                 class="gallery-thumb"
-                alt="{{ item.titulo }}">
+                alt="{{ item.titulo | escape }}"
+                loading="lazy">
 
             {% comment %}
             Indicador visual cuando existen varias imágenes.
@@ -73,7 +72,7 @@ title: Galería
 
             {% if fotos.size > 1 %}
             <div class="gallery-count-badge">
-                +{{ fotos.size | minus: 1 }}
+                <i class="fas fa-camera"></i> {{ fotos.size }} fotos
             </div>
             {% endif %}
 
@@ -95,11 +94,28 @@ title: Galería
 
     </div>
 
+    <div id="galeriaVacio" class="galeria-vacio" style="display: none;">
+        <i class="fas fa-images" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.4;"></i>
+        <p>No hay actividades registradas para este año.</p>
+    </div>
+
 </div>
 
 <div id="galleryModal" class="gallery-modal" onclick="closeModal()">
 
-    <span class="close-btn" onclick="closeModal()">
+    <a
+        id="modalOriginalLink"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="modal-original-btn"
+        title="Abrir imagen original"
+        aria-label="Abrir imagen original"
+        onclick="event.stopPropagation()">
+        <i class="fas fa-external-link-alt"></i>
+    </a>
+
+    <span class="close-btn" onclick="closeModal()" title="Cerrar">
         &times;
     </span>
 
@@ -125,6 +141,12 @@ title: Galería
             ❯
         </button>
 
+    </div>
+
+    <div
+        id="modalThumbnails"
+        class="gallery-modal-thumbnails"
+        onclick="event.stopPropagation()">
     </div>
 
     <div

@@ -3,6 +3,7 @@ layout: default
 title: "Conferencia en el 1er. Foro Regional de Cuerpos Académicos"
 fecha_texto: "15 de julio, 2026"
 categoria_tag: "Conferencia"
+anio: "2026"
 imagen_noticia: "https://res.cloudinary.com/dxcfe76rj/image/upload/v1794260074/Captura_de_pantalla_2026-11-09_153410_iwctql.png"
 ---
 

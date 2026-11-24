@@ -3,8 +3,11 @@ layout: default
 title: Inicio
 ---
 
-<header class="hero">
-    <div class="badge-tech">Ingeniería y Tecnología</div>
+<header class="hero hero-tech">
+    <div class="hero-badges">
+        <span class="badge-tech">Ingeniería y Tecnología</span>
+        <span class="badge-inst"><i class="fas fa-university"></i> Universidad Politécnica de Chiapas</span>
+    </div>
 
     <h1 class="hero-title">
         Dispositivos Biomédicos Inteligentes
@@ -17,17 +20,51 @@ title: Inicio
 
 <div class="container">
 
-    <div class="search-container">
-        <input
-            type="text"
-            id="inputBusquedaHero"
-            placeholder="Buscar tesis, artículos, autores..."
-            class="search-input">
+    <div class="search-wrapper">
+        <div class="search-container">
+            <input
+                type="text"
+                id="inputBusquedaHero"
+                placeholder="Buscar tesis, artículos, autores..."
+                class="search-input">
 
-        <button onclick="ejecutarBusqueda()" class="btn-search">
-            Buscar
-        </button>
+            <button onclick="ejecutarBusqueda()" class="btn-search">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </div>
+
+        <div class="quick-tags">
+            <span class="quick-tags-label">Explorar:</span>
+            <a href="{{ '/catalogo' | relative_url }}?search=IA" class="quick-tag">Inteligencia Artificial</a>
+            <a href="{{ '/catalogo' | relative_url }}?search=IoT" class="quick-tag">Monitoreo IoT</a>
+            <a href="{{ '/catalogo' | relative_url }}?search=Rehabilitacion" class="quick-tag">Rehabilitación</a>
+            <a href="{{ '/catalogo' | relative_url }}?search=ECG" class="quick-tag">Señales ECG</a>
+        </div>
     </div>
+
+    {% comment %}
+    <!-- Cintillo de Impacto y Métricas (oculto temporalmente) -->
+    {% assign total_proyectos = site.proyectos | size %}
+    {% assign total_equipo = site.data.equipo.investigadores.size | plus: site.data.equipo.alumnos.size %}
+    <div class="impact-strip">
+        <div class="impact-item">
+            <div class="impact-number">{{ total_proyectos }}+</div>
+            <div class="impact-label">Desarrollos y Prototipos</div>
+        </div>
+        <div class="impact-item">
+            <div class="impact-number">{{ total_equipo }}</div>
+            <div class="impact-label">Investigadores y Estudiantes</div>
+        </div>
+        <div class="impact-item">
+            <div class="impact-number">2</div>
+            <div class="impact-label">Miembros SNII (Secihti) y SEI</div>
+        </div>
+        <div class="impact-item">
+            <div class="impact-number">TRL 7–9</div>
+            <div class="impact-label">Validación en Entornos Clínicos</div>
+        </div>
+    </div>
+    {% endcomment %}
 
     <div class="section-header">
 
@@ -71,9 +108,9 @@ title: Inicio
 
         <div class="divider"></div>
 
-        <div class="grid">
+        <div class="grid grid-investigadores">
 
-            {% for miembro in site.data.equipo.investigadores limit:2 %}
+            {% for miembro in site.data.equipo.investigadores limit:4 %}
 
             <div class="card card-member">
 
@@ -115,13 +152,13 @@ title: Inicio
 
         </div>
 
-        {% assign noticias_ordenadas = site.noticias | reverse %}
+        {% assign noticias_ordenadas = site.noticias | sort: "date" | reverse %}
 
         {% for noticia in noticias_ordenadas limit:1 %}
 
         <div class="card-noticia">
 
-            {% if noticia.imagen_noticia %}
+            {% if noticia.imagen_noticia and noticia.imagen_noticia != "" %}
 
             <div
                 class="noticia-imagen"
@@ -179,19 +216,26 @@ title: Inicio
 
         </div>
 
-        <div class="grid">
+        <div class="grid grid-production">
 
             {% assign proyectos_ordenados = site.proyectos | sort: 'anio' | reverse %}
 
-            {% for proyecto in proyectos_ordenados limit:2 %}
+            {% for proyecto in proyectos_ordenados limit:3 %}
 
             <div class="card card-project">
 
                 <div>
 
-                    <span class="project-tag">
-                        {{ proyecto.anio }} | {{ proyecto.nivel }}
-                    </span>
+                    <div class="project-tags-row">
+                        <span class="project-tag">
+                            {{ proyecto.anio }} | {{ proyecto.nivel }}
+                        </span>
+                        {% if proyecto.tipo and proyecto.tipo != "" %}
+                        <span class="project-type-badge">
+                            {{ proyecto.tipo }}
+                        </span>
+                        {% endif %}
+                    </div>
 
                     <h3 class="project-title">
 
@@ -204,6 +248,12 @@ title: Inicio
                         {% endif %}
 
                     </h3>
+
+                    {% if proyecto.resumen and proyecto.resumen != "" %}
+                    <p class="project-excerpt">
+                        {{ proyecto.resumen | strip_html | truncate: 115 }}
+                    </p>
+                    {% endif %}
 
                     <p class="project-author">
 
