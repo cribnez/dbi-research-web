@@ -110,7 +110,7 @@ title: Inicio
 
         <div class="grid grid-investigadores">
 
-            {% for miembro in site.data.equipo.investigadores limit:4 %}
+            {% for miembro in site.data.equipo.investigadores limit:2 %}
 
             <div class="card card-member">
 
