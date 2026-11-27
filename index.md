@@ -226,16 +226,9 @@ title: Inicio
 
                 <div>
 
-                    <div class="project-tags-row">
-                        <span class="project-tag">
-                            {{ proyecto.anio }} | {{ proyecto.nivel }}
-                        </span>
-                        {% if proyecto.tipo and proyecto.tipo != "" %}
-                        <span class="project-type-badge">
-                            {{ proyecto.tipo }}
-                        </span>
-                        {% endif %}
-                    </div>
+                    <span class="project-tag">
+                        {{ proyecto.anio }} | {{ proyecto.nivel }}
+                    </span>
 
                     <h3 class="project-title">
 
